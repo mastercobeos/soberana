@@ -509,8 +509,6 @@ main{ position:relative;
     animation:none;
   }
 }
-.toolbar-controls{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
-.product-type-filter,
 .filters{ display:block; width:min(310px,100%);
 } .category-select-wrap{ position:relative; display:flex; align-items:center; width:100%; min-height:48px; border:1px solid rgba(255,255,255,.16); border-radius:15px; background:rgba(2,9,6,.28); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); transition:border-color .22s ease, box-shadow .22s ease, background .22s ease;
 } .category-select-wrap:hover,
@@ -519,7 +517,7 @@ main{ position:relative;
 } .category-select{ width:100%; height:48px; appearance:none; -webkit-appearance:none; border:0; outline:0; cursor:pointer; padding:17px 43px 5px 15px; border-radius:15px; background:transparent; color:#fff !important; font:inherit; font-size:.91rem; font-weight:760;
 } .category-select option{ color:#fff; background:#07110c;
 } .category-select-arrow{ position:absolute; right:15px; top:50%; transform:translateY(-54%); color:var(--accent) !important; font-size:1.35rem; line-height:1; pointer-events:none;
-} @media(max-width:700px){ .toolbar-controls,.product-type-filter,.filters{ width:100%; }
+} @media(max-width:700px){ .filters{ width:100%; }
 } 
 
 /* ===== Category filter dropdown ===== */
