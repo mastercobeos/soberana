@@ -244,7 +244,7 @@ h1 span{color:var(--accent)}
   flex-direction:column;
   align-items:flex-end;
   gap:2px;
-  max-width:45%;
+  max-width:56%;
   padding-top:3px;
   color:var(--accent);
   text-align:right;
@@ -253,7 +253,8 @@ h1 span{color:var(--accent)}
 .card-price strong{
   font-size:clamp(.96rem,1.5vw,1.12rem);
   font-weight:900;
-  white-space:nowrap;
+  line-height:1.08;
+  overflow-wrap:anywhere;
 }
 .card-price em{
   color:var(--muted);
