@@ -1,0 +1,84 @@
+let currentLang="en";
+let categories=DATA_EN.categories;
+let models=DATA_EN.models;
+let recommendations=DATA_EN.recommendations;
+let levels=DATA_EN.levels;
+let activeFilter=DATA_EN.categories[0]?.id||"estaciones";
+let selectedCompare=[];
+const categoryGrid=document.getElementById("categoryGrid");
+const filters=document.getElementById("filters");
+const modelsGrid=document.getElementById("modelsGrid");
+const searchInput=document.getElementById("searchInput");
+const compareWrap=document.getElementById("compareWrap");
+const compareTable=document.getElementById("compareTable");
+const t=()=>UI[currentLang];
+const warrantyBadge=()=>`<span class="warranty-badge">${t().warranty}</span>`;
+const warrantyRibbon=()=>`<img class="warranty-ribbon" src="assets/warranty-5-year.png" alt="${t().warranty}" loading="lazy">`;
+document.getElementById("heroImage").src=models.find(m=>m.name==="DELTA Pro 3").image;
+
+function setText(selector,value,html=false){ const el=document.querySelector(selector); if(el) html?el.innerHTML=value:el.textContent=value; }
+function applyStaticLanguage(){
+  const u=t();
+  document.documentElement.lang=currentLang;
+  document.title=u.title;
+  const meta=document.querySelector('meta[name="description"]'); if(meta) meta.content=u.meta;
+  setText('.nav-links a[href="#categorias"]',u.navCategories);
+  setText('.nav-links a[href="#modelos"]',u.navModels);
+  setText('.nav-links a[href="#recomendador"]',u.navRecommendations);
+  setText('.nav-links a[href="#niveles"]',u.navLevels);
+  setText('.nav-cta',u.navViewModels);
+  setText('.hero .kicker',u.heroKicker); setText('.hero h1',u.heroTitle,true); setText('.hero p',u.heroDesc);
+  setText('.hero-actions a[href="#categorias"]',u.chooseCategory); setText('.hero-actions a[href="#recomendador"]',u.quickRecommendation);
+  setText('.float-a strong',u.modelsCount); setText('.float-a small',u.rangeText); setText('.float-b strong',u.upTo); setText('.float-b small',u.scalable);
+  setText('#categorias .kicker',u.categoriesKicker); setText('#categorias h2',u.categoriesTitle); setText('#categorias .section-desc',u.categoriesDesc);
+  setText('#modelos .kicker',u.modelsKicker); setText('#modelos h2',u.modelsTitle); setText('#modelos .section-desc',u.modelsDesc);
+  const ex=document.querySelectorAll('#modelos .explain-card');
+  if(ex[0]){ex[0].querySelector('strong').textContent=u.capacityTitle;ex[0].querySelector('span').textContent=u.capacityDesc;}
+  if(ex[1]){ex[1].querySelector('strong').textContent=u.powerTitle;ex[1].querySelector('span').textContent=u.powerDesc;}
+  if(ex[2]){ex[2].querySelector('strong').textContent=u.expansionTitle;ex[2].querySelector('span').textContent=u.expansionDesc;}
+  searchInput.placeholder=u.searchPlaceholder;
+  setText('#comparador .panel-head h3',u.compareTitle); setText('#comparador .panel-head small',u.compareSubtitle); setText('#clearCompare',u.clear);
+  setText('#recomendador .kicker',u.recommendationKicker); setText('#recomendador h2',u.recommendationTitle); setText('#recomendador .section-desc',u.recommendationDesc);
+  const th=document.querySelectorAll('#recomendador thead th'); if(th[0])th[0].textContent=u.needHeader;if(th[1])th[1].textContent=u.modelHeader;if(th[2])th[2].textContent=u.categoryHeader;
+  setText('#niveles .kicker',u.levelsKicker); setText('#niveles h2',u.levelsTitle); setText('#niveles .section-desc',u.levelsDesc); document.getElementById('closeModal').setAttribute('aria-label',u.close);
+  const langToggle=document.getElementById('langToggle');
+  langToggle.textContent=currentLang.toUpperCase();
+  langToggle.setAttribute('aria-label',currentLang==='en'?'Cambiar a español':'Switch to English');
+}
+
+function toggleLanguage(){
+  setLanguage(currentLang==='en'?'es':'en');
+}
+
+function setLanguage(lang){
+  currentLang=lang==='es'?'es':'en';
+  const source=currentLang==='en'?DATA_EN:DATA;
+  categories=source.categories; models=source.models; recommendations=source.recommendations; levels=source.levels;
+  if(activeFilter==='all'||!categories.some(category=>category.id===activeFilter))activeFilter=categories[0]?.id||"estaciones";
+  applyStaticLanguage(); renderCategories(); renderFilters(); renderModels(); renderRecommendations(); renderLevels(); renderCompare();
+}
+
+function selectCategory(categoryId){ activeFilter=categoryId; searchInput.value=""; renderFilters(); renderModels(); document.getElementById("modelos").scrollIntoView({behavior:"smooth",block:"start"}); }
+let categorySliderTimers=[];
+function escapeHTML(value){return String(value).replace(/[&<>"']/g,char=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[char]));}
+function closeCategoryDropdown(){const wrap=document.querySelector(".category-select-wrap.open");if(!wrap)return;wrap.classList.remove("open");const button=wrap.querySelector(".category-select-button");if(button)button.setAttribute("aria-expanded","false");}
+function initializeCategorySliders(){ categorySliderTimers.forEach(clearInterval); categorySliderTimers=[]; document.querySelectorAll("[data-category-slider]").forEach(slider=>{ const slides=[...slider.querySelectorAll(".category-slide")]; const dots=[...slider.querySelectorAll(".category-dot")]; const modelName=slider.querySelector(".category-model-name"); if(slides.length<2)return; let current=0; const showSlide=index=>{current=index%slides.length;slides.forEach((slide,i)=>slide.classList.toggle("active",i===current));dots.forEach((dot,i)=>dot.classList.toggle("active",i===current));if(modelName)modelName.textContent=slides[current].dataset.model;}; categorySliderTimers.push(setInterval(()=>showSlide(current+1),3000)); }); }
+function renderCategories(){ categoryGrid.innerHTML=categories.map(c=>{ const categoryModels=models.filter(m=>m.category===c.id); return `<article class="category-card" role="button" tabindex="0" aria-label="${t().viewModels}: ${c.title}" onclick="selectCategory('${c.id}')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();selectCategory('${c.id}')}"><div class="category-media" data-category-slider="${c.id}"><div class="category-media-glow"></div>${categoryModels.map((m,index)=>`<img class="category-slide ${index===0?'active':''}" src="${m.image}" alt="${m.name}" data-model="${m.name}" loading="lazy">`).join('')}<span class="category-model-name">${categoryModels[0]?.name||''}</span><div class="category-dots" aria-hidden="true">${categoryModels.map((_,index)=>`<span class="category-dot ${index===0?'active':''}"></span>`).join('')}</div></div><div class="category-content"><div class="category-heading"><div class="category-number">${c.number}</div><h3>${c.title}</h3></div><p>${c.description}</p><span class="category-family">${c.family}</span><span class="category-link">${t().viewModels}</span></div></article>`; }).join(''); initializeCategorySliders(); }
+function renderModels(){ const q=searchInput.value.trim().toLowerCase(); const filtered=models.filter(m=>{const byCategory=activeFilter==='all'||m.category===activeFilter;const text=`${m.name} ${m.message} ${m.explanation} ${m.plain} ${m.keywords} ${m.ideal.join(' ')}`.toLowerCase();return byCategory&&text.includes(q);}); if(!filtered.length){modelsGrid.innerHTML=`<div class="empty">${t().noModels}</div>`;return;} modelsGrid.innerHTML=filtered.map(m=>`<article class="model-card" id="${modelAnchorId(m.name)}" data-model-name="${m.name}">${warrantyRibbon()}<div class="model-image"><span class="level-badge">${t().level} ${m.level}</span><img src="${m.image}" alt="${m.name}" loading="lazy"></div><div class="model-body"><div class="card-meta-row"><span class="family-badge">${m.family}</span></div><div class="model-title-row"><h3>${m.name}</h3>${m.display_price?`<span class="card-price"><strong>${m.display_price}</strong>${m.sale_status?`<em>${m.sale_status}</em>`:''}</span>`:''}</div><div class="model-message">${m.message}</div><div class="spec-grid"><div class="spec"><small>${t().batteryCapacity}</small><strong>${m.capacity}</strong><span class="spec-help">${t().durationHelp}</span></div><div class="spec"><small>${t().outputPower}</small><strong>${m.power}</strong><span class="spec-help">${t().powerHelp}</span></div><div class="spec full"><small>${t().batteryExpansion}</small><strong>${m.expansion}</strong><span class="spec-help">${t().expansionHelp}</span></div></div><p class="best-for"><strong>${t().plainWords}</strong> ${m.plain}</p><div class="tags">${m.ideal.slice(0,4).map(x=>`<span class="tag">${x}</span>`).join('')}</div><div class="card-actions"><button class="details-btn" onclick="openDetails('${m.name.replaceAll("'","\'")}')">${t().details}</button><button class="compare-btn ${selectedCompare.includes(m.name)?'selected':''}" onclick="toggleCompare('${m.name.replaceAll("'","\'")}')">${selectedCompare.includes(m.name)?t().selected:t().compare}</button></div></div></article>`).join(''); }
+function openDetails(name){ const m=models.find(x=>x.name===name); document.getElementById('modalImage').src=m.image;document.getElementById('modalImage').alt=m.name;document.getElementById('modalFamily').textContent=m.family;document.getElementById('modalTitle').textContent=m.name;document.querySelectorAll('.modal-content > .warranty-badge').forEach(b=>b.remove());document.getElementById('modalSubtitle').textContent=m.message;document.getElementById('modalSubtitle').insertAdjacentHTML('afterend',warrantyBadge());document.getElementById('modalSummary').textContent=m.explanation;document.getElementById('modalSpecs').innerHTML=`${m.display_price?`<div class="modal-spec"><small>Precio</small><strong>${m.display_price}</strong></div>`:''}<div class="modal-spec"><small>${t().capacity}</small><strong>${m.capacity}</strong></div><div class="modal-spec"><small>${t().power}</small><strong>${m.power}</strong></div><div class="modal-spec"><small>${t().batteryExpansion}</small><strong>${m.expansion_short}</strong></div>`;document.getElementById('modalLists').innerHTML=`<div class="mini-list good"><h4>${t().recommendedFor}</h4><ul>${m.ideal.map(x=>`<li>${x}</li>`).join('')}</ul></div><div class="mini-list bad"><h4>${t().notBestFor}</h4><ul>${m.avoid.map(x=>`<li>${x}</li>`).join('')}</ul></div>`;document.getElementById('modal').classList.add('open');document.getElementById('modal').setAttribute('aria-hidden','false'); }
+function toggleCompare(name){ if(selectedCompare.includes(name))selectedCompare=selectedCompare.filter(x=>x!==name);else{if(selectedCompare.length>=3){alert(t().maxCompare);return;}selectedCompare.push(name);}renderModels();renderCompare(); }
+function renderCompare(){ if(!selectedCompare.length){compareWrap.classList.remove('visible');return;}compareWrap.classList.add('visible');const chosen=selectedCompare.map(n=>models.find(m=>m.name===n));const rows=[[t().model,...chosen.map(m=>m.name)],[t().category,...chosen.map(m=>categories.find(c=>c.id===m.category).title)],[t().batteryCapacity,...chosen.map(m=>m.capacity)],[t().outputPower,...chosen.map(m=>m.power)],[t().batteryExpansion,...chosen.map(m=>m.expansion)],[t().plainWords,...chosen.map(m=>m.plain)],[t().recommended,...chosen.map(m=>m.ideal.join(', '))]];compareTable.innerHTML=`<tbody>${rows.map(row=>`<tr><th>${row[0]}</th>${row.slice(1).map(v=>`<td>${v}</td>`).join('')}</tr>`).join('')}</tbody>`; }
+function modelAnchorId(name){return 'modelo-'+name.normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');}
+function modelLink(name,label=name){return `<a class="recommended-model-link" href="#${modelAnchorId(name)}" onclick="event.preventDefault();goToModel('${name.replaceAll("'","\'")}')">${label}</a>`;}
+function recommendationModelMarkup(label){ if(label.includes('DELTA Pro 3')&&label.includes('Ultra'))return `${modelLink('DELTA Pro 3')} <span class="recommendation-connector">${t().or}</span> ${modelLink('DELTA Pro Ultra')} <span class="recommendation-suffix">${t().withTransfer}</span>`; if(label.includes('DELTA Pro 3')&&(label.includes('expandida')||label.includes('Expanded')))return modelLink('DELTA Pro 3',label); const exact=models.find(model=>model.name===label);return exact?modelLink(exact.name,label):`<span class="model-pill">${label}</span>`; }
+function goToModel(modelName){const model=models.find(item=>item.name===modelName);activeFilter=model?.category||categories[0]?.id||"estaciones";searchInput.value='';renderFilters();renderModels();requestAnimationFrame(()=>{const target=document.getElementById(modelAnchorId(modelName));if(!target)return;target.scrollIntoView({behavior:'smooth',block:'center'});target.classList.remove('model-card-highlight');void target.offsetWidth;target.classList.add('model-card-highlight');setTimeout(()=>target.classList.remove('model-card-highlight'),2400);});}
+function renderRecommendations(){document.getElementById('recommendBody').innerHTML=recommendations.map(r=>`<tr><td>${r[0]}</td><td><span class="model-pill">${recommendationModelMarkup(r[1])}</span></td><td>${r[2]}</td></tr>`).join('');}
+function renderLevels(){const list=document.getElementById('levelList');if(!list)return;list.innerHTML=levels.map(l=>`<article class="level-item"><div class="level-num">${l[0]}</div><h3>${l[1]}</h3><p>${l[2]}</p></article>`).join('');}
+function renderFilters(){ const items=[...categories]; if(!items.some(item=>item.id===activeFilter))activeFilter=items[0]?.id||"estaciones"; const activeItem=items.find(item=>item.id===activeFilter)||items[0]; filters.innerHTML=`<div class="category-select-wrap"><span class="category-select-label">${t().category}</span><button class="category-select category-select-button" id="categoryFilter" type="button" aria-haspopup="listbox" aria-expanded="false" aria-label="${t().filterAria}"><span>${escapeHTML(activeItem.title)}</span></button><span class="category-select-arrow" aria-hidden="true">v</span><div class="category-select-menu" role="listbox" aria-label="${t().category}">${items.map(item=>`<button type="button" class="${item.id===activeFilter?'active':''}" role="option" aria-selected="${item.id===activeFilter?'true':'false'}" data-category="${item.id}">${escapeHTML(item.title)}</button>`).join('')}</div></div>`; const wrap=filters.querySelector('.category-select-wrap'); const button=filters.querySelector('#categoryFilter'); button.addEventListener('click',()=>{const isOpen=wrap.classList.toggle('open');button.setAttribute('aria-expanded',isOpen?'true':'false');}); button.addEventListener('keydown',event=>{if(event.key==='ArrowDown'){event.preventDefault();wrap.classList.add('open');button.setAttribute('aria-expanded','true');wrap.querySelector('.category-select-menu button')?.focus();}}); wrap.querySelectorAll('.category-select-menu button').forEach(option=>{option.addEventListener('click',()=>{activeFilter=option.dataset.category;closeCategoryDropdown();renderFilters();renderModels();});option.addEventListener('keydown',event=>{const options=[...wrap.querySelectorAll('.category-select-menu button')];const index=options.indexOf(option);if(event.key==='Escape'){event.preventDefault();closeCategoryDropdown();button.focus();}if(event.key==='ArrowDown'){event.preventDefault();options[(index+1)%options.length].focus();}if(event.key==='ArrowUp'){event.preventDefault();options[(index-1+options.length)%options.length].focus();}});}); }
+searchInput.addEventListener('input',renderModels);
+document.getElementById('clearCompare').addEventListener('click',()=>{selectedCompare=[];renderModels();renderCompare();});
+const modal=document.getElementById('modal');document.getElementById('closeModal').addEventListener('click',()=>modal.classList.remove('open'));modal.addEventListener('click',e=>{if(e.target===modal)modal.classList.remove('open')});document.addEventListener('keydown',e=>{if(e.key==='Escape')modal.classList.remove('open')});
+document.addEventListener('click',event=>{if(!event.target.closest('.category-select-wrap'))closeCategoryDropdown();});
+document.addEventListener('keydown',event=>{if(event.key==='Escape')closeCategoryDropdown();});
+(function(){const nav=document.querySelector('.nav');let lastY=window.scrollY;let ticking=false;function updateNav(){const currentY=window.scrollY;if(currentY<=10){nav.classList.remove('nav-hidden');nav.classList.add('nav-visible');}else if(currentY>lastY+6){nav.classList.add('nav-hidden');nav.classList.remove('nav-visible');}else if(currentY<lastY-6){nav.classList.remove('nav-hidden');nav.classList.add('nav-visible');}lastY=currentY;ticking=false;}window.addEventListener('scroll',()=>{if(!ticking){requestAnimationFrame(updateNav);ticking=true;}},{passive:true});})();
+setLanguage('en');
