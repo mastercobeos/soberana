@@ -305,7 +305,7 @@
       "plain_description": "Tiene autonomía cercana a 1 kWh, pero no la potencia de una DELTA 3; conviene para muchas horas con consumos moderados.",
       "public_price": 11939.66,
       "distributor_price": null,
-      "tax_note": "+ IVA",
+      "tax_note": "",
       "capacity": "980 Wh",
       "power": "500 W",
       "expansion": "Capacidad fija de 980 Wh",
@@ -328,7 +328,7 @@
           "Aire acondicionado"
         ],
         "keywords": "delta 2 black e980 980wh 500w ups 30ms internet computadoras television refrigerador eficiente",
-        "display_price": "$11,939.66 + IVA"
+        "display_price": "$11,939.66"
       },
       "sale_status": "Bajo pedido, entrega 4-5 días",
       "image_url": "https://mx.ecoflow.com/cdn/shop/files/e980_a21252ea-2bab-41c4-819c-fddd2c67a79a.png?v=1762845476"
@@ -344,7 +344,7 @@
       "plain_description": "Alimenta prácticamente los mismos aparatos que la DELTA 3 Plus, pero la Plus carga con más energía solar y puede ampliar su batería.",
       "public_price": 17240.52,
       "distributor_price": null,
-      "tax_note": "+ IVA",
+      "tax_note": "",
       "capacity": "1,024 Wh",
       "power": "1,800 W",
       "expansion": "Capacidad fija de 1,024 Wh",
@@ -366,7 +366,7 @@
           "Calentadores durante horas"
         ],
         "keywords": "delta 3 1024wh 1800w refrigerador hogar microondas cafetera solar 500w capacidad fija",
-        "display_price": "$17,240.52 + IVA"
+        "display_price": "$17,240.52"
       },
       "sale_status": "Bajo pedido, entrega 4-5 días",
       "image_url": "https://cdn.shopify.com/s/files/1/0593/6132/9231/files/ecoflow-us-ecoflow-delta-3-plus-portable-power-station-standalone-delta-3-plus-1179495741.png?v=1756975490"
@@ -422,7 +422,7 @@
       "plain_description": "Adecuada para respaldar las cargas esenciales de una vivienda durante varias horas.",
       "public_price": 26981.9,
       "distributor_price": null,
-      "tax_note": "+ IVA",
+      "tax_note": "",
       "capacity": "2,048 Wh",
       "power": "2,400 W",
       "expansion": "Sí: hasta 2 baterías; capacidad total de 6,144 Wh",
@@ -444,7 +444,7 @@
           "Calefacción eléctrica prolongada"
         ],
         "keywords": "casa cargas esenciales oficina negocio refrigerador microondas electrodomésticos",
-        "display_price": "$26,981.90 + IVA"
+        "display_price": "$26,981.90"
       },
       "sale_status": "Bajo pedido, entrega 4-5 días",
       "image_url": "https://cdn.shopify.com/s/files/1/0593/6132/9231/files/ecoflow-delta-2-max-portable-power-station-51305159590231.png?v=1718876774"
@@ -460,7 +460,7 @@
       "plain_description": "Es el paso intermedio entre DELTA 2 Max y DELTA Pro 3: mucha más autonomía que la primera, pero ligeramente menos potencia que la segunda.",
       "public_price": 43102.59,
       "distributor_price": null,
-      "tax_note": "+ IVA",
+      "tax_note": "",
       "capacity": "3,600 Wh",
       "power": "3,600 W",
       "expansion": "Sí: hasta 2 baterías; 10.8 kWh por unidad",
@@ -482,7 +482,7 @@
           "Varios equipos de 240 V sin diseño"
         ],
         "keywords": "delta pro 3600wh 3600w residencial casa bomba herramientas rv expansion 10.8kwh",
-        "display_price": "$43,102.59 + IVA"
+        "display_price": "$43,102.59"
       },
       "sale_status": "Bajo pedido, entrega 4-5 días",
       "image_url": "https://cdn.shopify.com/s/files/1/0593/6132/9231/files/ecoflow-us-ecoflow-delta-pro-portable-power-station-dp-delta-pro-portable-power-station-1179495743.png?v=1756889795"
@@ -498,7 +498,7 @@
       "plain_description": "La opción adecuada cuando ya se quiere respaldar una parte de la instalación eléctrica de la casa.",
       "public_price": 68964.66,
       "distributor_price": null,
-      "tax_note": "+ IVA",
+      "tax_note": "",
       "capacity": "4,096 Wh",
       "power": "4,000 W",
       "expansion": "Sí: 1 o 2 baterías; 8.2 o 12.3 kWh por unidad",
@@ -519,7 +519,7 @@
           "Varios aires grandes simultáneos"
         ],
         "keywords": "residencial casa bomba minisplit 240v transferencia refrigerador circuitos",
-        "display_price": "$68,964.66 + IVA"
+        "display_price": "$68,964.66"
       },
       "sale_status": "Bajo pedido, entrega 4-5 días",
       "image_url": "https://mx.ecoflow.com/cdn/shop/files/ecoflow-ecoflow-delta-pro-3-portable-power-station-31998254350409.png?v=1765856654"
@@ -535,7 +535,7 @@
       "plain_description": "Se utiliza cuando el objetivo es respaldar prácticamente toda la vivienda y crecer por etapas.",
       "public_price": 77129.83,
       "distributor_price": null,
-      "tax_note": "+ IVA",
+      "tax_note": "",
       "capacity": "Desde 6 kWh",
       "power": "Desde 7,200 W",
       "expansion": "Sí: sistema modular de 6 a 90 kWh",
@@ -557,7 +557,7 @@
         ],
         "keywords": "casa completa aires acondicionados 240v panel automático respaldo total",
         "public_price_max": 275857.76,
-        "display_price": "$77,129.83 + IVA - $275,857.76 + IVA"
+        "display_price": "$77,129.83 - $275,857.76"
       },
       "sale_status": "Bajo pedido, entrega 4-5 días",
       "image_url": "https://cdn.shopify.com/s/files/1/0593/6132/9231/files/ecoflow-ecoflow-delta-pro-ultra-whole-home-backup-power-ecoflow-delta-pro-ultra-32618370236489.png?v=1740542286"
@@ -896,7 +896,7 @@
       "plain_description": "Combo para cargar una estación DELTA 2 desde el alternador del vehículo mientras manejas; útil para vanlife, trabajo móvil y respaldo fuera de red.",
       "public_price": 21292.24,
       "distributor_price": null,
-      "tax_note": "+ IVA",
+      "tax_note": "",
       "capacity": null,
       "power": "800W",
       "expansion": null,
@@ -920,7 +920,7 @@
       "plain_description": "Cargador DC-DC para aprovechar energía del alternador del vehículo y alimentar estaciones EcoFlow compatibles hasta 800W; también puede apoyar mantenimiento de la batería del vehículo según configuración.",
       "public_price": 5085.34,
       "distributor_price": null,
-      "tax_note": "+ IVA",
+      "tax_note": "",
       "capacity": null,
       "power": "800W",
       "expansion": null,
@@ -944,7 +944,7 @@
       "plain_description": "Batería plug-in de 298Wh para GLACIER; EcoFlow indica hasta 40 horas de enfriamiento y salida USB-C de hasta 100W para dispositivos.",
       "public_price": 6033.62,
       "distributor_price": null,
-      "tax_note": "+ IVA",
+      "tax_note": "",
       "capacity": null,
       "power": null,
       "expansion": null,
@@ -968,7 +968,7 @@
       "plain_description": "Aire acondicionado y calefactor portátil para espacios pequeños: 6100 BTU de enfriamiento, 6800 BTU de calefacción, control por app y modos inteligentes.",
       "public_price": 20688.79,
       "distributor_price": null,
-      "tax_note": "+ IVA",
+      "tax_note": "",
       "capacity": null,
       "power": null,
       "expansion": null,
@@ -992,7 +992,7 @@
       "plain_description": "Batería adicional LFP de 1024Wh para WAVE 3, diseñada para usar el equipo sin conexión directa y extender la operación en modo portátil.",
       "public_price": 14654.31,
       "distributor_price": null,
-      "tax_note": "+ IVA",
+      "tax_note": "",
       "capacity": "1024Wh",
       "power": null,
       "expansion": null,
