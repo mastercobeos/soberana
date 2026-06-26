@@ -26,6 +26,7 @@ function applyStaticLanguage(){
   setText('.nav-links a[href="#modelos"]',u.navModels);
   setText('.nav-links a[href="#recomendador"]',u.navRecommendations);
   setText('.nav-links a[href="#niveles"]',u.navLevels);
+  setText('.nav-dropdown-button',u.navProducts);
   setText('.nav-cta',u.navViewModels);
   setText('.hero .kicker',u.heroKicker); setText('.hero h1',u.heroTitle,true); setText('.hero p',u.heroDesc);
   setText('.hero-actions a[href="#categorias"]',u.chooseCategory); setText('.hero-actions a[href="#recomendador"]',u.quickRecommendation);

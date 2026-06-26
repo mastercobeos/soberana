@@ -11,7 +11,7 @@ const DATA_EN = {
 const UI = {
   en: {
     title:"Soberana Solutions · Choose by need", meta:"Comparative EcoFlow power station catalog by output, capacity, and use case.",
-    navCategories:"Categories", navModels:"Models", navRecommendations:"Recommendations", navLevels:"Levels", navViewModels:"View models",
+    navCategories:"Categories", navModels:"Models", navRecommendations:"Recommendations", navLevels:"Levels", navProducts:"Products", navViewModels:"View models",
     heroKicker:"Choose by use, output, and runtime", heroTitle:'Choose energy for what you <span>actually need.</span>', heroDesc:"Compare what each model can power, how long it may run, and whether extra batteries can extend its runtime.", chooseCategory:"Choose by category", quickRecommendation:"See quick recommendation", modelsCount:"14 models", rangeText:"from portable to residential", upTo:"Up to 90 kWh", scalable:"in scalable systems",
     categoriesKicker:"Start with the intended use", categoriesTitle:"Four main categories", categoriesDesc:"Select a card to view only the models suited to that need.",
     modelsKicker:"Equipment comparison", modelsTitle:"Models by backup level", modelsDesc:"The three main specifications serve different purposes. Review them before choosing.", capacityTitle:"Capacity in Wh or kWh", capacityDesc:"Shows how much energy the battery stores and therefore how long it may run.", powerTitle:"Output power in W", powerDesc:"Shows which appliances it can start and how many can run at the same time.", expansionTitle:"Battery expansion", expansionDesc:"Shows whether another battery can be added for longer runtime.", searchPlaceholder:"Search: refrigerator, laptop, mini-split...",
@@ -22,7 +22,7 @@ const UI = {
   },
   es: {
     title:"Soberana Solutions · Selección por necesidad", meta:"Catálogo comparativo de estaciones EcoFlow por potencia, capacidad y aplicación.",
-    navCategories:"Categorías", navModels:"Modelos", navRecommendations:"Recomendaciones", navLevels:"Niveles", navViewModels:"Ver modelos",
+    navCategories:"Categorías", navModels:"Modelos", navRecommendations:"Recomendaciones", navLevels:"Niveles", navProducts:"Productos", navViewModels:"Ver modelos",
     heroKicker:"Selección por uso, potencia y duración", heroTitle:'Elige energía para lo que <span>realmente necesitas.</span>', heroDesc:"Compara qué aparatos puede alimentar cada modelo, cuánto tiempo puede durar y si permite agregar baterías para ampliar su autonomía.", chooseCategory:"Elegir por categoría", quickRecommendation:"Ver recomendación rápida", modelsCount:"14 modelos", rangeText:"de portátil a residencial", upTo:"Hasta 90 kWh", scalable:"en sistemas escalables",
     categoriesKicker:"Empieza por el tipo de uso", categoriesTitle:"Cuatro categorías principales", categoriesDesc:"Selecciona una tarjeta para ver únicamente los modelos adecuados para esa necesidad.",
     modelsKicker:"Comparación de equipos", modelsTitle:"Modelos por nivel de respaldo", modelsDesc:"Las tres cifras principales tienen funciones diferentes. Revísalas antes de decidir.", capacityTitle:"Capacidad en Wh o kWh", capacityDesc:"Indica cuánta energía almacena la batería y, por tanto, cuánto tiempo puede durar.", powerTitle:"Potencia de salida en W", powerDesc:"Indica qué aparatos puede encender y cuántos puede utilizar al mismo tiempo.", expansionTitle:"Expansión de batería", expansionDesc:"Indica si se puede agregar otra batería para obtener más horas de funcionamiento.", searchPlaceholder:"Buscar: refrigerador, laptop, minisplit...",
