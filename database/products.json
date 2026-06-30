@@ -2,23 +2,23 @@
   "categories": [
     {
       "id": "estaciones",
-      "name": "Estaciones EcoFlow",
-      "description": "Equipos principales de respaldo y energía portátil."
+      "name": "Portátil y conectividad",
+      "description": "Para mantener internet, teléfonos, iluminación, una laptop y equipos sensibles durante apagones cortos."
     },
     {
       "id": "paneles",
-      "name": "Paneles solares",
-      "description": "Paneles para carga solar y extensión de autonomía."
+      "name": "Home office prolongado",
+      "description": "Más batería o potencia para trabajar varias horas con módem, laptop, monitor, TV, ventilador y cargas portátiles moderadas."
     },
     {
       "id": "baterias",
-      "name": "Baterías",
-      "description": "Baterías extra para ampliar capacidad y tiempo de uso."
+      "name": "Hogar y electrodomésticos",
+      "description": "Desde muchas horas con cargas moderadas hasta refrigerador, computadoras y aparatos de cocina por periodos controlados."
     },
     {
       "id": "inteligentes",
-      "name": "Inteligentes",
-      "description": "Accesorios inteligentes, clima portátil y carga vehicular."
+      "name": "Respaldo residencial",
+      "description": "Para circuitos de una vivienda, bombas, minisplits y cargas de 120/240 V con instalación adecuada."
     },
     {
       "id": "paquetes",
@@ -34,8 +34,8 @@
       "category": "estaciones",
       "family": "Serie RIVER",
       "subtitle": "Conectividad y emergencia básica",
-      "description": "La opción más compacta para conservar comunicación, iluminación y carga de dispositivos durante un apagón corto.",
-      "plain_description": "Con este equipo puedes mantener módem/router y 2 celulares aprox. 7-9 h; si agregas una laptop eficiente, aprox. 2-3 h. Se recarga en aprox. 1 h conectado a la luz y en 2.5-3 h con panel solar de 110 W.",
+      "description": "Equipo compacto para comunicación, iluminación y cargas pequeñas. Sus 230 Wh sirven para electrónica eficiente; no es para aparatos de alto consumo.",
+      "plain_description": "Autonomía orientativa con 85% útil: 50 W ≈ 3.9 h, 100 W ≈ 2.0 h, 300 W ≈ 0.7 h. La duración real cambia por picos de arranque, temperatura y eficiencia del equipo conectado.",
       "public_price": 5099,
       "distributor_price": null,
       "tax_note": "IVA incluido",
@@ -58,9 +58,18 @@
           "Cafetera potente",
           "Aire acondicionado"
         ],
-        "keywords": "internet modem router celular luces laptop portátil emergencia"
+        "keywords": "internet modem router celular luces laptop portátil emergencia",
+        "technical": {
+          "battery_wh": 230,
+          "ac_input_w": "320 W",
+          "solar_input_w": "110 W",
+          "ac_output_w": "300 W",
+          "surge_w": "600 W",
+          "x_boost_w": "600 W",
+          "ups_ms": "<20 ms (EPS)"
+        }
       },
-      "sale_status": "Bajo pedido, entrega 4-5 días",
+      "sale_status": "Bajo pedido",
       "image_url": "https://cdn.shopify.com/s/files/1/0593/6132/9231/files/ecoflow-us-ecoflow-river-3-portable-power-station-r3-1174069423.png?v=1756976053"
     },
     {
@@ -70,8 +79,8 @@
       "category": "estaciones",
       "family": "Serie RIVER",
       "subtitle": "Continuidad para equipos sensibles",
-      "description": "Mantiene conectados equipos sensibles durante cortes breves y está enfocada en funcionar como respaldo UPS. Frente a la RIVER 3 convencional no ofrece más potencia: su diferencia principal es la continuidad para módem, computadora, NAS o CPAP.",
-      "plain_description": "Con este equipo mantienes módem/router o una computadora eficiente sin que se apague en cortes cortos: 7-9 h con internet, 2-3 h con laptop y 1-2 h con dos equipos sensibles. Carga aprox. 1 h a la luz y 2.5-3 h con solar.",
+      "description": "Versión enfocada en continuidad para equipos sensibles. Antes de ofrecerla, valida que el cliente necesita respaldo UPS/EPS y no más potencia.",
+      "plain_description": "Autonomía orientativa con 85% útil: 50 W ≈ 4.2 h, 100 W ≈ 2.1 h, 300 W ≈ 0.7 h. La duración real cambia por picos de arranque, temperatura y eficiencia del equipo conectado.",
       "public_price": 5119,
       "distributor_price": null,
       "tax_note": "IVA incluido",
@@ -98,9 +107,18 @@
         "keywords": "ups no break respaldo modem router computadora nas cpap continuidad corte breve 245wh 300w",
         "price_source": "Excel base_datos_powerme_comercial_integrada_precios_completos.xlsx",
         "price_source_row_id": "P0053",
-        "price_match_score": 1
+        "price_match_score": 1,
+        "technical": {
+          "battery_wh": 245,
+          "ac_input_w": "320 W",
+          "solar_input_w": "110 W",
+          "ac_output_w": "300 W",
+          "surge_w": "600 W",
+          "x_boost_w": "600 W",
+          "ups_ms": "<10 ms"
+        }
       },
-      "sale_status": "Bajo pedido, entrega 4-5 días",
+      "sale_status": "Bajo pedido",
       "image_url": "https://cdn.shopify.com/s/files/1/0593/6132/9231/files/ecoflow-us-ecoflow-river-3-portable-power-station-r3-1174069423.png?v=1756976053"
     },
     {
@@ -110,14 +128,14 @@
       "category": "estaciones",
       "family": "Serie RIVER",
       "subtitle": "Home office compacto",
-      "description": "Entrega más potencia que la RIVER 3 y permite agregar una batería compatible cuando se necesita mayor duración.",
-      "plain_description": "Con este equipo puedes sostener módem/router y laptop aprox. 3-4 h; si agregas monitor, calcula 2-3 h. Se recarga en aprox. 1 h a la luz y 1.5-2 h con panel solar compatible; con batería extra aumenta la autonomía.",
+      "description": "Entrega más potencia que la RIVER 3 y permite agregar batería EB300 o EB600 para aumentar autonomía sin subir la salida base de 600 W.",
+      "plain_description": "Autonomía orientativa con 85% útil: 50 W ≈ 4.9 h, 100 W ≈ 2.4 h, 300 W ≈ 0.8 h. La duración real cambia por picos de arranque, temperatura y eficiencia del equipo conectado.",
       "public_price": 5999,
       "distributor_price": null,
       "tax_note": "IVA incluido",
-      "capacity": "268 Wh",
+      "capacity": "286 Wh",
       "power": "600 W",
-      "expansion": "Sí: EB300 o EB600; hasta aprox. 840 Wh",
+      "expansion": "Sí: EB300 o EB600; hasta aprox. 858 Wh",
       "tags": [
         "Módem y router",
         "Laptop",
@@ -135,9 +153,18 @@
           "Minisplit",
           "Cocina eléctrica"
         ],
-        "keywords": "home office laptop monitor internet televisión batería adicional"
+        "keywords": "home office laptop monitor internet televisión batería adicional",
+        "technical": {
+          "battery_wh": 286,
+          "ac_input_w": "380 W",
+          "solar_input_w": "220 W",
+          "ac_output_w": "600 W",
+          "surge_w": "1,200 W",
+          "x_boost_w": "1,200 W",
+          "ups_ms": "<10 ms"
+        }
       },
-      "sale_status": "Bajo pedido, entrega 4-5 días",
+      "sale_status": "Bajo pedido",
       "image_url": "https://cdn.shopify.com/s/files/1/0593/6132/9231/files/ecoflow-us-ecoflow-river-3-plus-portable-power-station-standalone-36158995398729.png?v=1752041545"
     },
     {
@@ -147,9 +174,9 @@
       "category": "estaciones",
       "family": "Serie RIVER",
       "subtitle": "Autonomía media para trabajo y entretenimiento",
-      "description": "Ofrece aproximadamente el doble de energía que una RIVER compacta para trabajar, ver televisión o usar un ventilador durante más tiempo. Su capacidad es parecida a la RIVER 3 Max, pero entrega menos potencia: 500 W frente a 600 W.",
-      "plain_description": "Con este equipo puedes mantener home office básico 5-7 h, TV 4-5 h o módem/router más laptop 6-8 h. Con dos equipos medianos calcula 3-4 h. Se recarga en aprox. 1 h a la luz y 3-4 h con solar.",
-      "public_price": 9999,
+      "description": "Buena opción de autonomía media para laptop, internet, TV o ventilador. Frente a RIVER 3 Max tiene capacidad similar, pero menor salida AC: 500 W frente a 600 W.",
+      "plain_description": "Autonomía orientativa con 85% útil: 50 W ≈ 8.7 h, 100 W ≈ 4.4 h, 300 W ≈ 1.5 h. La duración real cambia por picos de arranque, temperatura y eficiencia del equipo conectado.",
+      "public_price": 6599,
       "distributor_price": null,
       "tax_note": "IVA incluido",
       "capacity": "512 Wh",
@@ -172,9 +199,18 @@
           "Minisplit",
           "Circuitos completos"
         ],
-        "keywords": "home office 512wh 500w laptop monitor television ventilador internet river 2 max"
+        "keywords": "home office 512wh 500w laptop monitor television ventilador internet river 2 max",
+        "technical": {
+          "battery_wh": 512,
+          "ac_input_w": "660 W",
+          "solar_input_w": "220 W",
+          "ac_output_w": "500 W",
+          "surge_w": "1,000 W",
+          "x_boost_w": "1,000 W",
+          "ups_ms": "<30 ms (EPS)"
+        }
       },
-      "sale_status": "Bajo pedido, entrega 4-5 días",
+      "sale_status": "Bajo pedido",
       "image_url": "https://cdn.shopify.com/s/files/1/0593/6132/9231/files/ecoflow-us-ecoflow-river-2-max-portable-power-station-30042740555849_1500x_d4588403-9891-493c-a7c9-990bda1498dd.webp?v=1762658410"
     },
     {
@@ -184,14 +220,14 @@
       "category": "estaciones",
       "family": "Serie RIVER",
       "subtitle": "Jornada de trabajo con batería ampliada",
-      "description": "Es una RIVER 3 Plus acompañada por la batería EB300. Aumenta la duración, pero conserva 600 W de potencia de salida.",
-      "plain_description": "Con este equipo puedes trabajar con módem/router, laptop y monitor aprox. 6-8 h; con TV o ventilador, 5-7 h. Con dos equipos medianos calcula 3-5 h. Se recarga en aprox. 1.5 h a la luz y 3-4 h con solar.",
-      "public_price": 10199,
+      "description": "Configuración RIVER 3 Plus con batería EB300. Aumenta la energía disponible a 572 Wh y conserva 600 W de salida AC.",
+      "plain_description": "Autonomía orientativa con 85% útil: 50 W ≈ 9.7 h, 100 W ≈ 4.9 h, 300 W ≈ 1.6 h. La duración real cambia por picos de arranque, temperatura y eficiencia del equipo conectado.",
+      "public_price": 8599,
       "distributor_price": null,
       "tax_note": "IVA incluido",
-      "capacity": "554 Wh",
+      "capacity": "572 Wh",
       "power": "600 W",
-      "expansion": "Ya incluye una batería EB300",
+      "expansion": "Ya incluye batería EB300",
       "tags": [
         "Jornada de home office",
         "Laptop y monitor",
@@ -209,9 +245,18 @@
           "Minisplit",
           "Circuitos completos"
         ],
-        "keywords": "jornada oficina laptop monitor ventilador televisión internet"
+        "keywords": "jornada oficina laptop monitor ventilador televisión internet",
+        "technical": {
+          "battery_wh": 572,
+          "ac_input_w": "380 W (base)",
+          "solar_input_w": "220 W",
+          "ac_output_w": "600 W",
+          "surge_w": "1,200 W",
+          "x_boost_w": "1,200 W",
+          "ups_ms": "<10 ms"
+        }
       },
-      "sale_status": "Bajo pedido, entrega 4-5 días",
+      "sale_status": "Bajo pedido",
       "image_url": "https://cdn.shopify.com/s/files/1/0593/6132/9231/files/ecoflow-us-ecoflow-river-3-plus-portable-power-station-standalone-35888815702089_85b7f2bf-3fb2-4570-874e-870566788373.png?v=1775123729"
     },
     {
@@ -221,9 +266,9 @@
       "category": "estaciones",
       "family": "Serie RIVER",
       "subtitle": "Más potencia portátil dentro de la serie RIVER",
-      "description": "Combina 768 Wh con una salida de 800 W, por lo que puede alimentar aparatos más exigentes que la RIVER 2 Max y las RIVER 3 de 600 W. Comparada con la RIVER 3 Max Plus, almacena un poco menos de energía, pero entrega más potencia.",
-      "plain_description": "Con este equipo puedes usar laptop, router y monitor 8-10 h; TV o ventilador 7-9 h, y un refrigerador eficiente por periodos controlados. Con dos equipos medianos calcula 4-6 h. Carga aprox. 1.2 h a la luz y 4-5 h con solar.",
-      "public_price": 9999,
+      "description": "Combina 768 Wh con 800 W de salida AC. Puede manejar cargas portátiles más exigentes que RIVER 2 Max y las RIVER 3 de 600 W.",
+      "plain_description": "Autonomía orientativa con 85% útil: 50 W ≈ 13 h, 100 W ≈ 6.5 h, 300 W ≈ 2.2 h. La duración real cambia por picos de arranque, temperatura y eficiencia del equipo conectado.",
+      "public_price": 8599,
       "distributor_price": null,
       "tax_note": "IVA incluido",
       "capacity": "768 Wh",
@@ -249,9 +294,18 @@
         "keywords": "river 2 pro 768wh 800w xboost 1600 home office refrigerador television ventilador potencia",
         "price_source": "Excel base_datos_powerme_comercial_integrada_precios_completos.xlsx",
         "price_source_row_id": "P0049",
-        "price_match_score": 1
+        "price_match_score": 1,
+        "technical": {
+          "battery_wh": 768,
+          "ac_input_w": "940 W",
+          "solar_input_w": "220 W",
+          "ac_output_w": "800 W",
+          "surge_w": "1,600 W",
+          "x_boost_w": "1,600 W",
+          "ups_ms": "<30 ms (EPS)"
+        }
       },
-      "sale_status": "Bajo pedido, entrega 4-5 días",
+      "sale_status": "Bajo pedido",
       "image_url": "https://cdn.shopify.com/s/files/1/0593/6132/9231/files/ecoflow-us-ecoflow-river-2-pro-portable-power-station-30042784006217_1500x_0df8c4aa-09a0-4fc7-b463-e0dc0623a685.webp?v=1733970158"
     },
     {
@@ -261,14 +315,14 @@
       "category": "estaciones",
       "family": "Serie RIVER",
       "subtitle": "Mayor autonomía dentro de la familia RIVER",
-      "description": "Es la configuración RIVER con mayor capacidad. Está pensada para electrónica y consumos moderados durante más horas.",
-      "plain_description": "Con este equipo puedes mantener home office completo 9-12 h, TV/ventilador 8-10 h o refrigerador eficiente por periodos más largos. Con dos equipos medianos calcula 5-7 h. Carga aprox. 2-2.5 h a la luz y 5-6 h con solar.",
-      "public_price": 17400,
+      "description": "Configuración RIVER con mayor autonomía: RIVER 3 Plus con batería EB600. Mantiene 600 W de salida AC, por lo que no sustituye una DELTA para cargas grandes.",
+      "plain_description": "Autonomía orientativa con 85% útil: 50 W ≈ 15 h, 100 W ≈ 7.3 h, 300 W ≈ 2.4 h. La duración real cambia por picos de arranque, temperatura y eficiencia del equipo conectado.",
+      "public_price": 8799,
       "distributor_price": null,
       "tax_note": "IVA incluido",
-      "capacity": "840 Wh",
+      "capacity": "858 Wh",
       "power": "600 W",
-      "expansion": "Ya incluye una batería EB600",
+      "expansion": "Ya incluye batería EB600",
       "tags": [
         "Home office prolongado",
         "Internet",
@@ -289,9 +343,18 @@
         "keywords": "larga duración refrigerador temporal laptop monitor televisión ventilador",
         "price_source": "Excel base_datos_powerme_comercial_integrada_precios_completos.xlsx",
         "price_source_row_id": "P0023",
-        "price_match_score": 0.8
+        "price_match_score": 0.8,
+        "technical": {
+          "battery_wh": 858,
+          "ac_input_w": "380 W (base)",
+          "solar_input_w": "220 W",
+          "ac_output_w": "600 W",
+          "surge_w": "1,200 W",
+          "x_boost_w": "1,200 W",
+          "ups_ms": "<10 ms"
+        }
       },
-      "sale_status": "Bajo pedido, entrega 4-5 días",
+      "sale_status": "Bajo pedido",
       "image_url": "https://cdn.shopify.com/s/files/1/0593/6132/9231/files/ecoflow-us-ecoflow-river-3-plus-portable-power-station-standalone-35888815669321_85f32f34-63f6-4830-8f25-391020407b37.png?v=1752564431"
     },
     {
@@ -301,9 +364,9 @@
       "category": "estaciones",
       "family": "Serie DELTA",
       "subtitle": "Casi 1 kWh para cargas moderadas",
-      "description": "Almacena casi la misma energía que una DELTA 3, pero su salida es mucho menor: 500 W frente a 1,800 W. Por eso ofrece buena duración con internet, computadoras, televisión y refrigeradores eficientes cuyo arranque sea compatible, pero no es la indicada para aparatos de alto consumo.",
-      "plain_description": "Con este equipo puedes mantener internet, cámaras y TV muchas horas: 12-18 h con cargas pequeñas, 6-8 h con dos equipos medianos o un refrigerador eficiente controlado. Carga aprox. 1.5 h a la luz y 3-4 h con solar.",
-      "public_price": 11939.66,
+      "description": "Almacena casi 1 kWh, pero su salida de 500 W limita aparatos de alto consumo. Conviene para electrónica, TV, internet y refrigeradores eficientes previamente verificados.",
+      "plain_description": "Autonomía orientativa con 85% útil: 50 W ≈ 17 h, 100 W ≈ 8.3 h, 300 W ≈ 2.8 h. La duración real cambia por picos de arranque, temperatura y eficiencia del equipo conectado.",
+      "public_price": 9499,
       "distributor_price": null,
       "tax_note": "",
       "capacity": "980 Wh",
@@ -328,9 +391,18 @@
           "Aire acondicionado"
         ],
         "keywords": "delta 2 black e980 980wh 500w ups 30ms internet computadoras television refrigerador eficiente",
-        "display_price": "$11,939.66"
+        "display_price": "$11,939.66",
+        "technical": {
+          "battery_wh": 980,
+          "ac_input_w": "500 W",
+          "solar_input_w": "500 W",
+          "ac_output_w": "500 W",
+          "surge_w": "1,000 W",
+          "x_boost_w": "1,000 W",
+          "ups_ms": "30 ms (EPS)"
+        }
       },
-      "sale_status": "Bajo pedido, entrega 4-5 días",
+      "sale_status": "Bajo pedido",
       "image_url": "https://mx.ecoflow.com/cdn/shop/files/e980_a21252ea-2bab-41c4-819c-fddd2c67a79a.png?v=1762845476"
     },
     {
@@ -340,9 +412,9 @@
       "category": "estaciones",
       "family": "Serie DELTA",
       "subtitle": "Potencia DELTA en configuración sencilla",
-      "description": "Entrega la misma capacidad y potencia base que la DELTA 3 Plus para refrigerador y electrodomésticos comunes. La diferencia es que la DELTA 3 es la opción más sencilla: admite hasta 500 W solares y no ofrece la expansión de batería de la versión Plus.",
-      "plain_description": "Con este equipo puedes mantener refrigerador, internet y algunas luces aprox. 6-10 h; microondas o cafetera conviene usarlos por periodos cortos. Con dos equipos medianos calcula 4-6 h. Carga aprox. 1 h a la luz y 2.5-3 h con solar.",
-      "public_price": 17240.52,
+      "description": "DELTA de 1 kWh para electrodomésticos comunes. Tiene 1,800 W de salida, pero menor entrada solar y menos expansión que DELTA 3 Plus.",
+      "plain_description": "Autonomía orientativa con 85% útil: 50 W ≈ 17 h, 100 W ≈ 8.7 h, 300 W ≈ 2.9 h. La duración real cambia por picos de arranque, temperatura y eficiencia del equipo conectado.",
+      "public_price": 14999,
       "distributor_price": null,
       "tax_note": "",
       "capacity": "1,024 Wh",
@@ -366,9 +438,18 @@
           "Calentadores durante horas"
         ],
         "keywords": "delta 3 1024wh 1800w refrigerador hogar microondas cafetera solar 500w capacidad fija",
-        "display_price": "$17,240.52"
+        "display_price": "$17,240.52",
+        "technical": {
+          "battery_wh": 1024,
+          "ac_input_w": "1,500 W",
+          "solar_input_w": "500 W",
+          "ac_output_w": "1,800 W",
+          "surge_w": "3,600 W",
+          "x_boost_w": "2,400 W",
+          "ups_ms": "<10 ms"
+        }
       },
-      "sale_status": "Bajo pedido, entrega 4-5 días",
+      "sale_status": "Bajo pedido",
       "image_url": "https://cdn.shopify.com/s/files/1/0593/6132/9231/files/ecoflow-us-ecoflow-delta-3-plus-portable-power-station-standalone-delta-3-plus-1179495741.png?v=1756975490"
     },
     {
@@ -377,39 +458,50 @@
       "brand": "EcoFlow",
       "category": "estaciones",
       "family": "Serie DELTA",
-      "subtitle": "Respaldo equilibrado para hogar y oficina",
-      "description": "Combina suficiente potencia para electrodomésticos comunes con una capacidad inicial de 1 kWh y opción de ampliación.",
-      "plain_description": "Con este equipo puedes mantener refrigerador, internet, TV y luces aprox. 6-10 h; con home office completo, 8-12 h. Con dos equipos medianos calcula 4-6 h. Carga aprox. 1 h a la luz y 1.5-2 h con buena entrada solar.",
-      "public_price": 21999,
+      "subtitle": "Combo con batería adicional inteligente",
+      "description": "Combo DELTA 3 Plus con batería adicional inteligente. Duplica la capacidad base de 1,024 Wh a 2,048 Wh, mantiene 1,800 W de salida AC, carga rápida por CA de 1,500 W y entrada solar de hasta 1,000 W. Recomendado para emergencias, respaldo en casa, oficina, RV y camping.",
+      "plain_description": "Autonomía orientativa con 85% útil sobre 2,048 Wh: 50 W aprox. 35 h, 100 W aprox. 17 h, 300 W aprox. 5.8 h. Puede alimentar cargas esenciales como refrigerador, internet, luces y computadoras; la duración real depende de picos de arranque y consumo.",
+      "public_price": 23999,
       "distributor_price": null,
       "tax_note": "IVA incluido",
-      "capacity": "1,024 Wh",
+      "capacity": "2,048 Wh",
       "power": "1,800 W",
-      "expansion": "Sí: batería inteligente compatible; hasta aprox. 5 kWh",
+      "expansion": "Incluye batería adicional inteligente: 2,048 Wh totales; expandible hasta 5 kWh",
       "tags": [
         "Refrigerador",
-        "Internet",
+        "Internet y router",
         "Luces",
         "Televisión",
         "Computadoras",
-        "Cafetera"
+        "Camping/RV",
+        "UPS para equipos sensibles"
       ],
-      "source_url": "https://mx.ecoflow.com/products/delta-3-plus-portable-power-station",
+      "source_url": "https://www.amazon.com.mx/EF-ECOFLOW-el%C3%A9ctrica-inteligente-emergencias/dp/B0DCBV939X",
       "specs": {
         "level": 4,
         "category_original": "hogar",
         "avoid": [
-          "Toda la vivienda sin control",
-          "Varios aires",
-          "Calentadores durante horas"
+          "Toda la vivienda sin cálculo",
+          "Aires acondicionados grandes",
+          "Calentadores durante horas",
+          "Equipos de 240 V"
         ],
-        "keywords": "refrigerador hogar oficina cafetera computadoras electrodomésticos",
-        "price_source": "Excel base_datos_powerme_comercial_integrada_precios_completos.xlsx",
+        "keywords": "delta 3 plus batería adicional 2048wh 1800w respaldo hogar emergencia camping rv ups solar refrigerador internet",
+        "price_source": "Amazon MX B0DCBV939X",
         "price_source_row_id": "P0035",
-        "price_match_score": 1
+        "price_match_score": 1,
+        "technical": {
+          "battery_wh": 2048,
+          "ac_input_w": "1,500 W",
+          "solar_input_w": "1,000 W",
+          "ac_output_w": "1,800 W",
+          "surge_w": "3,600 W",
+          "x_boost_w": "2,200 W+",
+          "ups_ms": "10 ms"
+        }
       },
-      "sale_status": "Bajo pedido, entrega 4-5 días",
-      "image_url": "https://cdn.shopify.com/s/files/1/0593/6132/9231/files/ecoflow-us-ecoflow-delta-3-plus-portable-power-station-standalone-delta-3-plus-1179495741.png?v=1756975490"
+      "sale_status": "Bajo pedido",
+      "image_url": "assets/delta-3-plus-combo.png"
     },
     {
       "id": "delta-2-max",
@@ -418,9 +510,9 @@
       "category": "estaciones",
       "family": "Serie DELTA",
       "subtitle": "Cargas esenciales durante más tiempo",
-      "description": "Ofrece el doble de batería que una DELTA de 1 kWh y permite añadir dos baterías para apagones prolongados.",
-      "plain_description": "Con este equipo puedes mantener refrigerador, internet, TV y luces aprox. 10-16 h; con oficina completa, 12-18 h. Con dos o tres equipos medianos calcula 7-10 h. Carga aprox. 1.3 h a la luz y 2.5-3 h con solar.",
-      "public_price": 26981.9,
+      "description": "Respaldo de 2 kWh para cargas esenciales y pequeños negocios. La salida de 2,400 W permite más aparatos que las DELTA de 1 kWh.",
+      "plain_description": "Autonomía orientativa con 85% útil: 50 W ≈ 35 h, 100 W ≈ 17 h, 300 W ≈ 5.8 h. La duración real cambia por picos de arranque, temperatura y eficiencia del equipo conectado.",
+      "public_price": 25599,
       "distributor_price": null,
       "tax_note": "",
       "capacity": "2,048 Wh",
@@ -444,9 +536,18 @@
           "Calefacción eléctrica prolongada"
         ],
         "keywords": "casa cargas esenciales oficina negocio refrigerador microondas electrodomésticos",
-        "display_price": "$26,981.90"
+        "display_price": "$26,981.90",
+        "technical": {
+          "battery_wh": 2048,
+          "ac_input_w": "1,800 W",
+          "solar_input_w": "1,000 W",
+          "ac_output_w": "2,400 W",
+          "surge_w": "4,800 W",
+          "x_boost_w": "3,400 W",
+          "ups_ms": "30 ms (EPS)"
+        }
       },
-      "sale_status": "Bajo pedido, entrega 4-5 días",
+      "sale_status": "Bajo pedido",
       "image_url": "https://cdn.shopify.com/s/files/1/0593/6132/9231/files/ecoflow-delta-2-max-portable-power-station-51305159590231.png?v=1718876774"
     },
     {
@@ -456,9 +557,9 @@
       "category": "estaciones",
       "family": "Serie DELTA Pro",
       "subtitle": "Alta autonomía residencial y profesional",
-      "description": "Supera ampliamente a la DELTA 2 Max en duración y potencia, y puede respaldar electrodomésticos pesados, herramientas, una RV o circuitos prioritarios con la instalación adecuada. Frente a la DELTA Pro 3 tiene un poco menos de capacidad y salida, pero sigue siendo un sistema residencial escalable.",
-      "plain_description": "Con este equipo puedes respaldar refrigerador, congelador, internet, TV y bomba pequeña aprox. 12-20 h según uso; herramientas o microondas se usan por periodos. Con dos circuitos esenciales calcula 8-12 h. Carga aprox. 2.5-3 h a la luz y 3-6 h con solar.",
-      "public_price": 43102.59,
+      "description": "Sistema portátil/residencial de 3.6 kWh para cargas grandes, herramientas, RV o circuitos prioritarios con instalación adecuada.",
+      "plain_description": "Autonomía orientativa con 85% útil: 50 W ≈ 61 h, 100 W ≈ 31 h, 300 W ≈ 10 h. La duración real cambia por picos de arranque, temperatura y eficiencia del equipo conectado.",
+      "public_price": 30199,
       "distributor_price": null,
       "tax_note": "",
       "capacity": "3,600 Wh",
@@ -482,9 +583,18 @@
           "Varios equipos de 240 V sin diseño"
         ],
         "keywords": "delta pro 3600wh 3600w residencial casa bomba herramientas rv expansion 10.8kwh",
-        "display_price": "$43,102.59"
+        "display_price": "$35,799",
+        "technical": {
+          "battery_wh": 3600,
+          "ac_input_w": "1,800 W",
+          "solar_input_w": "1,600 W",
+          "ac_output_w": "3,600 W",
+          "surge_w": "7,200 W",
+          "x_boost_w": "4,500 W",
+          "ups_ms": "30 ms (EPS)"
+        }
       },
-      "sale_status": "Bajo pedido, entrega 4-5 días",
+      "sale_status": "Bajo pedido",
       "image_url": "https://cdn.shopify.com/s/files/1/0593/6132/9231/files/ecoflow-us-ecoflow-delta-pro-portable-power-station-dp-delta-pro-portable-power-station-1179495743.png?v=1756889795"
     },
     {
@@ -493,35 +603,48 @@
       "brand": "EcoFlow",
       "category": "estaciones",
       "family": "Serie DELTA Pro",
-      "subtitle": "Respaldo residencial y equipos de alto consumo",
-      "description": "Está diseñada para cargas residenciales, salida de 120/240 V y conexión a circuitos prioritarios mediante transferencia.",
-      "plain_description": "Con este equipo puedes alimentar circuitos prioritarios, refrigerador, bomba o minisplit eficiente varias horas: 10-18 h en cargas esenciales y 6-10 h con dos cargas fuertes moderadas. Carga aprox. 2.5-3 h a la luz y 2-4 h con solar según paneles.",
-      "public_price": 68964.66,
+      "subtitle": "Respaldo residencial 120/240 V de alta demanda",
+      "description": "DELTA Pro 3 es una central eléctrica residencial/portátil de 4,096 Wh con salida 120/240 V y 4,000 W AC. Con X-Boost puede apoyar cargas resistivas de hasta 6,000 W y el sistema puede escalarse hasta 48 kWh para respaldo prolongado de casa. Es adecuada para circuitos prioritarios, refrigerador, bomba de agua, herramientas, RV, camping y emergencias; su conmutación UPS de 10 ms protege equipos sensibles.",
+      "plain_description": "Autonomía orientativa con 85% útil sobre 4,096 Wh: 50 W aprox. 70 h, 100 W aprox. 35 h, 300 W aprox. 12 h y 1,000 W aprox. 3.5 h. La autonomía aumenta con baterías adicionales; para respaldo de 2-4 días se debe calcular el consumo real de los circuitos.",
+      "public_price": 60199,
       "distributor_price": null,
       "tax_note": "",
       "capacity": "4,096 Wh",
       "power": "4,000 W",
-      "expansion": "Sí: 1 o 2 baterías; 8.2 o 12.3 kWh por unidad",
+      "expansion": "Sí: expandible con baterías adicionales y generadores inteligentes hasta 48 kWh",
       "tags": [
         "Circuitos prioritarios",
-        "Refrigerador",
-        "Bomba",
-        "Minisplit",
-        "Equipos de 120/240 V"
+        "Refrigerador y congelador",
+        "Bomba de agua",
+        "Herramientas",
+        "RV y camping",
+        "Servidores/NAS",
+        "Equipos 120/240 V validados"
       ],
-      "source_url": "https://mx.ecoflow.com/products/delta-pro-3-portable-power-station",
+      "source_url": "https://www.amazon.com.mx/EF-ECOFLOW-DELTA-Pro-el%C3%A9ctrica/dp/B0D2P5Y1T5",
       "specs": {
         "level": 6,
         "category_original": "residencial",
         "avoid": [
           "Instalación improvisada",
-          "Toda la casa sin calcular consumo",
-          "Varios aires grandes simultáneos"
+          "Casa completa sin cálculo de cargas",
+          "Varios equipos grandes a la vez sin diseño",
+          "Cargas de 240 V sin validación eléctrica"
         ],
-        "keywords": "residencial casa bomba minisplit 240v transferencia refrigerador circuitos",
-        "display_price": "$68,964.66"
+        "keywords": "delta pro 3 4096wh 4000w 120 240v xboost 6000w expansion 48kwh ups 10ms respaldo residencial bomba agua rv camping emergencia",
+        "display_price": "$60,999",
+        "technical": {
+          "battery_wh": 4096,
+          "ac_input_w": "1,800 W (120 V) / 4,000 W (240 V)",
+          "solar_input_w": "2,600 W",
+          "ac_output_w": "4,000 W",
+          "surge_w": "8,000 W",
+          "x_boost_w": "6,000 W",
+          "ups_ms": "10 ms"
+        },
+        "price_source": "Amazon MX DELTA Pro 3"
       },
-      "sale_status": "Bajo pedido, entrega 4-5 días",
+      "sale_status": "Bajo pedido",
       "image_url": "https://mx.ecoflow.com/cdn/shop/files/ecoflow-ecoflow-delta-pro-3-portable-power-station-31998254350409.png?v=1765856654"
     },
     {
@@ -531,9 +654,9 @@
       "category": "estaciones",
       "family": "Serie DELTA Pro",
       "subtitle": "Sistema escalable para respaldo integral",
-      "description": "Es una plataforma residencial modular para alimentar múltiples circuitos, equipos grandes y sistemas automáticos de respaldo.",
-      "plain_description": "Con este sistema puedes respaldar desde circuitos esenciales hasta gran parte de la casa. En configuración base de 6 kWh, cargas esenciales pueden durar aprox. 18-30 h; con expansión crece por etapas. La carga por luz o solar depende del diseño instalado.",
-      "public_price": 77129.83,
+      "description": "Plataforma residencial modular. Debe cotizarse con estudio de cargas, circuitos prioritarios, protecciones y método de transferencia.",
+      "plain_description": "Autonomía orientativa con 85% útil: 50 W ≈ 102 h, 100 W ≈ 51 h, 300 W ≈ 17 h. La duración real cambia por picos de arranque, temperatura y eficiencia del equipo conectado.",
+      "public_price": 110000,
       "distributor_price": null,
       "tax_note": "",
       "capacity": "Desde 6 kWh",
@@ -556,136 +679,19 @@
           "Uso sin electricista"
         ],
         "keywords": "casa completa aires acondicionados 240v panel automático respaldo total",
-        "public_price_max": 275857.76,
-        "display_price": "$77,129.83 - $275,857.76"
+        "display_price": "$110,000",
+        "technical": {
+          "battery_wh": 6000,
+          "ac_input_w": "7,200 W por inversor",
+          "solar_input_w": "5,600 W por inversor",
+          "ac_output_w": "7,200 W por inversor",
+          "surge_w": "10,800 W",
+          "x_boost_w": "No aplica",
+          "ups_ms": "Depende de instalación"
+        }
       },
-      "sale_status": "Bajo pedido, entrega 4-5 días",
+      "sale_status": "Bajo pedido",
       "image_url": "https://cdn.shopify.com/s/files/1/0593/6132/9231/files/ecoflow-ecoflow-delta-pro-ultra-whole-home-backup-power-ecoflow-delta-pro-ultra-32618370236489.png?v=1740542286"
-    },
-    {
-      "id": "panel-solar-ecoflow-110w",
-      "name": "Panel Solar EcoFlow 110W",
-      "brand": "EcoFlow",
-      "category": "paneles",
-      "family": "Panel solar",
-      "subtitle": "Panel solar portátil",
-      "description": "Panel plegable y fácil de mover para recargar estaciones RIVER o DELTA pequeñas. Es buena opción para camping, apagones cortos y mantener equipos básicos con apoyo solar.",
-      "plain_description": "Panel plegable y fácil de mover para recargar estaciones RIVER o DELTA pequeñas. Es buena opción para camping, apagones cortos y mantener equipos básicos con apoyo solar.",
-      "public_price": 4999,
-      "distributor_price": null,
-      "tax_note": "IVA incluido",
-      "capacity": "110W",
-      "power": "110W",
-      "expansion": null,
-      "tags": [
-        "solar",
-        "panel",
-        "carga"
-      ],
-      "source_url": "https://mx.ecoflow.com/products/110w-portable-solar-panel",
-      "specs": {},
-      "image_url": "https://cdn.shopify.com/s/files/1/0593/6132/9231/files/1-1_6aa110ac-773d-4a95-9986-64ae39ff610c.jpg?v=1775126040",
-      "sale_status": "Bajo pedido, entrega 4-5 días"
-    },
-    {
-      "id": "panel-solar-160w",
-      "name": "Panel Solar 160W",
-      "brand": "EcoFlow",
-      "category": "paneles",
-      "family": "Panel solar",
-      "subtitle": "Panel solar portátil",
-      "description": "Panel portátil con mayor captación que uno compacto. Sirve para recargar estaciones medianas durante el día y extender autonomía en viajes, campo o respaldo en casa.",
-      "plain_description": "Panel portátil con mayor captación que uno compacto. Sirve para recargar estaciones medianas durante el día y extender autonomía en viajes, campo o respaldo en casa.",
-      "public_price": 5499,
-      "distributor_price": null,
-      "tax_note": "IVA incluido",
-      "capacity": "160W",
-      "power": "160W",
-      "expansion": null,
-      "tags": [
-        "solar",
-        "panel",
-        "carga"
-      ],
-      "source_url": null,
-      "specs": {},
-      "image_url": "https://mx.ecoflow.com/cdn/shop/files/1_43b53d4e-33a7-4f96-bfe9-9d20499c06f0.jpg?v=1775126162",
-      "sale_status": "Bajo pedido, entrega 4-5 días"
-    },
-    {
-      "id": "panel-solar-125w",
-      "name": "Panel Solar 125W",
-      "brand": "EcoFlow",
-      "category": "paneles",
-      "family": "Panel solar",
-      "subtitle": "Panel solar portátil",
-      "description": "Panel intermedio para quien necesita más carga que un panel chico, pero quiere seguir con algo ligero. Funciona bien con estaciones portátiles y uso ocasional.",
-      "plain_description": "Panel intermedio para quien necesita más carga que un panel chico, pero quiere seguir con algo ligero. Funciona bien con estaciones portátiles y uso ocasional.",
-      "public_price": 5299,
-      "distributor_price": null,
-      "tax_note": "IVA incluido",
-      "capacity": "125W",
-      "power": "125W",
-      "expansion": null,
-      "tags": [
-        "solar",
-        "panel",
-        "carga"
-      ],
-      "source_url": null,
-      "specs": {},
-      "image_url": "https://mx.ecoflow.com/cdn/shop/files/imgi_286_71ftIGLOZDL_small.jpg?v=1775126438",
-      "sale_status": "Bajo pedido, entrega 4-5 días"
-    },
-    {
-      "id": "panel-solar-ecoflow-400w",
-      "name": "Panel Solar EcoFlow 400W",
-      "brand": "EcoFlow",
-      "category": "paneles",
-      "family": "Panel solar",
-      "subtitle": "Panel solar portátil",
-      "description": "Panel portátil de alta potencia para cargar más rápido estaciones DELTA. Conviene cuando necesitas recuperar batería durante el día y aprovechar mejor las horas de sol.",
-      "plain_description": "Panel portátil de alta potencia para cargar más rápido estaciones DELTA. Conviene cuando necesitas recuperar batería durante el día y aprovechar mejor las horas de sol.",
-      "public_price": 14849,
-      "distributor_price": null,
-      "tax_note": "IVA incluido",
-      "capacity": "400W",
-      "power": "400W",
-      "expansion": null,
-      "tags": [
-        "solar",
-        "panel",
-        "carga"
-      ],
-      "source_url": "https://mx.ecoflow.com/products/400w-portable-solar-panel",
-      "specs": {},
-      "image_url": "https://cdn.shopify.com/s/files/1/0593/6132/9231/files/ecoflow-400w-portable-solar-panel-42463116132516.png?v=1718876811",
-      "sale_status": "Bajo pedido, entrega 4-5 días"
-    },
-    {
-      "id": "panel-solar-60w-tipo-c",
-      "name": "Panel Solar 60W Tipo C",
-      "brand": "EcoFlow",
-      "category": "paneles",
-      "family": "Tipo C",
-      "subtitle": "Panel solar portátil",
-      "description": "Panel compacto para cargas pequeñas, celulares, tablets o estaciones muy portátiles. Es práctico para movilidad, emergencias ligeras y uso donde el espacio importa.",
-      "plain_description": "Panel compacto para cargas pequeñas, celulares, tablets o estaciones muy portátiles. Es práctico para movilidad, emergencias ligeras y uso donde el espacio importa.",
-      "public_price": 2899,
-      "distributor_price": null,
-      "tax_note": "IVA incluido",
-      "capacity": "60W",
-      "power": "60W",
-      "expansion": null,
-      "tags": [
-        "solar",
-        "panel",
-        "carga"
-      ],
-      "source_url": "https://mx.ecoflow.com/products/60w-portable-solar-panel",
-      "specs": {},
-      "image_url": "https://cdn.shopify.com/s/files/1/0593/6132/9231/files/1_baeb92ea-4803-49c3-8201-8eec53f231ee.png?v=1718876825",
-      "sale_status": "Bajo pedido, entrega 4-5 días"
     },
     {
       "id": "ecoflow-bateria-extra-delta-2-1024wh",
@@ -713,7 +719,7 @@
         "price_source_row_id": "P0006",
         "price_match_score": 1
       },
-      "sale_status": "Bajo pedido, entrega 4-5 días",
+      "sale_status": "Bajo pedido",
       "image_url": "https://cdn.shopify.com/s/files/1/0593/6132/9231/files/bateria-adicional-inteligente-ecoflow-delta-2-38982957957342.png?v=1765265213"
     },
     {
@@ -742,7 +748,7 @@
         "price_source_row_id": "P0007",
         "price_match_score": 1
       },
-      "sale_status": "Bajo pedido, entrega 4-5 días",
+      "sale_status": "Bajo pedido",
       "image_url": "https://cdn.shopify.com/s/files/1/0593/6132/9231/files/D3_EB-fv.png?v=1740551483"
     },
     {
@@ -771,7 +777,7 @@
         "price_source_row_id": "P0010",
         "price_match_score": 1
       },
-      "sale_status": "Bajo pedido, entrega 4-5 días",
+      "sale_status": "Bajo pedido",
       "image_url": "https://mx.ecoflow.com/cdn/shop/files/bateria-enchufable-para-ecoflow-glacier-49171275055451.png?v=1719211507"
     },
     {
@@ -800,7 +806,7 @@
         "price_source_row_id": "P0003",
         "price_match_score": 1
       },
-      "sale_status": "Bajo pedido, entrega 4-5 días",
+      "sale_status": "Bajo pedido",
       "image_url": "https://cdn.shopify.com/s/files/1/0593/6132/9231/files/bateria-adicional-inteligente-ecoflow-delta-pro-3-57082918764891.png?v=1768297061"
     },
     {
@@ -829,7 +835,7 @@
         "price_source_row_id": "P0001",
         "price_match_score": 1
       },
-      "sale_status": "Bajo pedido, entrega 4-5 días",
+      "sale_status": "Bajo pedido",
       "image_url": "https://cdn.shopify.com/s/files/1/0593/6132/9231/files/ecoflow-ecoflow-delta-pro-ultra-whole-home-backup-power-ecoflow-delta-pro-ultra-32618370236489.png?v=1740542286"
     },
     {
@@ -858,7 +864,7 @@
         "price_source_row_id": "P0002",
         "price_match_score": 1
       },
-      "sale_status": "Bajo pedido, entrega 4-5 días",
+      "sale_status": "Bajo pedido",
       "image_url": "https://cdn.shopify.com/s/files/1/0593/6132/9231/files/bateria-adicional-inteligente-ecoflow-delta-2-max-50801469587803_239ec72c-3d31-43d6-bdf4-f3bb54c9affe.png?v=1719216719"
     },
     {
@@ -882,7 +888,7 @@
       ],
       "source_url": "https://www.ecoflow.com/us/smart-home-panel-2",
       "specs": {},
-      "sale_status": "Bajo pedido, entrega 4-5 días",
+      "sale_status": "Bajo pedido",
       "image_url": "https://www.ecoflow.com/responsive/picture/smart-home-panel-2/launch/13_1.png"
     },
     {
@@ -907,7 +913,7 @@
       "source_url": "https://www.ecoflow.com/us/800w-alternator-charger",
       "specs": {},
       "image_url": "https://cdn.shopify.com/s/files/1/0593/6132/9231/files/cargador-con-alternador-ecoflow-de-800-w-55148125028699_be888cc3-fa69-4c44-a43b-5a7fe100ac9f.png?v=1732010885",
-      "sale_status": "Bajo pedido, entrega 4-5 días"
+      "sale_status": "Bajo pedido"
     },
     {
       "id": "alternador-800w",
@@ -931,7 +937,7 @@
       "source_url": "https://www.ecoflow.com/us/800w-alternator-charger",
       "specs": {},
       "image_url": "https://cdn.shopify.com/s/files/1/0593/6132/9231/files/cargador-con-alternador-ecoflow-de-800-w-55148125028699_be888cc3-fa69-4c44-a43b-5a7fe100ac9f.png?v=1732010885",
-      "sale_status": "Bajo pedido, entrega 4-5 días"
+      "sale_status": "Bajo pedido"
     },
     {
       "id": "ecoflow-glacier-bateria-extra",
@@ -955,7 +961,7 @@
       "source_url": "https://www.ecoflow.com/us/glacier-portable-refrigerator",
       "specs": {},
       "image_url": "https://mx.ecoflow.com/cdn/shop/files/bateria-enchufable-para-ecoflow-glacier-49171275055451.png?v=1719211507",
-      "sale_status": "Bajo pedido, entrega 4-5 días"
+      "sale_status": "Bajo pedido"
     },
     {
       "id": "ecoflow-wave-3",
@@ -979,7 +985,7 @@
       "source_url": "https://www.ecoflow.com/us/wave-3-portable-air-conditioner",
       "specs": {},
       "image_url": "https://cdn.shopify.com/s/files/1/0593/6132/9231/files/ecoflow-wave-3-portable-air-conditioner-1161397081.png?v=1766998641",
-      "sale_status": "Bajo pedido, entrega 4-5 días"
+      "sale_status": "Bajo pedido"
     },
     {
       "id": "ecoflow-wave-3-bateria-extra",
@@ -1003,57 +1009,7 @@
       "source_url": "https://www.ecoflow.com/us/wave-3-portable-air-conditioner",
       "specs": {},
       "image_url": "https://cdn.shopify.com/s/files/1/0593/6132/9231/files/ecoflow-wave-3-add-on-battery-1161397071.png?v=1765441081",
-      "sale_status": "Bajo pedido, entrega 4-5 días"
-    },
-    {
-      "id": "delta-2",
-      "name": "DELTA 2",
-      "brand": "EcoFlow",
-      "category": "estaciones",
-      "family": "Serie DELTA",
-      "subtitle": "Respaldo DELTA de 1 kWh con mayor salida",
-      "description": "Estación DELTA de uso general para refrigerador, oficina y electrodomésticos comunes con precio comercial definido.",
-      "plain_description": "Con este equipo puedes mantener refrigerador, internet y luces aprox. 6-10 h; home office completo 8-12 h; con dos equipos medianos calcula 4-6 h. Se recarga en aprox. 1.3 h a la luz y 3-6 h con solar.",
-      "public_price": 18999,
-      "distributor_price": null,
-      "tax_note": "IVA incluido",
-      "capacity": "1,024 Wh",
-      "power": "1,800 W",
-      "expansion": "Compatible con batería adicional",
-      "sale_status": "Bajo pedido, entrega 4-5 días",
-      "tags": [
-        "Refrigerador",
-        "Internet",
-        "Computadoras",
-        "Televisión"
-      ],
-      "source_url": "https://mx.ecoflow.com/products/ecoflow-power-station-delta-2-black-e980",
-      "specs": {},
-      "image_url": "https://cdn.shopify.com/s/files/1/0593/6132/9231/files/ecoflow-delta-2-portable-power-station-52097645347159_af9f1c9f-a8bb-42ef-b33b-bde856873c53.png?v=1765265336"
-    },
-    {
-      "id": "delta-3-1500-w",
-      "name": "DELTA 3 1500 W",
-      "brand": "EcoFlow",
-      "category": "estaciones",
-      "family": "Serie DELTA",
-      "subtitle": "Equipo DELTA de 1,500 W para cargas controladas",
-      "description": "Modelo disponible bajo pedido; conviene validar disponibilidad y ficha técnica antes de confirmar la compra.",
-      "plain_description": "Con este equipo puedes alimentar cargas medianas bajo pedido, pero falta confirmar capacidad final; antes de prometer horas se valida ficha técnica. Al cotizar se calcula duración con tus equipos y tiempos de carga reales.",
-      "public_price": 22899,
-      "distributor_price": null,
-      "tax_note": "IVA incluido",
-      "capacity": "Por confirmar",
-      "power": "1,500 W",
-      "expansion": "Por confirmar",
-      "sale_status": "Bajo pedido, entrega 4-5 días",
-      "tags": [
-        "Cotización bajo pedido",
-        "Cargas medianas"
-      ],
-      "source_url": "https://www.ecoflow.com/us/delta-3-portable-power-station",
-      "specs": {},
-      "image_url": "https://cdn.shopify.com/s/files/1/0593/6132/9231/files/ecoflow-us-ecoflow-delta-3-plus-portable-power-station-standalone-delta-3-plus-1179495741.png?v=1756975490"
+      "sale_status": "Bajo pedido"
     },
     {
       "id": "delta-3-max",
@@ -1061,272 +1017,1018 @@
       "brand": "EcoFlow",
       "category": "estaciones",
       "family": "Serie DELTA",
-      "subtitle": "DELTA de mayor capacidad para respaldo esencial",
-      "description": "Modelo disponible bajo pedido con precio final; validar especificaciones técnicas antes de confirmar la compra.",
-      "plain_description": "Con este equipo se cotiza para respaldo de hogar de mayor duración, pero falta confirmar ficha final; antes de prometer horas se valida capacidad, potencia y carga solar/AC. Se calcula duración con tus aparatos reales.",
-      "public_price": 25999,
+      "subtitle": "Respaldo potente de 2 kWh para hogar y RV",
+      "description": "Central eléctrica DELTA 3 Max Plus con batería LiFePO4 de 2,048 Wh y salida AC de 3,000 W. Está pensada para respaldo residencial, RV, camping y emergencias: puede cubrir refrigerador, microondas, herramientas, computadoras y equipos sensibles con conmutación UPS de 10 ms. Con X-Boost alcanza hasta 3,800 W para aparatos resistivos compatibles y puede escalarse con baterías adicionales EcoFlow hasta 10 kWh.",
+      "plain_description": "Autonomía orientativa con 85% útil sobre 2,048 Wh: 50 W aprox. 35 h, 100 W aprox. 17 h, 300 W aprox. 5.8 h y 1,000 W aprox. 1.7 h. La duración real cambia por picos de arranque, temperatura y consumo de cada equipo.",
+      "public_price": 26499,
       "distributor_price": null,
       "tax_note": "IVA incluido",
-      "capacity": "Por confirmar",
-      "power": "Por confirmar",
-      "expansion": "Por confirmar",
-      "sale_status": "Bajo pedido, entrega 4-5 días",
+      "capacity": "2,048 Wh",
+      "power": "3,000 W",
+      "expansion": "Sí: expandible con baterías adicionales EcoFlow hasta 10 kWh",
+      "sale_status": "Bajo pedido",
       "tags": [
-        "Hogar",
-        "Respaldo esencial",
-        "Cargas prolongadas"
+        "Refrigerador",
+        "Microondas",
+        "Herramientas",
+        "Computadoras",
+        "Equipos sensibles",
+        "RV y camping",
+        "Respaldo residencial"
       ],
-      "source_url": "https://mx.ecoflow.com/products/delta-2-max-portable-power-station",
-      "specs": {},
+      "source_url": "https://www.amazon.com.mx/EF-ECOFLOW-el%C3%A9ctrica-port%C3%A1til-generador/dp/B0FQV9Q9J2",
+      "specs": {
+        "technical": {
+          "battery_wh": 2048,
+          "ac_input_w": "Carga rápida 0-80% aprox. 64 min",
+          "solar_input_w": "Panel solar opcional",
+          "ac_output_w": "3,000 W",
+          "surge_w": "Por confirmar",
+          "x_boost_w": "3,800 W",
+          "ups_ms": "10 ms"
+        },
+        "avoid": [
+          "Casa completa sin cálculo de cargas",
+          "Varios aires acondicionados a la vez",
+          "Cargas de 240 V sin validación",
+          "Calentadores prolongados"
+        ],
+        "keywords": "delta 3 max plus 2048wh 3000w xboost 3800w lifepo4 ups 10ms respaldo residencial rv camping refrigerador microondas herramientas",
+        "price_source": "Amazon MX B0FQV9Q9J2"
+      },
       "image_url": "https://cdn.shopify.com/s/files/1/0593/6132/9231/files/ecoflow-us-ecoflow-delta-3-plus-portable-power-station-standalone-delta-3-plus-1179495741.png?v=1756975490"
     },
     {
-      "id": "panel-portatil-220w",
-      "name": "Panel portátil 220W",
+      "id": "panel-solar-ecoflow-45w",
+      "name": "Panel Solar EcoFlow 45W",
       "brand": "EcoFlow",
       "category": "paneles",
-      "public_price": 8249,
-      "distributor_price": null,
+      "family": "Paneles solares",
+      "subtitle": "45W · precio con IVA y margen operativo",
+      "description": "Panel compacto para cargas ligeras, celulares, tablets y apoyo solar básico en movilidad.",
+      "plain_description": "Precio calculado con regla comercial: distribuidor $1,320.92 + 16% IVA + $600.",
+      "public_price": 2132.27,
+      "distributor_price": 1320.92,
+      "tax_note": "IVA incluido",
+      "capacity": "45W",
+      "power": "45W",
+      "expansion": null,
+      "tags": [
+        "45W",
+        "EcoFlow",
+        "Solar"
+      ],
+      "source_url": null,
+      "specs": {
+        "price_rule": "distribuidor * 1.16 + 600",
+        "distributor_price": 1320.92,
+        "final_price": 2132.27
+      },
+      "sale_status": "Bajo pedido",
+      "image_url": "assets/panels/panel-solar-ecoflow-45w-clean.png"
+    },
+    {
+      "id": "panel-solar-ecoflow-45w-tipo-c",
+      "name": "Panel Solar EcoFlow 45W Tipo C",
+      "brand": "EcoFlow",
+      "category": "paneles",
+      "family": "Paneles Tipo C",
+      "subtitle": "45W · precio con IVA y margen operativo",
+      "description": "Opción compacta Tipo C para recarga ligera, salidas rápidas y equipos pequeños.",
+      "plain_description": "Precio calculado con regla comercial: distribuidor $1,320.92 + 16% IVA + $600.",
+      "public_price": 2132.27,
+      "distributor_price": 1320.92,
+      "tax_note": "IVA incluido",
+      "capacity": "45W",
+      "power": "45W",
+      "expansion": null,
+      "tags": [
+        "45W",
+        "Tipo C",
+        "Solar"
+      ],
+      "source_url": null,
+      "specs": {
+        "price_rule": "distribuidor * 1.16 + 600",
+        "distributor_price": 1320.92,
+        "final_price": 2132.27
+      },
+      "sale_status": "Bajo pedido",
+      "image_url": "assets/panels/panel-solar-ecoflow-45w-tipo-c-clean.png"
+    },
+    {
+      "id": "panel-solar-ecoflow-60w",
+      "name": "Panel Solar EcoFlow 60W",
+      "brand": "EcoFlow",
+      "category": "paneles",
+      "family": "Paneles solares",
+      "subtitle": "60W · precio con IVA y margen operativo",
+      "description": "Panel pequeño para emergencia ligera, camping y soporte solar de estaciones portátiles.",
+      "plain_description": "Precio calculado con regla comercial: distribuidor $1,824.37 + 16% IVA + $600.",
+      "public_price": 2716.27,
+      "distributor_price": 1824.37,
+      "tax_note": "IVA incluido",
+      "capacity": "60W",
+      "power": "60W",
+      "expansion": null,
+      "tags": [
+        "60W",
+        "EcoFlow",
+        "Solar"
+      ],
+      "source_url": null,
+      "specs": {
+        "price_rule": "distribuidor * 1.16 + 600",
+        "distributor_price": 1824.37,
+        "final_price": 2716.27
+      },
+      "sale_status": "Bajo pedido",
+      "image_url": "assets/panels/panel-solar-ecoflow-60w-clean.png"
+    },
+    {
+      "id": "panel-solar-60w-tipo-c",
+      "name": "Panel Solar 60W Tipo C",
+      "brand": "EcoFlow",
+      "category": "paneles",
+      "family": "Paneles Tipo C",
+      "subtitle": "60W · precio con IVA y margen operativo",
+      "description": "Panel compacto para cargas pequeñas, celulares, tablets o estaciones muy portátiles.",
+      "plain_description": "Precio calculado con regla comercial: distribuidor $1,824.37 + 16% IVA + $600.",
+      "public_price": 2716.27,
+      "distributor_price": 1824.37,
+      "tax_note": "IVA incluido",
+      "capacity": "60W",
+      "power": "60W",
+      "expansion": null,
+      "tags": [
+        "60W",
+        "Tipo C",
+        "Solar"
+      ],
+      "source_url": null,
+      "specs": {
+        "price_rule": "distribuidor * 1.16 + 600",
+        "distributor_price": 1824.37,
+        "final_price": 2716.27
+      },
+      "sale_status": "Bajo pedido",
+      "image_url": "assets/panels/panel-solar-60w-tipo-c-clean.png"
+    },
+    {
+      "id": "panel-solar-ecoflow-110w",
+      "name": "Panel Solar EcoFlow 110W",
+      "brand": "EcoFlow",
+      "category": "paneles",
+      "family": "Paneles solares",
+      "subtitle": "110W · precio con IVA y margen operativo",
+      "description": "Panel plegable para recargar estaciones RIVER o DELTA pequeñas durante apagones cortos.",
+      "plain_description": "Precio calculado con regla comercial: distribuidor $3,145.92 + 16% IVA + $600.",
+      "public_price": 4249.27,
+      "distributor_price": 3145.92,
+      "tax_note": "IVA incluido",
+      "capacity": "110W",
+      "power": "110W",
+      "expansion": null,
+      "tags": [
+        "110W",
+        "EcoFlow",
+        "Solar"
+      ],
+      "source_url": null,
+      "specs": {
+        "price_rule": "distribuidor * 1.16 + 600",
+        "distributor_price": 3145.92,
+        "final_price": 4249.27
+      },
+      "sale_status": "Bajo pedido",
+      "image_url": "assets/panels/panel-solar-ecoflow-110w-clean.png"
+    },
+    {
+      "id": "panel-solar-ecoflow-110w-ligero",
+      "name": "Panel Solar EcoFlow 110W Ligero",
+      "brand": "EcoFlow",
+      "category": "paneles",
+      "family": "Paneles solares",
+      "subtitle": "110W · precio con IVA y margen operativo",
+      "description": "Versión ligera para usuarios que priorizan movilidad y armado rápido en campo o camping.",
+      "plain_description": "Precio calculado con regla comercial: distribuidor $3,650.00 + 16% IVA + $600.",
+      "public_price": 4834,
+      "distributor_price": 3650,
+      "tax_note": "IVA incluido",
+      "capacity": "110W",
+      "power": "110W",
+      "expansion": null,
+      "tags": [
+        "110W",
+        "Ligero",
+        "Solar"
+      ],
+      "source_url": null,
+      "specs": {
+        "price_rule": "distribuidor * 1.16 + 600",
+        "distributor_price": 3650,
+        "final_price": 4834
+      },
+      "sale_status": "Bajo pedido",
+      "image_url": "assets/panels/panel-solar-ecoflow-110w-ligero-clean.png"
+    },
+    {
+      "id": "panel-solar-125w",
+      "name": "Panel Solar 125W",
+      "brand": "EcoFlow",
+      "category": "paneles",
+      "family": "Paneles solares",
+      "subtitle": "125W · precio con IVA y margen operativo",
+      "description": "Panel intermedio para quien necesita más carga que un panel chico sin subir a formatos grandes.",
+      "plain_description": "Precio calculado con regla comercial: distribuidor $3,334.71 + 16% IVA + $600. Rango final: $4,468.26 - $7,899.28.",
+      "public_price": 4468.26,
+      "distributor_price": 3334.71,
+      "tax_note": "IVA incluido",
+      "capacity": "125W",
+      "power": "125W",
+      "expansion": null,
+      "tags": [
+        "125W",
+        "EcoFlow",
+        "Solar"
+      ],
+      "source_url": null,
+      "specs": {
+        "price_rule": "distribuidor * 1.16 + 600",
+        "distributor_price": 3334.71,
+        "final_price": 4468.26,
+        "distributor_price_range": [
+          3334.71,
+          6292.48
+        ],
+        "final_price_range": [
+          4468.26,
+          7899.28
+        ]
+      },
+      "sale_status": "Bajo pedido",
+      "image_url": "assets/panels/panel-solar-125w-clean.png"
+    },
+    {
+      "id": "panel-solar-160w",
+      "name": "Panel Solar 160W",
+      "brand": "EcoFlow",
+      "category": "paneles",
+      "family": "Paneles solares",
+      "subtitle": "160W · precio con IVA y margen operativo",
+      "description": "Panel portátil con mayor captación para estaciones medianas y uso de respaldo durante el día.",
+      "plain_description": "Precio calculado con regla comercial: distribuidor $3,322.34 + 16% IVA + $600.",
+      "public_price": 4453.91,
+      "distributor_price": 3322.34,
+      "tax_note": "IVA incluido",
+      "capacity": "160W",
+      "power": "160W",
+      "expansion": null,
+      "tags": [
+        "160W",
+        "EcoFlow",
+        "Solar"
+      ],
+      "source_url": null,
+      "specs": {
+        "price_rule": "distribuidor * 1.16 + 600",
+        "distributor_price": 3322.34,
+        "final_price": 4453.91
+      },
+      "sale_status": "Bajo pedido",
+      "image_url": "assets/panels/panel-solar-160w-clean.png"
+    },
+    {
+      "id": "panel-solar-ecoflow-160w-ligero",
+      "name": "Panel Solar EcoFlow 160W Ligero",
+      "brand": "EcoFlow",
+      "category": "paneles",
+      "family": "Paneles solares",
+      "subtitle": "160W · precio con IVA y margen operativo",
+      "description": "Panel de 160W en formato ligero para mejor balance entre carga solar y transporte.",
+      "plain_description": "Precio calculado con regla comercial: distribuidor $3,921.81 + 16% IVA + $600.",
+      "public_price": 5149.3,
+      "distributor_price": 3921.81,
+      "tax_note": "IVA incluido",
+      "capacity": "160W",
+      "power": "160W",
+      "expansion": null,
+      "tags": [
+        "160W",
+        "Ligero",
+        "Solar"
+      ],
+      "source_url": null,
+      "specs": {
+        "price_rule": "distribuidor * 1.16 + 600",
+        "distributor_price": 3921.81,
+        "final_price": 5149.3
+      },
+      "sale_status": "Bajo pedido",
+      "image_url": "assets/panels/panel-solar-ecoflow-160w-ligero-clean.png"
+    },
+    {
+      "id": "panel-solar-ecoflow-220w-ligero",
+      "name": "Panel Solar EcoFlow 220W Ligero",
+      "brand": "EcoFlow",
+      "category": "paneles",
+      "family": "Paneles solares",
+      "subtitle": "220W · precio con IVA y margen operativo",
+      "description": "Panel de potencia media en versión ligera para estaciones RIVER grandes y DELTA pequeñas.",
+      "plain_description": "Precio calculado con regla comercial: distribuidor $5,033.85 + 16% IVA + $600.",
+      "public_price": 6439.27,
+      "distributor_price": 5033.85,
       "tax_note": "IVA incluido",
       "capacity": "220W",
       "power": "220W",
-      "image_url": "https://cdn.shopify.com/s/files/1/0593/6132/9231/files/ecoflow-us-ecoflow-nextgen-220w-portable-solar-panel-solar-panels-30885262327881_720x_96ab051a-440d-4313-8fdc-c8b29fa7197c.webp?v=1731396244",
-      "source_url": "https://mx.ecoflow.com/products/nextgen-220w-portable-solar-panel",
-      "sale_status": "Bajo pedido, entrega 4-5 días",
-      "description": "Panel solar plegable de potencia media para recargar estaciones EcoFlow durante el día. Conviene cuando quieres más velocidad que un panel compacto sin cargar con un panel grande.",
-      "plain_description": "Panel solar plegable de potencia media para recargar estaciones EcoFlow durante el día. Conviene cuando quieres más velocidad que un panel compacto sin cargar con un panel grande."
+      "expansion": null,
+      "tags": [
+        "220W",
+        "Ligero",
+        "Solar"
+      ],
+      "source_url": null,
+      "specs": {
+        "price_rule": "distribuidor * 1.16 + 600",
+        "distributor_price": 5033.85,
+        "final_price": 6439.27
+      },
+      "sale_status": "Bajo pedido",
+      "image_url": "assets/panels/panel-solar-ecoflow-220w-ligero-clean.png"
     },
     {
-      "id": "panel-rigido-400w-par",
-      "name": "Panel rígido 400W, par",
+      "id": "panel-solar-ecoflow-220w",
+      "name": "Panel Solar EcoFlow 220W",
       "brand": "EcoFlow",
       "category": "paneles",
-      "public_price": 11349,
-      "distributor_price": null,
+      "family": "Paneles solares",
+      "subtitle": "220W · precio con IVA y margen operativo",
+      "description": "Panel plegable de potencia media para recargar estaciones EcoFlow con mejor velocidad solar.",
+      "plain_description": "Precio calculado con regla comercial: distribuidor $6,103.68 + 16% IVA + $600.",
+      "public_price": 7680.27,
+      "distributor_price": 6103.68,
+      "tax_note": "IVA incluido",
+      "capacity": "220W",
+      "power": "220W",
+      "expansion": null,
+      "tags": [
+        "220W",
+        "EcoFlow",
+        "Solar"
+      ],
+      "source_url": null,
+      "specs": {
+        "price_rule": "distribuidor * 1.16 + 600",
+        "distributor_price": 6103.68,
+        "final_price": 7680.27
+      },
+      "sale_status": "Bajo pedido",
+      "image_url": "assets/panels/panel-solar-ecoflow-220w-clean.png"
+    },
+    {
+      "id": "panel-solar-rigido-400w",
+      "name": "Panel Solar Rígido 400W",
+      "brand": "EcoFlow",
+      "category": "paneles",
+      "family": "Paneles rígidos",
+      "subtitle": "400W · precio con IVA y margen operativo",
+      "description": "Panel rígido para instalación fija en techo, terraza o estructura con carga diaria estable.",
+      "plain_description": "Precio calculado con regla comercial: distribuidor $5,861.38 + 16% IVA + $600.",
+      "public_price": 7399.2,
+      "distributor_price": 5861.38,
       "tax_note": "IVA incluido",
       "capacity": "400W",
       "power": "400W",
-      "image_url": "https://cdn.shopify.com/s/files/1/0593/6132/9231/files/400w_3x_591df31c-124f-4e3a-ad35-01ee536e7663.png?v=1739529258",
-      "source_url": "https://mx.ecoflow.com/products/400w-rigid-solar-panel",
-      "sale_status": "Bajo pedido, entrega 4-5 días",
-      "description": "Par de paneles rígidos para instalación más fija en techo, terraza o estructura. Conviene cuando buscas carga solar diaria y estable para estaciones DELTA o sistemas de respaldo.",
-      "plain_description": "Par de paneles rígidos para instalación más fija en techo, terraza o estructura. Conviene cuando buscas carga solar diaria y estable para estaciones DELTA o sistemas de respaldo."
-    },
-    {
-      "id": "river-3-panel-60-w",
-      "name": "RIVER 3 + panel 60 W",
-      "brand": "EcoFlow",
-      "category": "paquetes",
-      "family": "Paquete",
-      "subtitle": "Combo comercial",
-      "description": "Paquete básico para emergencias ligeras: mantiene celulares, módem/router, luces pequeñas y recarga solar compacta durante el día.",
-      "plain_description": "Paquete básico para emergencias ligeras: mantiene celulares, módem/router, luces pequeñas y recarga solar compacta durante el día.",
-      "public_price": 8099,
-      "distributor_price": null,
-      "tax_note": "IVA incluido",
-      "capacity": null,
-      "power": null,
       "expansion": null,
-      "sale_status": "Bajo pedido, entrega 4-5 días",
       "tags": [
-        "paquete",
-        "combo"
+        "400W",
+        "Rígido",
+        "Solar"
       ],
       "source_url": null,
-      "specs": {},
+      "specs": {
+        "price_rule": "distribuidor * 1.16 + 600",
+        "distributor_price": 5861.38,
+        "final_price": 7399.2
+      },
+      "sale_status": "Bajo pedido",
+      "image_url": "assets/panels/panel-solar-rigido-400w-clean.png"
+    },
+    {
+      "id": "panel-solar-ecoflow-400w-ligero",
+      "name": "Panel Solar EcoFlow 400W Ligero",
+      "brand": "EcoFlow",
+      "category": "paneles",
+      "family": "Paneles solares",
+      "subtitle": "400W · precio con IVA y margen operativo",
+      "description": "Panel 400W más fácil de mover que un rígido, ideal para DELTA y carga solar rápida.",
+      "plain_description": "Precio calculado con regla comercial: distribuidor $9,439.03 + 16% IVA + $600.",
+      "public_price": 11549.27,
+      "distributor_price": 9439.03,
+      "tax_note": "IVA incluido",
+      "capacity": "400W",
+      "power": "400W",
+      "expansion": null,
+      "tags": [
+        "400W",
+        "Ligero",
+        "Solar"
+      ],
+      "source_url": null,
+      "specs": {
+        "price_rule": "distribuidor * 1.16 + 600",
+        "distributor_price": 9439.03,
+        "final_price": 11549.27
+      },
+      "sale_status": "Bajo pedido",
+      "image_url": "assets/panels/panel-solar-ecoflow-400w-ligero-clean.png"
+    },
+    {
+      "id": "panel-solar-ecoflow-400w",
+      "name": "Panel Solar EcoFlow 400W",
+      "brand": "EcoFlow",
+      "category": "paneles",
+      "family": "Paneles solares",
+      "subtitle": "400W · precio con IVA y margen operativo",
+      "description": "Panel portátil de alta potencia para cargar más rápido estaciones DELTA y sistemas de respaldo.",
+      "plain_description": "Precio calculado con regla comercial: distribuidor $9,823.47 + 16% IVA + $600.",
+      "public_price": 11995.23,
+      "distributor_price": 9823.47,
+      "tax_note": "IVA incluido",
+      "capacity": "400W",
+      "power": "400W",
+      "expansion": null,
+      "tags": [
+        "400W",
+        "EcoFlow",
+        "Solar"
+      ],
+      "source_url": null,
+      "specs": {
+        "price_rule": "distribuidor * 1.16 + 600",
+        "distributor_price": 9823.47,
+        "final_price": 11995.23
+      },
+      "sale_status": "Bajo pedido",
+      "image_url": "assets/panels/panel-solar-ecoflow-400w-clean.png"
+    },
+    {
+      "id": "paquete-river-3-panel-solar-ecoflow-110w",
+      "name": "RIVER 3 + Panel Solar EcoFlow 110W",
+      "brand": "EcoFlow",
+      "category": "paquetes",
+      "family": "Paquete solar",
+      "subtitle": "Emergencia ligera",
+      "description": "RIVER 3 con Panel Solar EcoFlow 110W. Paquete ultra portátil para apagones cortos, comunicación, luz básica y recarga solar durante el día. Carga solar estimada: 2.6 h en sol útil.",
+      "plain_description": "Pensado para internet, celular, iluminación LED y una laptop eficiente. No conviene para refrigerador, microondas o cargas de calor. Carga solar aproximada: 2.6 h.",
+      "public_price": 9348.27,
+      "distributor_price": null,
+      "tax_note": "Precio = equipo + panel",
+      "capacity": "230 Wh",
+      "power": "300 W",
+      "expansion": "No admite batería adicional",
+      "tags": [
+        "RIVER 3",
+        "Panel Solar EcoFlow 110W",
+        "Emergencia ligera"
+      ],
+      "source_url": null,
+      "specs": {
+        "station_id": "RIVER 3",
+        "panel_id": "panel-solar-ecoflow-110w",
+        "station_price": 5099,
+        "panel_price": 4249.27,
+        "package_price": 9348.27,
+        "solar_charge_time": "2.6 h",
+        "usable_capacity_percent": 85,
+        "runtime_examples": {
+          "1 dispositivo: módem/router 12 W": "16 h",
+          "2 dispositivos: módem + luz LED 22 W": "8.9 h",
+          "3 dispositivos: módem + luz + celulares 32 W": "6.1 h",
+          "4 dispositivos: lo anterior + laptop eficiente 77 W": "2.5 h"
+        }
+      },
+      "sale_status": "Bajo pedido",
       "image_url": "https://cdn.shopify.com/s/files/1/0593/6132/9231/files/ecoflow-us-ecoflow-river-3-portable-power-station-r3-1174069423.png?v=1756976053"
     },
     {
-      "id": "river-3-panel-110-w",
-      "name": "RIVER 3 + panel 110 W",
+      "id": "paquete-river-3-plus-panel-solar-ecoflow-220w",
+      "name": "RIVER 3 Plus + Panel Solar EcoFlow 220W",
       "brand": "EcoFlow",
       "category": "paquetes",
-      "family": "Paquete",
-      "subtitle": "Combo comercial",
-      "description": "Paquete portátil para internet, celulares, laptop ligera y luces. El panel de 110W ayuda a recuperar batería más rápido que un panel pequeño.",
-      "plain_description": "Paquete portátil para internet, celulares, laptop ligera y luces. El panel de 110W ayuda a recuperar batería más rápido que un panel pequeño.",
-      "public_price": 10299,
+      "family": "Paquete solar",
+      "subtitle": "Emergencia ligera",
+      "description": "RIVER 3 Plus con Panel Solar EcoFlow 220W. Paquete ultra portátil para apagones cortos, comunicación, luz básica y recarga solar durante el día. Carga solar estimada: 98 min en sol útil.",
+      "plain_description": "Pensado para internet, celular, iluminación LED y una laptop eficiente. No conviene para refrigerador, microondas o cargas de calor. Carga solar aproximada: 98 min.",
+      "public_price": 13679.27,
       "distributor_price": null,
-      "tax_note": "IVA incluido",
-      "capacity": null,
-      "power": null,
-      "expansion": null,
-      "sale_status": "Bajo pedido, entrega 4-5 días",
+      "tax_note": "Precio = equipo + panel",
+      "capacity": "286 Wh",
+      "power": "600 W",
+      "expansion": "Sí: EB300 o EB600; hasta aprox. 858 Wh",
       "tags": [
-        "paquete",
-        "combo"
+        "RIVER 3 Plus",
+        "Panel Solar EcoFlow 220W",
+        "Emergencia ligera"
       ],
       "source_url": null,
-      "specs": {},
-      "image_url": "https://cdn.shopify.com/s/files/1/0593/6132/9231/files/ecoflow-us-ecoflow-river-3-portable-power-station-r3-1174069423.png?v=1756976053"
+      "specs": {
+        "station_id": "RIVER 3 Plus",
+        "panel_id": "panel-solar-ecoflow-220w",
+        "station_price": 5999,
+        "panel_price": 7680.27,
+        "package_price": 13679.27,
+        "solar_charge_time": "98 min",
+        "usable_capacity_percent": 85,
+        "runtime_examples": {
+          "1 dispositivo: módem/router 12 W": "20 h",
+          "2 dispositivos: módem + luz LED 22 W": "11 h",
+          "3 dispositivos: módem + luz + celulares 32 W": "7.6 h",
+          "4 dispositivos: lo anterior + laptop eficiente 77 W": "3.2 h"
+        }
+      },
+      "sale_status": "Bajo pedido",
+      "image_url": "https://cdn.shopify.com/s/files/1/0593/6132/9231/files/ecoflow-us-ecoflow-river-3-plus-portable-power-station-standalone-36158995398729.png?v=1752041545"
     },
     {
-      "id": "river-2-max-panel-160-w",
-      "name": "RIVER 2 Max + panel 160 W",
+      "id": "paquete-river-2-max-panel-solar-ecoflow-220w",
+      "name": "RIVER 2 Max + Panel Solar EcoFlow 220W",
       "brand": "EcoFlow",
       "category": "paquetes",
-      "family": "Paquete",
-      "subtitle": "Combo comercial",
-      "description": "Paquete para home office y entretenimiento por más horas. Sirve para laptop, módem, monitor, TV o ventilador con apoyo solar durante el día.",
-      "plain_description": "Paquete para home office y entretenimiento por más horas. Sirve para laptop, módem, monitor, TV o ventilador con apoyo solar durante el día.",
-      "public_price": 15099,
+      "family": "Paquete solar",
+      "subtitle": "Home office y entretenimiento",
+      "description": "RIVER 2 Max con Panel Solar EcoFlow 220W. Paquete para home office, entretenimiento ligero y ventilación básica con panel de 220W. Carga solar estimada: 2.9 h en sol útil.",
+      "plain_description": "Para trabajar varias horas con internet, laptop, monitor, TV o ventilador. Es portátil, pero no sustituye un sistema residencial. Carga solar aproximada: 2.9 h.",
+      "public_price": 14279.27,
       "distributor_price": null,
-      "tax_note": "IVA incluido",
-      "capacity": null,
-      "power": null,
-      "expansion": null,
-      "sale_status": "Bajo pedido, entrega 4-5 días",
+      "tax_note": "Precio = equipo + panel",
+      "capacity": "512 Wh",
+      "power": "500 W",
+      "expansion": "No admite batería adicional",
       "tags": [
-        "paquete",
-        "combo"
+        "RIVER 2 Max",
+        "Panel Solar EcoFlow 220W",
+        "Home office y entretenimiento"
       ],
       "source_url": null,
-      "specs": {},
+      "specs": {
+        "station_id": "RIVER 2 Max",
+        "panel_id": "panel-solar-ecoflow-220w",
+        "station_price": 6599,
+        "panel_price": 7680.27,
+        "package_price": 14279.27,
+        "solar_charge_time": "2.9 h",
+        "usable_capacity_percent": 85,
+        "runtime_examples": {
+          "1 dispositivo: laptop eficiente 45 W": "9.7 h",
+          "2 dispositivos: módem + laptop 57 W": "7.6 h",
+          "3 dispositivos: módem + laptop + monitor 82 W": "5.3 h",
+          "4 dispositivos: módem + laptop + monitor + ventilador 132 W": "3.3 h",
+          "5 dispositivos: lo anterior + TV 212 W": "2.1 h"
+        }
+      },
+      "sale_status": "Bajo pedido",
       "image_url": "https://cdn.shopify.com/s/files/1/0593/6132/9231/files/ecoflow-us-ecoflow-river-2-max-portable-power-station-30042740555849_1500x_d4588403-9891-493c-a7c9-990bda1498dd.webp?v=1762658410"
     },
     {
-      "id": "delta-2-max-panel-400-w",
-      "name": "DELTA 2 Max + panel 400 W",
+      "id": "paquete-river-3-max-panel-solar-ecoflow-220w",
+      "name": "RIVER 3 Max + Panel Solar EcoFlow 220W",
       "brand": "EcoFlow",
       "category": "paquetes",
-      "family": "Paquete",
-      "subtitle": "Combo comercial",
-      "description": "Paquete para respaldo de cargas esenciales del hogar. Puede apoyar refrigerador, internet, TV, luces y oficina, con carga solar más rápida.",
-      "plain_description": "Paquete para respaldo de cargas esenciales del hogar. Puede apoyar refrigerador, internet, TV, luces y oficina, con carga solar más rápida.",
-      "public_price": 41599,
+      "family": "Paquete solar",
+      "subtitle": "Home office y entretenimiento",
+      "description": "RIVER 3 Max con Panel Solar EcoFlow 220W. Paquete para home office, entretenimiento ligero y ventilación básica con panel de 220W. Carga solar estimada: 3.3 h en sol útil.",
+      "plain_description": "Para trabajar varias horas con internet, laptop, monitor, TV o ventilador. Es portátil, pero no sustituye un sistema residencial. Carga solar aproximada: 3.3 h.",
+      "public_price": 16279.27,
       "distributor_price": null,
-      "tax_note": "IVA incluido",
-      "capacity": null,
-      "power": null,
-      "expansion": null,
-      "sale_status": "Bajo pedido, entrega 4-5 días",
+      "tax_note": "Precio = equipo + panel",
+      "capacity": "572 Wh",
+      "power": "600 W",
+      "expansion": "Ya incluye batería EB300",
       "tags": [
-        "paquete",
-        "combo"
+        "RIVER 3 Max",
+        "Panel Solar EcoFlow 220W",
+        "Home office y entretenimiento"
       ],
       "source_url": null,
-      "specs": {},
+      "specs": {
+        "station_id": "RIVER 3 Max",
+        "panel_id": "panel-solar-ecoflow-220w",
+        "station_price": 8599,
+        "panel_price": 7680.27,
+        "package_price": 16279.27,
+        "solar_charge_time": "3.3 h",
+        "usable_capacity_percent": 85,
+        "runtime_examples": {
+          "1 dispositivo: laptop eficiente 45 W": "11 h",
+          "2 dispositivos: módem + laptop 57 W": "8.5 h",
+          "3 dispositivos: módem + laptop + monitor 82 W": "5.9 h",
+          "4 dispositivos: módem + laptop + monitor + ventilador 132 W": "3.7 h",
+          "5 dispositivos: lo anterior + TV 212 W": "2.3 h"
+        }
+      },
+      "sale_status": "Bajo pedido",
+      "image_url": "https://cdn.shopify.com/s/files/1/0593/6132/9231/files/ecoflow-us-ecoflow-river-3-plus-portable-power-station-standalone-35888815702089_85b7f2bf-3fb2-4570-874e-870566788373.png?v=1775123729"
+    },
+    {
+      "id": "paquete-river-2-pro-panel-solar-ecoflow-220w",
+      "name": "RIVER 2 Pro + Panel Solar EcoFlow 220W",
+      "brand": "EcoFlow",
+      "category": "paquetes",
+      "family": "Paquete solar",
+      "subtitle": "Home office y entretenimiento",
+      "description": "RIVER 2 Pro con Panel Solar EcoFlow 220W. Paquete para home office, entretenimiento ligero y ventilación básica con panel de 220W. Carga solar estimada: 4.4 h en sol útil.",
+      "plain_description": "Para trabajar varias horas con internet, laptop, monitor, TV o ventilador. Es portátil, pero no sustituye un sistema residencial. Carga solar aproximada: 4.4 h.",
+      "public_price": 16279.27,
+      "distributor_price": null,
+      "tax_note": "Precio = equipo + panel",
+      "capacity": "768 Wh",
+      "power": "800 W",
+      "expansion": "No admite batería adicional",
+      "tags": [
+        "RIVER 2 Pro",
+        "Panel Solar EcoFlow 220W",
+        "Home office y entretenimiento"
+      ],
+      "source_url": null,
+      "specs": {
+        "station_id": "RIVER 2 Pro",
+        "panel_id": "panel-solar-ecoflow-220w",
+        "station_price": 8599,
+        "panel_price": 7680.27,
+        "package_price": 16279.27,
+        "solar_charge_time": "4.4 h",
+        "usable_capacity_percent": 85,
+        "runtime_examples": {
+          "1 dispositivo: laptop eficiente 45 W": "15 h",
+          "2 dispositivos: módem + laptop 57 W": "11 h",
+          "3 dispositivos: módem + laptop + monitor 82 W": "8.0 h",
+          "4 dispositivos: módem + laptop + monitor + ventilador 132 W": "4.9 h",
+          "5 dispositivos: lo anterior + TV 212 W": "3.1 h"
+        }
+      },
+      "sale_status": "Bajo pedido",
+      "image_url": "https://cdn.shopify.com/s/files/1/0593/6132/9231/files/ecoflow-us-ecoflow-river-2-pro-portable-power-station-30042784006217_1500x_0df8c4aa-09a0-4fc7-b463-e0dc0623a685.webp?v=1733970158"
+    },
+    {
+      "id": "paquete-river-3-max-plus-panel-solar-ecoflow-220w",
+      "name": "RIVER 3 Max Plus + Panel Solar EcoFlow 220W",
+      "brand": "EcoFlow",
+      "category": "paquetes",
+      "family": "Paquete solar",
+      "subtitle": "Home office y entretenimiento",
+      "description": "RIVER 3 Max Plus con Panel Solar EcoFlow 220W. Paquete para home office, entretenimiento ligero y ventilación básica con panel de 220W. Carga solar estimada: 4.9 h en sol útil.",
+      "plain_description": "Para trabajar varias horas con internet, laptop, monitor, TV o ventilador. Es portátil, pero no sustituye un sistema residencial. Carga solar aproximada: 4.9 h.",
+      "public_price": 16479.27,
+      "distributor_price": null,
+      "tax_note": "Precio = equipo + panel",
+      "capacity": "858 Wh",
+      "power": "600 W",
+      "expansion": "Ya incluye batería EB600",
+      "tags": [
+        "RIVER 3 Max Plus",
+        "Panel Solar EcoFlow 220W",
+        "Home office y entretenimiento"
+      ],
+      "source_url": null,
+      "specs": {
+        "station_id": "RIVER 3 Max Plus",
+        "panel_id": "panel-solar-ecoflow-220w",
+        "station_price": 8799,
+        "panel_price": 7680.27,
+        "package_price": 16479.27,
+        "solar_charge_time": "4.9 h",
+        "usable_capacity_percent": 85,
+        "runtime_examples": {
+          "1 dispositivo: laptop eficiente 45 W": "16 h",
+          "2 dispositivos: módem + laptop 57 W": "13 h",
+          "3 dispositivos: módem + laptop + monitor 82 W": "8.9 h",
+          "4 dispositivos: módem + laptop + monitor + ventilador 132 W": "5.5 h",
+          "5 dispositivos: lo anterior + TV 212 W": "3.4 h"
+        }
+      },
+      "sale_status": "Bajo pedido",
+      "image_url": "https://cdn.shopify.com/s/files/1/0593/6132/9231/files/ecoflow-us-ecoflow-river-3-plus-portable-power-station-standalone-35888815669321_85f32f34-63f6-4830-8f25-391020407b37.png?v=1752564431"
+    },
+    {
+      "id": "paquete-delta-2-black-panel-solar-ecoflow-400w",
+      "name": "DELTA 2 Black + Panel Solar EcoFlow 400W",
+      "brand": "EcoFlow",
+      "category": "paquetes",
+      "family": "Paquete solar",
+      "subtitle": "Cargas esenciales del hogar",
+      "description": "DELTA 2 Black con Panel Solar EcoFlow 400W. Paquete para respaldo esencial de casa: refrigerador eficiente, internet, luces, TV y computadoras, con carga solar de apoyo. Carga solar estimada: 3.1 h en sol útil.",
+      "plain_description": "Adecuado para refrigerador eficiente, internet, luces, TV, computadoras y algunos aparatos de cocina usados por periodos cortos. Carga solar aproximada: 3.1 h.",
+      "public_price": 21494.23,
+      "distributor_price": null,
+      "tax_note": "Precio = equipo + panel",
+      "capacity": "980 Wh",
+      "power": "500 W",
+      "expansion": "Capacidad fija de 980 Wh",
+      "tags": [
+        "DELTA 2 Black",
+        "Panel Solar EcoFlow 400W",
+        "Cargas esenciales del hogar"
+      ],
+      "source_url": null,
+      "specs": {
+        "station_id": "DELTA 2 Black",
+        "panel_id": "panel-solar-ecoflow-400w",
+        "station_price": 9499,
+        "panel_price": 11995.23,
+        "package_price": 21494.23,
+        "solar_charge_time": "3.1 h",
+        "usable_capacity_percent": 85,
+        "runtime_examples": {
+          "1 dispositivo: refrigerador eficiente promedio 120 W": "6.9 h",
+          "2 dispositivos: refrigerador + módem 132 W": "6.3 h",
+          "3 dispositivos: refrigerador + módem + luces 162 W": "5.1 h",
+          "4 dispositivos: lo anterior + TV 242 W": "3.4 h",
+          "5 dispositivos: lo anterior + laptop 287 W": "2.9 h"
+        }
+      },
+      "sale_status": "Bajo pedido",
+      "image_url": "https://mx.ecoflow.com/cdn/shop/files/e980_a21252ea-2bab-41c4-819c-fddd2c67a79a.png?v=1762845476"
+    },
+    {
+      "id": "paquete-delta-3-panel-solar-ecoflow-400w",
+      "name": "DELTA 3 + Panel Solar EcoFlow 400W",
+      "brand": "EcoFlow",
+      "category": "paquetes",
+      "family": "Paquete solar",
+      "subtitle": "Cargas esenciales del hogar",
+      "description": "DELTA 3 con Panel Solar EcoFlow 400W. Paquete para respaldo esencial de casa: refrigerador eficiente, internet, luces, TV y computadoras, con carga solar de apoyo. Carga solar estimada: 3.2 h en sol útil.",
+      "plain_description": "Adecuado para refrigerador eficiente, internet, luces, TV, computadoras y algunos aparatos de cocina usados por periodos cortos. Carga solar aproximada: 3.2 h.",
+      "public_price": 26994.23,
+      "distributor_price": null,
+      "tax_note": "Precio = equipo + panel",
+      "capacity": "1,024 Wh",
+      "power": "1,800 W",
+      "expansion": "Capacidad fija de 1,024 Wh",
+      "tags": [
+        "DELTA 3",
+        "Panel Solar EcoFlow 400W",
+        "Cargas esenciales del hogar"
+      ],
+      "source_url": null,
+      "specs": {
+        "station_id": "DELTA 3",
+        "panel_id": "panel-solar-ecoflow-400w",
+        "station_price": 14999,
+        "panel_price": 11995.23,
+        "package_price": 26994.23,
+        "solar_charge_time": "3.2 h",
+        "usable_capacity_percent": 85,
+        "runtime_examples": {
+          "1 dispositivo: refrigerador eficiente promedio 120 W": "7.3 h",
+          "2 dispositivos: refrigerador + módem 132 W": "6.6 h",
+          "3 dispositivos: refrigerador + módem + luces 162 W": "5.4 h",
+          "4 dispositivos: lo anterior + TV 242 W": "3.6 h",
+          "5 dispositivos: lo anterior + laptop 287 W": "3.0 h"
+        }
+      },
+      "sale_status": "Bajo pedido",
+      "image_url": "https://cdn.shopify.com/s/files/1/0593/6132/9231/files/ecoflow-us-ecoflow-delta-3-plus-portable-power-station-standalone-delta-3-plus-1179495741.png?v=1756975490"
+    },
+    {
+      "id": "paquete-delta-3-plus-panel-solar-rigido-400w",
+      "name": "DELTA 3 Plus + Panel Solar Rígido 400W",
+      "brand": "EcoFlow",
+      "category": "paquetes",
+      "family": "Paquete solar",
+      "subtitle": "Cargas esenciales del hogar",
+      "description": "DELTA 3 Plus con Panel Solar Rígido 400W. Paquete para respaldo esencial de casa: refrigerador eficiente, internet, luces, TV y computadoras, con carga solar de apoyo. Carga solar estimada: 6.4 h en sol útil.",
+      "plain_description": "Adecuado para refrigerador eficiente, internet, luces, TV, computadoras y algunos aparatos de cocina usados por periodos cortos. Carga solar aproximada: 6.4 h.",
+      "public_price": 31398.2,
+      "distributor_price": null,
+      "tax_note": "Precio = equipo + panel",
+      "capacity": "2,048 Wh",
+      "power": "1,800 W",
+      "expansion": "Incluye batería adicional inteligente: 2,048 Wh totales; expandible hasta 5 kWh",
+      "tags": [
+        "DELTA 3 Plus",
+        "Panel Solar Rígido 400W",
+        "Cargas esenciales del hogar"
+      ],
+      "source_url": null,
+      "specs": {
+        "station_id": "DELTA 3 Plus",
+        "panel_id": "panel-solar-rigido-400w",
+        "station_price": 23999,
+        "panel_price": 7399.2,
+        "package_price": 31398.2,
+        "solar_charge_time": "6.4 h",
+        "usable_capacity_percent": 85,
+        "runtime_examples": {
+          "1 dispositivo: refrigerador eficiente promedio 120 W": "15 h",
+          "2 dispositivos: refrigerador + módem 132 W": "13 h",
+          "3 dispositivos: refrigerador + módem + luces 162 W": "11 h",
+          "4 dispositivos: lo anterior + TV 242 W": "7.2 h",
+          "5 dispositivos: lo anterior + laptop 287 W": "6.1 h"
+        }
+      },
+      "sale_status": "Bajo pedido",
+      "image_url": "assets/delta-3-plus-combo.png"
+    },
+    {
+      "id": "paquete-delta-2-max-panel-solar-rigido-400w",
+      "name": "DELTA 2 Max + Panel Solar Rígido 400W",
+      "brand": "EcoFlow",
+      "category": "paquetes",
+      "family": "Paquete solar",
+      "subtitle": "Cargas esenciales del hogar",
+      "description": "DELTA 2 Max con Panel Solar Rígido 400W. Paquete para respaldo esencial de casa: refrigerador eficiente, internet, luces, TV y computadoras, con carga solar de apoyo. Carga solar estimada: 6.4 h en sol útil.",
+      "plain_description": "Adecuado para refrigerador eficiente, internet, luces, TV, computadoras y algunos aparatos de cocina usados por periodos cortos. Carga solar aproximada: 6.4 h.",
+      "public_price": 32998.2,
+      "distributor_price": null,
+      "tax_note": "Precio = equipo + panel",
+      "capacity": "2,048 Wh",
+      "power": "2,400 W",
+      "expansion": "Sí: hasta 2 baterías; capacidad total de 6,144 Wh",
+      "tags": [
+        "DELTA 2 Max",
+        "Panel Solar Rígido 400W",
+        "Cargas esenciales del hogar"
+      ],
+      "source_url": null,
+      "specs": {
+        "station_id": "DELTA 2 Max",
+        "panel_id": "panel-solar-rigido-400w",
+        "station_price": 25599,
+        "panel_price": 7399.2,
+        "package_price": 32998.2,
+        "solar_charge_time": "6.4 h",
+        "usable_capacity_percent": 85,
+        "runtime_examples": {
+          "1 dispositivo: refrigerador eficiente promedio 120 W": "15 h",
+          "2 dispositivos: refrigerador + módem 132 W": "13 h",
+          "3 dispositivos: refrigerador + módem + luces 162 W": "11 h",
+          "4 dispositivos: lo anterior + TV 242 W": "7.2 h",
+          "5 dispositivos: lo anterior + laptop 287 W": "6.1 h"
+        }
+      },
+      "sale_status": "Bajo pedido",
       "image_url": "https://cdn.shopify.com/s/files/1/0593/6132/9231/files/ecoflow-delta-2-max-portable-power-station-51305159590231.png?v=1718876774"
     },
     {
-      "id": "delta-2-max-bateria-adicional",
-      "name": "DELTA 2 Max + batería adicional",
+      "id": "paquete-delta-pro-panel-solar-rigido-400w",
+      "name": "DELTA Pro + Panel Solar Rígido 400W",
       "brand": "EcoFlow",
       "category": "paquetes",
-      "family": "Paquete",
-      "subtitle": "Combo comercial",
-      "description": "Paquete para apagones más largos: DELTA 2 Max con batería extra para duplicar autonomía en refrigerador, oficina, luces y equipos esenciales.",
-      "plain_description": "Paquete para apagones más largos: DELTA 2 Max con batería extra para duplicar autonomía en refrigerador, oficina, luces y equipos esenciales.",
-      "public_price": 44399,
+      "family": "Paquete solar",
+      "subtitle": "Respaldo residencial y cargas grandes",
+      "description": "DELTA Pro con Panel Solar Rígido 400W. Paquete para respaldo residencial, herramientas, RV o circuitos prioritarios. El panel de 400W aporta carga de apoyo; para cargar más rápido se recomienda ampliar arreglo solar. Carga solar estimada con este panel: 11 h.",
+      "plain_description": "Para circuitos prioritarios, refrigerador, congelador, bomba, herramientas, equipos sensibles o respaldo residencial con cálculo de cargas. Carga solar aproximada: 11 h.",
+      "public_price": 37598.2,
       "distributor_price": null,
-      "tax_note": "IVA incluido",
-      "capacity": null,
-      "power": null,
-      "expansion": null,
-      "sale_status": "Bajo pedido, entrega 4-5 días",
+      "tax_note": "Precio = equipo + panel",
+      "capacity": "3,600 Wh",
+      "power": "3,600 W",
+      "expansion": "Sí: hasta 2 baterías; 10.8 kWh por unidad",
       "tags": [
-        "paquete",
-        "combo"
+        "DELTA Pro",
+        "Panel Solar Rígido 400W",
+        "Respaldo residencial y cargas grandes"
       ],
       "source_url": null,
-      "specs": {},
-      "image_url": "https://cdn.shopify.com/s/files/1/0593/6132/9231/files/ecoflow-delta-2-max-portable-power-station-51305159590231.png?v=1718876774"
-    },
-    {
-      "id": "delta-pro-panel-400-w",
-      "name": "DELTA Pro + panel 400 W",
-      "brand": "EcoFlow",
-      "category": "paquetes",
-      "family": "Paquete",
-      "subtitle": "Combo comercial",
-      "description": "Paquete de respaldo residencial o profesional para cargas más grandes. Conviene para refrigerador, congelador, herramientas, bomba pequeña y apoyo solar.",
-      "plain_description": "Paquete de respaldo residencial o profesional para cargas más grandes. Conviene para refrigerador, congelador, herramientas, bomba pequeña y apoyo solar.",
-      "public_price": 52499,
-      "distributor_price": null,
-      "tax_note": "IVA incluido",
-      "capacity": null,
-      "power": null,
-      "expansion": null,
-      "sale_status": "Bajo pedido, entrega 4-5 días",
-      "tags": [
-        "paquete",
-        "combo"
-      ],
-      "source_url": null,
-      "specs": {},
+      "specs": {
+        "station_id": "DELTA Pro",
+        "panel_id": "panel-solar-rigido-400w",
+        "station_price": 30199,
+        "panel_price": 7399.2,
+        "package_price": 37598.2,
+        "solar_charge_time": "11 h",
+        "usable_capacity_percent": 85,
+        "runtime_examples": {
+          "1 carga: refrigerador eficiente 120 W": "26 h",
+          "2 cargas: refrigerador + congelador 220 W": "14 h",
+          "3 cargas: refrigerador + congelador + internet/luces 282 W": "11 h",
+          "4 cargas: lo anterior + bomba pequeña intermitente 782 W": "3.9 h",
+          "5 cargas: lo anterior + herramientas controladas 1,282 W": "2.4 h"
+        }
+      },
+      "sale_status": "Bajo pedido",
       "image_url": "https://cdn.shopify.com/s/files/1/0593/6132/9231/files/ecoflow-us-ecoflow-delta-pro-portable-power-station-dp-delta-pro-portable-power-station-1179495743.png?v=1756889795"
     },
     {
-      "id": "wave-3-delta-2-max",
-      "name": "WAVE 3 + DELTA 2 Max",
+      "id": "paquete-delta-pro-3-panel-solar-rigido-400w",
+      "name": "DELTA Pro 3 + Panel Solar Rígido 400W",
       "brand": "EcoFlow",
       "category": "paquetes",
-      "family": "Paquete",
-      "subtitle": "Combo comercial",
-      "description": "Paquete para climatizar espacios pequeños sin depender siempre de la toma de corriente. Útil para cuarto, camper, oficina móvil o emergencia.",
-      "plain_description": "Paquete para climatizar espacios pequeños sin depender siempre de la toma de corriente. Útil para cuarto, camper, oficina móvil o emergencia.",
-      "public_price": 50699,
+      "family": "Paquete solar",
+      "subtitle": "Respaldo residencial y cargas grandes",
+      "description": "DELTA Pro 3 con Panel Solar Rígido 400W. Paquete para respaldo residencial, herramientas, RV o circuitos prioritarios. El panel de 400W aporta carga de apoyo; para cargar más rápido se recomienda ampliar arreglo solar. Carga solar estimada con este panel: 13 h.",
+      "plain_description": "Para circuitos prioritarios, refrigerador, congelador, bomba, herramientas, equipos sensibles o respaldo residencial con cálculo de cargas. Carga solar aproximada: 13 h.",
+      "public_price": 67598.2,
       "distributor_price": null,
-      "tax_note": "IVA incluido",
-      "capacity": null,
-      "power": null,
-      "expansion": null,
-      "sale_status": "Bajo pedido, entrega 4-5 días",
+      "tax_note": "Precio = equipo + panel",
+      "capacity": "4,096 Wh",
+      "power": "4,000 W",
+      "expansion": "Sí: expandible con baterías adicionales y generadores inteligentes hasta 48 kWh",
       "tags": [
-        "paquete",
-        "combo"
+        "DELTA Pro 3",
+        "Panel Solar Rígido 400W",
+        "Respaldo residencial y cargas grandes"
       ],
       "source_url": null,
-      "specs": {},
-      "image_url": "https://cdn.shopify.com/s/files/1/0593/6132/9231/files/ecoflow-wave-3-portable-air-conditioner-1161397081.png?v=1766998641"
+      "specs": {
+        "station_id": "DELTA Pro 3",
+        "panel_id": "panel-solar-rigido-400w",
+        "station_price": 60199,
+        "panel_price": 7399.2,
+        "package_price": 67598.2,
+        "solar_charge_time": "13 h",
+        "usable_capacity_percent": 85,
+        "runtime_examples": {
+          "1 carga: refrigerador eficiente 120 W": "29 h",
+          "2 cargas: refrigerador + congelador 220 W": "16 h",
+          "3 cargas: refrigerador + congelador + internet/luces 282 W": "12 h",
+          "4 cargas: lo anterior + bomba pequeña intermitente 782 W": "4.5 h",
+          "5 cargas: lo anterior + herramientas controladas 1,282 W": "2.7 h"
+        }
+      },
+      "sale_status": "Bajo pedido",
+      "image_url": "https://mx.ecoflow.com/cdn/shop/files/ecoflow-ecoflow-delta-pro-3-portable-power-station-31998254350409.png?v=1765856654"
     },
     {
-      "id": "delta-pro-ultra-bateria",
-      "name": "DELTA Pro Ultra + batería",
+      "id": "paquete-delta-pro-ultra-panel-solar-rigido-400w",
+      "name": "DELTA Pro Ultra + Panel Solar Rígido 400W",
       "brand": "EcoFlow",
       "category": "paquetes",
-      "family": "Paquete",
-      "subtitle": "Combo comercial",
-      "description": "Paquete residencial de alta capacidad para respaldar circuitos importantes de la casa. Conviene cuando quieres crecer autonomía por etapas.",
-      "plain_description": "Paquete residencial de alta capacidad para respaldar circuitos importantes de la casa. Conviene cuando quieres crecer autonomía por etapas.",
-      "public_price": 126099,
+      "family": "Paquete solar",
+      "subtitle": "Respaldo residencial y cargas grandes",
+      "description": "DELTA Pro Ultra con Panel Solar Rígido 400W. Paquete para respaldo residencial, herramientas, RV o circuitos prioritarios. El panel de 400W aporta carga de apoyo; para cargar más rápido se recomienda ampliar arreglo solar. Carga solar estimada con este panel: 19 h.",
+      "plain_description": "Para circuitos prioritarios, refrigerador, congelador, bomba, herramientas, equipos sensibles o respaldo residencial con cálculo de cargas. Carga solar aproximada: 19 h.",
+      "public_price": 117399.2,
       "distributor_price": null,
-      "tax_note": "IVA incluido",
-      "capacity": null,
-      "power": null,
-      "expansion": null,
-      "sale_status": "Bajo pedido, entrega 4-5 días",
+      "tax_note": "Precio = equipo + panel",
+      "capacity": "Desde 6 kWh",
+      "power": "Desde 7,200 W",
+      "expansion": "Sí: sistema modular de 6 a 90 kWh",
       "tags": [
-        "paquete",
-        "combo"
+        "DELTA Pro Ultra",
+        "Panel Solar Rígido 400W",
+        "Respaldo residencial y cargas grandes"
       ],
       "source_url": null,
-      "specs": {},
+      "specs": {
+        "station_id": "DELTA Pro Ultra",
+        "panel_id": "panel-solar-rigido-400w",
+        "station_price": 110000,
+        "panel_price": 7399.2,
+        "package_price": 117399.2,
+        "solar_charge_time": "19 h",
+        "usable_capacity_percent": 85,
+        "runtime_examples": {
+          "1 carga: refrigerador eficiente 120 W": "43 h",
+          "2 cargas: refrigerador + congelador 220 W": "23 h",
+          "3 cargas: refrigerador + congelador + internet/luces 282 W": "18 h",
+          "4 cargas: lo anterior + bomba pequeña intermitente 782 W": "6.5 h",
+          "5 cargas: lo anterior + herramientas controladas 1,282 W": "4.0 h"
+        }
+      },
+      "sale_status": "Bajo pedido",
       "image_url": "https://cdn.shopify.com/s/files/1/0593/6132/9231/files/ecoflow-ecoflow-delta-pro-ultra-whole-home-backup-power-ecoflow-delta-pro-ultra-32618370236489.png?v=1740542286"
     },
     {
-      "id": "delta-pro-ultra-bateria-smart-home-panel-2",
-      "name": "DELTA Pro Ultra + batería + Smart Home Panel 2",
+      "id": "paquete-delta-3-max-panel-solar-ecoflow-400w",
+      "name": "DELTA 3 Max + Panel Solar EcoFlow 400W",
       "brand": "EcoFlow",
       "category": "paquetes",
-      "family": "Paquete",
-      "subtitle": "Combo comercial",
-      "description": "Sistema residencial más completo: batería Pro Ultra con panel inteligente para administrar circuitos de casa como refrigerador, luces, internet o bomba.",
-      "plain_description": "Sistema residencial más completo: batería Pro Ultra con panel inteligente para administrar circuitos de casa como refrigerador, luces, internet o bomba.",
-      "public_price": 165099,
+      "family": "Paquete solar",
+      "subtitle": "Cargas esenciales del hogar",
+      "description": "DELTA 3 Max con Panel Solar EcoFlow 400W. Paquete para respaldo esencial de casa: refrigerador eficiente, internet, luces, TV y computadoras, con carga solar de apoyo. Carga solar estimada: 6.4 h en sol útil.",
+      "plain_description": "Adecuado para refrigerador eficiente, internet, luces, TV, computadoras y algunos aparatos de cocina usados por periodos cortos. Carga solar aproximada: 6.4 h.",
+      "public_price": 38494.23,
       "distributor_price": null,
-      "tax_note": "IVA incluido",
-      "capacity": null,
-      "power": null,
-      "expansion": null,
-      "sale_status": "Bajo pedido, entrega 4-5 días",
+      "tax_note": "Precio = equipo + panel",
+      "capacity": "2,048 Wh",
+      "power": "3,000 W",
+      "expansion": "Sí: expandible con baterías adicionales EcoFlow hasta 10 kWh",
       "tags": [
-        "paquete",
-        "combo"
+        "DELTA 3 Max",
+        "Panel Solar EcoFlow 400W",
+        "Cargas esenciales del hogar"
       ],
       "source_url": null,
-      "specs": {},
-      "image_url": "https://cdn.shopify.com/s/files/1/0593/6132/9231/files/ecoflow-ecoflow-delta-pro-ultra-whole-home-backup-power-ecoflow-delta-pro-ultra-32618370236489.png?v=1740542286"
+      "specs": {
+        "station_id": "DELTA 3 Max",
+        "panel_id": "panel-solar-ecoflow-400w",
+        "station_price": 26499,
+        "panel_price": 11995.23,
+        "package_price": 38494.23,
+        "solar_charge_time": "6.4 h",
+        "usable_capacity_percent": 85,
+        "runtime_examples": {
+          "1 dispositivo: refrigerador eficiente promedio 120 W": "15 h",
+          "2 dispositivos: refrigerador + módem 132 W": "13 h",
+          "3 dispositivos: refrigerador + módem + luces 162 W": "11 h",
+          "4 dispositivos: lo anterior + TV 242 W": "7.2 h",
+          "5 dispositivos: lo anterior + laptop 287 W": "6.1 h"
+        }
+      },
+      "sale_status": "Bajo pedido",
+      "image_url": "https://cdn.shopify.com/s/files/1/0593/6132/9231/files/ecoflow-us-ecoflow-delta-3-plus-portable-power-station-standalone-delta-3-plus-1179495741.png?v=1756975490"
     }
   ]
 }

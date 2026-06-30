@@ -3,121 +3,586 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Paquetes EcoFlow con combinaciones listas para respaldo, carga solar y uso residencial.">
-<title>Soberana Solutions · Paquetes</title>
+<meta name="description" content="Paquetes EcoFlow con estación y panel solar correspondiente, precio combinado, carga solar estimada y autonomías por dispositivos.">
+<title>Soberana Solutions · Paquetes solares</title>
 <link rel="stylesheet" href="src/styles.css">
+<style>
+body {
+  font-family: "Aptos", "Segoe UI Variable Text", "Segoe UI", "Inter", "Helvetica Neue", Arial, sans-serif;
+  font-optical-sizing: auto;
+}
+.solar-catalog-hero h1,
+.package-card h3,
+.package-card .card-price strong {
+  font-family: "Aptos Display", "Segoe UI Variable Display", "Aptos", "Segoe UI", "Inter", sans-serif;
+  letter-spacing: 0;
+}
+.solar-catalog-hero h1 {
+  font-weight: 780;
+  line-height: .98;
+}
+.solar-catalog-hero p,
+.package-card .product-description,
+.package-runtime-list li {
+  font-weight: 430;
+}
+.package-card h3 {
+  font-weight: 760;
+  line-height: 1.12;
+}
+.package-card .family-badge,
+.package-card .details-btn,
+.solar-catalog-hero .hero-actions .btn {
+  font-family: "Aptos", "Segoe UI Variable Text", "Segoe UI", "Inter", sans-serif;
+}
+.solar-catalog-hero .hero-actions {
+  gap: 12px;
+  align-items: center;
+  margin-top: 30px;
+}
+.solar-catalog-hero .hero-actions .btn {
+  min-height: 52px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+  padding: 0 22px;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(255,255,255,.045);
+  color: #f4fff7 !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.08);
+  font-weight: 800;
+  letter-spacing: 0;
+  text-decoration: none;
+  transition: transform .18s ease, border-color .18s ease, background .18s ease, box-shadow .18s ease;
+}
+.solar-catalog-hero .hero-actions .btn.primary {
+  border-color: rgba(105, 255, 157, .42);
+  background: linear-gradient(135deg, #66f397 0%, #4fe386 100%);
+  color: #04170d !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.34),
+    0 10px 24px rgba(79, 227, 134, .22);
+}
+.solar-catalog-hero .hero-actions .btn:not(.primary) {
+  background: rgba(255,255,255,.035);
+  border-color: rgba(255,255,255,.16);
+}
+.solar-catalog-hero .hero-actions .btn:hover {
+  transform: translateY(-1px);
+  background: rgba(255,255,255,.065);
+  border-color: rgba(105, 255, 157, .32);
+}
+.solar-catalog-hero .hero-actions .btn.primary:hover {
+  background: linear-gradient(135deg, #7bffa9 0%, #58ee8f 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.38),
+    0 12px 28px rgba(79, 227, 134, .27);
+}
+.package-card {
+  align-items: stretch;
+  grid-template-columns: minmax(210px, 28%) 1fr;
+  border-radius: 24px;
+  padding: 20px;
+  background:
+    linear-gradient(145deg, rgba(255,255,255,.055), rgba(255,255,255,.018)),
+    radial-gradient(circle at 100% 100%, rgba(73,233,139,.12), transparent 42%);
+}
+.package-card .solar-product-body {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.package-photo-stack {
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) 34px minmax(0, 1.05fr);
+  gap: 4px;
+  align-items: center;
+  align-self: stretch;
+  height: 100%;
+  min-height: 430px;
+  padding: 12px;
+  background:
+    radial-gradient(circle at 50% 25%, rgba(96, 255, 176, .18), transparent 45%),
+    linear-gradient(145deg, rgba(255,255,255,.08), rgba(255,255,255,.02));
+}
+.package-photo-slot {
+  min-height: 0;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  overflow: hidden;
+}
+.package-photo-stack .product-photo {
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  object-fit: contain;
+  transform: scale(1.16);
+}
+.package-photo-station .product-photo {
+  transform: scale(1.22);
+}
+.package-photo-panel .product-photo {
+  filter: contrast(1.04) saturate(1.04);
+  transform: scale(1.14);
+}
+.package-plus {
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  justify-self: center;
+  border-radius: 999px;
+  color: #052817;
+  background: #49e98b;
+  font-weight: 900;
+  line-height: 1;
+  align-self: center;
+}
+.package-runtime-list {
+  list-style: none;
+  margin: 14px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 9px;
+}
+.package-runtime-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  border: 1px solid rgba(255,255,255,.11);
+  border-radius: 10px;
+  padding: 10px 12px;
+  background: rgba(255,255,255,.025);
+  font-size: .88rem;
+  line-height: 1.35;
+}
+.package-runtime-list strong {
+  white-space: nowrap;
+  color: #f3fff6;
+}
+.package-card .details-btn {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-start;
+  width: auto;
+  min-width: 112px;
+  margin-top: 18px;
+  padding: 10px 16px;
+  border: 1px solid rgba(91, 255, 145, .36);
+  border-radius: 999px;
+  background: rgba(91, 255, 145, .12);
+  color: #ecfff2 !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.12);
+  text-decoration: none;
+  font-weight: 800;
+  line-height: 1;
+  transition: background .18s ease, border-color .18s ease, transform .18s ease;
+}
+.package-card .details-btn:hover {
+  transform: translateY(-1px);
+  background: rgba(91, 255, 145, .18);
+  border-color: rgba(91, 255, 145, .58);
+}
+.package-hero-feature {
+  min-height: 320px;
+}
+.package-hero-feature::before {
+  z-index: 0;
+}
+.package-hero-real {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  min-width: 0;
+  min-height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  padding: 28px 42px 64px;
+}
+.package-hero-real::before {
+  content: "";
+  position: absolute;
+  inset: 24px 56px 36px;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(79, 243, 134, .24), rgba(79, 243, 134, 0) 68%);
+  filter: blur(4px);
+}
+.package-hero-real img {
+  position: relative;
+  display: block;
+  opacity: 1;
+  visibility: visible;
+  object-fit: contain;
+  filter: drop-shadow(0 18px 28px rgba(0,0,0,.32));
+}
+.package-hero-station {
+  width: min(58%, 360px);
+  max-height: 220px;
+  z-index: 2;
+}
+.package-hero-panel {
+  width: min(34%, 230px);
+  max-height: 150px;
+  z-index: 2;
+}
+.package-hero-real .package-plus {
+  position: relative;
+  z-index: 2;
+  flex: 0 0 42px;
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  color: #06160e;
+  background: #5cff8d;
+  box-shadow: 0 14px 32px rgba(92,255,141,.3);
+  font-size: 1.65rem;
+  font-weight: 900;
+}
+.package-hero-feature .solar-feature-meta {
+  z-index: 2;
+}
+@media (max-width: 760px) {
+  .package-card {
+    grid-template-columns: 1fr;
+  }
+  .package-photo-stack {
+    min-height: 360px;
+    grid-template-rows: minmax(0, 1fr) 34px minmax(0, 1fr);
+  }
+  .package-hero-feature {
+    min-height: 260px;
+  }
+  .package-hero-real {
+    min-height: 210px;
+    gap: 10px;
+    padding: 22px 18px 58px;
+  }
+  .package-hero-station {
+    width: 62%;
+  }
+  .package-hero-panel {
+    width: 34%;
+  }
+}
+</style>
 </head>
 <body>
-<nav class="nav"> <div class="container nav-inner"> <a class="brand" href="index.html#inicio"> <span class="brand-mark"><img src="assets/hojita-removebg-preview.png" alt="" aria-hidden="true"></span> <span>Soberana Solutions</span> </a> <button class="nav-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="navMenu"><span></span><span></span><span></span></button> <div class="nav-menu" id="navMenu"> <div class="nav-links"> <a href="index.html#categorias">Categorías</a> <a href="index.html#modelos">Modelos</a> <a href="index.html#recomendador">Recomendaciones</a> <div class="nav-dropdown"> <button class="nav-dropdown-button active" type="button" aria-haspopup="true" aria-expanded="false">Productos</button> <div class="nav-dropdown-menu"><a href="paneles.html">Paneles</a> <a class="active" href="paquetes.html">Paquetes</a> <a href="baterias.html">Baterías</a> <a href="inteligentes.html">Inteligentes</a></div> </div> </div> <div class="nav-actions"><a class="nav-cta" href="index.html#modelos">Ver modelos</a></div> </div> </div></nav>
+<nav class="nav"> <div class="container nav-inner"> <a class="brand" href="index.html#inicio"> <span class="brand-mark"><img src="assets/hojita-removebg-preview.png" alt="" aria-hidden="true"></span> <span>Soberana Solutions</span> </a> <button class="nav-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="navMenu"><span></span><span></span><span></span></button> <div class="nav-menu" id="navMenu"> <div class="nav-links"> <a href="index.html#categorias">Categorías</a> <a href="index.html#modelos">Modelos</a> <a href="index.html#recomendador">Recomendaciones</a> <div class="nav-dropdown"> <button class="nav-dropdown-button" type="button" aria-haspopup="true" aria-expanded="false">Productos</button> <div class="nav-dropdown-menu"><a href="paneles.html">Paneles</a> <a href="paquetes.html">Paquetes</a> <a href="baterias.html">Baterías</a> <a href="inteligentes.html">Inteligentes</a></div> </div> </div> <div class="nav-actions"><button class="lang-toggle" id="langToggle" type="button" aria-label="Switch to English">ES</button><a class="nav-cta" href="index.html#modelos">Ver modelos</a></div> </div> </div></nav>
 <main>
 <section class="section solar-catalog-hero">
   <div class="container solar-hero-grid">
     <div>
       <div class="kicker">Combos solares</div>
-      <h1>Paquetes</h1>
-      <p>Combinaciones listas para entender qué estación, panel, batería o accesorio conviene según el tipo de respaldo que necesita el cliente.</p>
+      <h1>Paquetes solares</h1>
+      <p>Equipo EcoFlow más panel correspondiente, con precio combinado, tiempo de carga solar y autonomía estimada según dispositivos conectados.</p>
       <div class="hero-actions">
         <a class="btn primary" href="#paquetes">Ver paquetes</a>
         <a class="btn" href="paneles.html">Ver paneles</a>
       </div>
     </div>
-    <div class="solar-feature">
-      <div class="package-hero" aria-hidden="true"><span></span><span></span><span></span></div>
+    <div class="solar-feature package-hero-feature">
+      <div class="package-hero-real" aria-hidden="true">
+        <img class="package-hero-station" src="assets/river-3-hero-clean.png" alt="">
+        <div class="package-plus">+</div>
+        <img class="package-hero-panel" src="assets/panels/panel-solar-ecoflow-400w-clean.png" alt="">
+      </div>
       <div class="solar-feature-meta">
         <strong>Paquetes EcoFlow</strong>
-        <small>Estación · panel · batería · control</small>
+        <small>Equipo + panel solar</small>
       </div>
     </div>
   </div>
 </section>
 <section class="section" id="paquetes">
   <div class="container">
-    <div class="section-head">
-      <div>
-        <div class="kicker">Ejemplos de paquetes</div>
-        <h2>Combos disponibles</h2>
-      </div>
-      <p class="section-desc">Paquetes pensados para explicar rápido qué puede resolver cada combinación. La compatibilidad exacta debe validarse antes de cerrar venta.</p>
-    </div>
     <div class="solar-product-grid">
-      <article class="solar-product-card">
-        <div class="solar-product-image product-photo-wrap"><img class="product-photo" src="https://cdn.shopify.com/s/files/1/0593/6132/9231/files/ecoflow-us-ecoflow-river-3-portable-power-station-r3-1174069423.png?v=1756976053" alt="RIVER 3 + panel 60 W" loading="lazy"></div>
+      <article class="solar-product-card package-card">
+        <div class="solar-product-image product-photo-wrap package-photo-stack">
+          <div class="package-photo-slot package-photo-station">
+            <img class="product-photo" src="https://cdn.shopify.com/s/files/1/0593/6132/9231/files/ecoflow-us-ecoflow-river-3-portable-power-station-r3-1174069423.png?v=1756976053" alt="RIVER 3" loading="lazy">
+          </div>
+          <div class="package-plus" aria-hidden="true">+</div>
+          <div class="package-photo-slot package-photo-panel">
+            <img class="product-photo" src="assets/panels/panel-solar-ecoflow-110w-clean.png" alt="Panel Solar EcoFlow 110W" loading="lazy">
+          </div>
+        </div>
         <div class="solar-product-body">
-          <span class="family-badge">Paquete</span>
-          <div class="product-title-row"><h3>RIVER 3 + panel 60 W</h3><span class="card-price"><strong>$8,099</strong><em>Bajo pedido, entrega 4-5 días</em></span></div>
-          <p class="product-description">Paquete básico para emergencias ligeras: mantiene celulares, módem/router, luces pequeñas y recarga solar compacta durante el día.</p>
+          <span class="family-badge">Emergencia ligera</span>
+          <div class="product-title-row"><h3>RIVER 3 + Panel Solar EcoFlow 110W</h3><span class="card-price"><strong>$9,348.27</strong><em>Bajo pedido</em></span></div>
+          <p class="product-description">RIVER 3 con Panel Solar EcoFlow 110W. Paquete ultra portátil para apagones cortos, comunicación, luz básica y recarga solar durante el día. Carga solar estimada: 2.6 h en sol útil.</p>
+          <p class="product-description"><strong>Carga con panel:</strong> 2.6 h aprox. en sol útil. <strong>Capacidad:</strong> 230 Wh. <strong>Salida:</strong> 300 W.</p>
+          <p class="product-description">Pensado para internet, celular, iluminación LED y una laptop eficiente. No conviene para refrigerador, microondas o cargas de calor.</p>
+          <ul class="package-runtime-list"><li><span>1 dispositivo: módem/router 12 W</span><strong>16 h</strong></li><li><span>2 dispositivos: módem + luz LED 22 W</span><strong>8.9 h</strong></li><li><span>3 dispositivos: módem + luz + celulares 32 W</span><strong>6.1 h</strong></li><li><span>4 dispositivos: lo anterior + laptop eficiente 77 W</span><strong>2.5 h</strong></li></ul>
           <a class="details-btn" href="#">Ver más</a>
         </div>
       </article>
-      <article class="solar-product-card">
-        <div class="solar-product-image product-photo-wrap"><img class="product-photo" src="https://cdn.shopify.com/s/files/1/0593/6132/9231/files/ecoflow-us-ecoflow-river-3-portable-power-station-r3-1174069423.png?v=1756976053" alt="RIVER 3 + panel 110 W" loading="lazy"></div>
+      <article class="solar-product-card package-card">
+        <div class="solar-product-image product-photo-wrap package-photo-stack">
+          <div class="package-photo-slot package-photo-station">
+            <img class="product-photo" src="https://cdn.shopify.com/s/files/1/0593/6132/9231/files/ecoflow-us-ecoflow-river-3-plus-portable-power-station-standalone-36158995398729.png?v=1752041545" alt="RIVER 3 Plus" loading="lazy">
+          </div>
+          <div class="package-plus" aria-hidden="true">+</div>
+          <div class="package-photo-slot package-photo-panel">
+            <img class="product-photo" src="assets/panels/panel-solar-ecoflow-220w-clean.png" alt="Panel Solar EcoFlow 220W" loading="lazy">
+          </div>
+        </div>
         <div class="solar-product-body">
-          <span class="family-badge">Paquete</span>
-          <div class="product-title-row"><h3>RIVER 3 + panel 110 W</h3><span class="card-price"><strong>$10,299</strong><em>Bajo pedido, entrega 4-5 días</em></span></div>
-          <p class="product-description">Paquete portátil para internet, celulares, laptop ligera y luces. El panel de 110W ayuda a recuperar batería más rápido que un panel pequeño.</p>
+          <span class="family-badge">Emergencia ligera</span>
+          <div class="product-title-row"><h3>RIVER 3 Plus + Panel Solar EcoFlow 220W</h3><span class="card-price"><strong>$13,679.27</strong><em>Bajo pedido</em></span></div>
+          <p class="product-description">RIVER 3 Plus con Panel Solar EcoFlow 220W. Paquete ultra portátil para apagones cortos, comunicación, luz básica y recarga solar durante el día. Carga solar estimada: 98 min en sol útil.</p>
+          <p class="product-description"><strong>Carga con panel:</strong> 98 min aprox. en sol útil. <strong>Capacidad:</strong> 286 Wh. <strong>Salida:</strong> 600 W.</p>
+          <p class="product-description">Pensado para internet, celular, iluminación LED y una laptop eficiente. No conviene para refrigerador, microondas o cargas de calor.</p>
+          <ul class="package-runtime-list"><li><span>1 dispositivo: módem/router 12 W</span><strong>20 h</strong></li><li><span>2 dispositivos: módem + luz LED 22 W</span><strong>11 h</strong></li><li><span>3 dispositivos: módem + luz + celulares 32 W</span><strong>7.6 h</strong></li><li><span>4 dispositivos: lo anterior + laptop eficiente 77 W</span><strong>3.2 h</strong></li></ul>
           <a class="details-btn" href="#">Ver más</a>
         </div>
       </article>
-      <article class="solar-product-card">
-        <div class="solar-product-image product-photo-wrap"><img class="product-photo" src="https://cdn.shopify.com/s/files/1/0593/6132/9231/files/ecoflow-us-ecoflow-river-2-max-portable-power-station-30042740555849_1500x_d4588403-9891-493c-a7c9-990bda1498dd.webp?v=1762658410" alt="RIVER 2 Max + panel 160 W" loading="lazy"></div>
+      <article class="solar-product-card package-card">
+        <div class="solar-product-image product-photo-wrap package-photo-stack">
+          <div class="package-photo-slot package-photo-station">
+            <img class="product-photo" src="https://cdn.shopify.com/s/files/1/0593/6132/9231/files/ecoflow-us-ecoflow-river-2-max-portable-power-station-30042740555849_1500x_d4588403-9891-493c-a7c9-990bda1498dd.webp?v=1762658410" alt="RIVER 2 Max" loading="lazy">
+          </div>
+          <div class="package-plus" aria-hidden="true">+</div>
+          <div class="package-photo-slot package-photo-panel">
+            <img class="product-photo" src="assets/panels/panel-solar-ecoflow-220w-clean.png" alt="Panel Solar EcoFlow 220W" loading="lazy">
+          </div>
+        </div>
         <div class="solar-product-body">
-          <span class="family-badge">Paquete</span>
-          <div class="product-title-row"><h3>RIVER 2 Max + panel 160 W</h3><span class="card-price"><strong>$15,099</strong><em>Bajo pedido, entrega 4-5 días</em></span></div>
-          <p class="product-description">Paquete para home office y entretenimiento por más horas. Sirve para laptop, módem, monitor, TV o ventilador con apoyo solar durante el día.</p>
+          <span class="family-badge">Home office y entretenimiento</span>
+          <div class="product-title-row"><h3>RIVER 2 Max + Panel Solar EcoFlow 220W</h3><span class="card-price"><strong>$14,279.27</strong><em>Bajo pedido</em></span></div>
+          <p class="product-description">RIVER 2 Max con Panel Solar EcoFlow 220W. Paquete para home office, entretenimiento ligero y ventilación básica con panel de 220W. Carga solar estimada: 2.9 h en sol útil.</p>
+          <p class="product-description"><strong>Carga con panel:</strong> 2.9 h aprox. en sol útil. <strong>Capacidad:</strong> 512 Wh. <strong>Salida:</strong> 500 W.</p>
+          <p class="product-description">Para trabajar varias horas con internet, laptop, monitor, TV o ventilador. Es portátil, pero no sustituye un sistema residencial.</p>
+          <ul class="package-runtime-list"><li><span>1 dispositivo: laptop eficiente 45 W</span><strong>9.7 h</strong></li><li><span>2 dispositivos: módem + laptop 57 W</span><strong>7.6 h</strong></li><li><span>3 dispositivos: módem + laptop + monitor 82 W</span><strong>5.3 h</strong></li><li><span>4 dispositivos: módem + laptop + monitor + ventilador 132 W</span><strong>3.3 h</strong></li><li><span>5 dispositivos: lo anterior + TV 212 W</span><strong>2.1 h</strong></li></ul>
           <a class="details-btn" href="#">Ver más</a>
         </div>
       </article>
-      <article class="solar-product-card">
-        <div class="solar-product-image product-photo-wrap"><img class="product-photo" src="https://cdn.shopify.com/s/files/1/0593/6132/9231/files/ecoflow-delta-2-max-portable-power-station-51305159590231.png?v=1718876774" alt="DELTA 2 Max + panel 400 W" loading="lazy"></div>
+      <article class="solar-product-card package-card">
+        <div class="solar-product-image product-photo-wrap package-photo-stack">
+          <div class="package-photo-slot package-photo-station">
+            <img class="product-photo" src="https://cdn.shopify.com/s/files/1/0593/6132/9231/files/ecoflow-us-ecoflow-river-3-plus-portable-power-station-standalone-35888815702089_85b7f2bf-3fb2-4570-874e-870566788373.png?v=1775123729" alt="RIVER 3 Max" loading="lazy">
+          </div>
+          <div class="package-plus" aria-hidden="true">+</div>
+          <div class="package-photo-slot package-photo-panel">
+            <img class="product-photo" src="assets/panels/panel-solar-ecoflow-220w-clean.png" alt="Panel Solar EcoFlow 220W" loading="lazy">
+          </div>
+        </div>
         <div class="solar-product-body">
-          <span class="family-badge">Paquete</span>
-          <div class="product-title-row"><h3>DELTA 2 Max + panel 400 W</h3><span class="card-price"><strong>$41,599</strong><em>Bajo pedido, entrega 4-5 días</em></span></div>
-          <p class="product-description">Paquete para respaldo de cargas esenciales del hogar. Puede apoyar refrigerador, internet, TV, luces y oficina, con carga solar más rápida.</p>
+          <span class="family-badge">Home office y entretenimiento</span>
+          <div class="product-title-row"><h3>RIVER 3 Max + Panel Solar EcoFlow 220W</h3><span class="card-price"><strong>$16,279.27</strong><em>Bajo pedido</em></span></div>
+          <p class="product-description">RIVER 3 Max con Panel Solar EcoFlow 220W. Paquete para home office, entretenimiento ligero y ventilación básica con panel de 220W. Carga solar estimada: 3.3 h en sol útil.</p>
+          <p class="product-description"><strong>Carga con panel:</strong> 3.3 h aprox. en sol útil. <strong>Capacidad:</strong> 572 Wh. <strong>Salida:</strong> 600 W.</p>
+          <p class="product-description">Para trabajar varias horas con internet, laptop, monitor, TV o ventilador. Es portátil, pero no sustituye un sistema residencial.</p>
+          <ul class="package-runtime-list"><li><span>1 dispositivo: laptop eficiente 45 W</span><strong>11 h</strong></li><li><span>2 dispositivos: módem + laptop 57 W</span><strong>8.5 h</strong></li><li><span>3 dispositivos: módem + laptop + monitor 82 W</span><strong>5.9 h</strong></li><li><span>4 dispositivos: módem + laptop + monitor + ventilador 132 W</span><strong>3.7 h</strong></li><li><span>5 dispositivos: lo anterior + TV 212 W</span><strong>2.3 h</strong></li></ul>
           <a class="details-btn" href="#">Ver más</a>
         </div>
       </article>
-      <article class="solar-product-card">
-        <div class="solar-product-image product-photo-wrap"><img class="product-photo" src="https://cdn.shopify.com/s/files/1/0593/6132/9231/files/ecoflow-delta-2-max-portable-power-station-51305159590231.png?v=1718876774" alt="DELTA 2 Max + batería adicional" loading="lazy"></div>
+      <article class="solar-product-card package-card">
+        <div class="solar-product-image product-photo-wrap package-photo-stack">
+          <div class="package-photo-slot package-photo-station">
+            <img class="product-photo" src="https://cdn.shopify.com/s/files/1/0593/6132/9231/files/ecoflow-us-ecoflow-river-2-pro-portable-power-station-30042784006217_1500x_0df8c4aa-09a0-4fc7-b463-e0dc0623a685.webp?v=1733970158" alt="RIVER 2 Pro" loading="lazy">
+          </div>
+          <div class="package-plus" aria-hidden="true">+</div>
+          <div class="package-photo-slot package-photo-panel">
+            <img class="product-photo" src="assets/panels/panel-solar-ecoflow-220w-clean.png" alt="Panel Solar EcoFlow 220W" loading="lazy">
+          </div>
+        </div>
         <div class="solar-product-body">
-          <span class="family-badge">Paquete</span>
-          <div class="product-title-row"><h3>DELTA 2 Max + batería adicional</h3><span class="card-price"><strong>$44,399</strong><em>Bajo pedido, entrega 4-5 días</em></span></div>
-          <p class="product-description">Paquete para apagones más largos: DELTA 2 Max con batería extra para duplicar autonomía en refrigerador, oficina, luces y equipos esenciales.</p>
+          <span class="family-badge">Home office y entretenimiento</span>
+          <div class="product-title-row"><h3>RIVER 2 Pro + Panel Solar EcoFlow 220W</h3><span class="card-price"><strong>$16,279.27</strong><em>Bajo pedido</em></span></div>
+          <p class="product-description">RIVER 2 Pro con Panel Solar EcoFlow 220W. Paquete para home office, entretenimiento ligero y ventilación básica con panel de 220W. Carga solar estimada: 4.4 h en sol útil.</p>
+          <p class="product-description"><strong>Carga con panel:</strong> 4.4 h aprox. en sol útil. <strong>Capacidad:</strong> 768 Wh. <strong>Salida:</strong> 800 W.</p>
+          <p class="product-description">Para trabajar varias horas con internet, laptop, monitor, TV o ventilador. Es portátil, pero no sustituye un sistema residencial.</p>
+          <ul class="package-runtime-list"><li><span>1 dispositivo: laptop eficiente 45 W</span><strong>15 h</strong></li><li><span>2 dispositivos: módem + laptop 57 W</span><strong>11 h</strong></li><li><span>3 dispositivos: módem + laptop + monitor 82 W</span><strong>8.0 h</strong></li><li><span>4 dispositivos: módem + laptop + monitor + ventilador 132 W</span><strong>4.9 h</strong></li><li><span>5 dispositivos: lo anterior + TV 212 W</span><strong>3.1 h</strong></li></ul>
           <a class="details-btn" href="#">Ver más</a>
         </div>
       </article>
-      <article class="solar-product-card">
-        <div class="solar-product-image product-photo-wrap"><img class="product-photo" src="https://cdn.shopify.com/s/files/1/0593/6132/9231/files/ecoflow-us-ecoflow-delta-pro-portable-power-station-dp-delta-pro-portable-power-station-1179495743.png?v=1756889795" alt="DELTA Pro + panel 400 W" loading="lazy"></div>
+      <article class="solar-product-card package-card">
+        <div class="solar-product-image product-photo-wrap package-photo-stack">
+          <div class="package-photo-slot package-photo-station">
+            <img class="product-photo" src="https://cdn.shopify.com/s/files/1/0593/6132/9231/files/ecoflow-us-ecoflow-river-3-plus-portable-power-station-standalone-35888815669321_85f32f34-63f6-4830-8f25-391020407b37.png?v=1752564431" alt="RIVER 3 Max Plus" loading="lazy">
+          </div>
+          <div class="package-plus" aria-hidden="true">+</div>
+          <div class="package-photo-slot package-photo-panel">
+            <img class="product-photo" src="assets/panels/panel-solar-ecoflow-220w-clean.png" alt="Panel Solar EcoFlow 220W" loading="lazy">
+          </div>
+        </div>
         <div class="solar-product-body">
-          <span class="family-badge">Paquete</span>
-          <div class="product-title-row"><h3>DELTA Pro + panel 400 W</h3><span class="card-price"><strong>$52,499</strong><em>Bajo pedido, entrega 4-5 días</em></span></div>
-          <p class="product-description">Paquete de respaldo residencial o profesional para cargas más grandes. Conviene para refrigerador, congelador, herramientas, bomba pequeña y apoyo solar.</p>
+          <span class="family-badge">Home office y entretenimiento</span>
+          <div class="product-title-row"><h3>RIVER 3 Max Plus + Panel Solar EcoFlow 220W</h3><span class="card-price"><strong>$16,479.27</strong><em>Bajo pedido</em></span></div>
+          <p class="product-description">RIVER 3 Max Plus con Panel Solar EcoFlow 220W. Paquete para home office, entretenimiento ligero y ventilación básica con panel de 220W. Carga solar estimada: 4.9 h en sol útil.</p>
+          <p class="product-description"><strong>Carga con panel:</strong> 4.9 h aprox. en sol útil. <strong>Capacidad:</strong> 858 Wh. <strong>Salida:</strong> 600 W.</p>
+          <p class="product-description">Para trabajar varias horas con internet, laptop, monitor, TV o ventilador. Es portátil, pero no sustituye un sistema residencial.</p>
+          <ul class="package-runtime-list"><li><span>1 dispositivo: laptop eficiente 45 W</span><strong>16 h</strong></li><li><span>2 dispositivos: módem + laptop 57 W</span><strong>13 h</strong></li><li><span>3 dispositivos: módem + laptop + monitor 82 W</span><strong>8.9 h</strong></li><li><span>4 dispositivos: módem + laptop + monitor + ventilador 132 W</span><strong>5.5 h</strong></li><li><span>5 dispositivos: lo anterior + TV 212 W</span><strong>3.4 h</strong></li></ul>
           <a class="details-btn" href="#">Ver más</a>
         </div>
       </article>
-      <article class="solar-product-card">
-        <div class="solar-product-image product-photo-wrap"><img class="product-photo" src="https://cdn.shopify.com/s/files/1/0593/6132/9231/files/ecoflow-wave-3-portable-air-conditioner-1161397081.png?v=1766998641" alt="WAVE 3 + DELTA 2 Max" loading="lazy"></div>
+      <article class="solar-product-card package-card">
+        <div class="solar-product-image product-photo-wrap package-photo-stack">
+          <div class="package-photo-slot package-photo-station">
+            <img class="product-photo" src="https://mx.ecoflow.com/cdn/shop/files/e980_a21252ea-2bab-41c4-819c-fddd2c67a79a.png?v=1762845476" alt="DELTA 2 Black" loading="lazy">
+          </div>
+          <div class="package-plus" aria-hidden="true">+</div>
+          <div class="package-photo-slot package-photo-panel">
+            <img class="product-photo" src="assets/panels/panel-solar-ecoflow-400w-clean.png" alt="Panel Solar EcoFlow 400W" loading="lazy">
+          </div>
+        </div>
         <div class="solar-product-body">
-          <span class="family-badge">Paquete</span>
-          <div class="product-title-row"><h3>WAVE 3 + DELTA 2 Max</h3><span class="card-price"><strong>$50,699</strong><em>Bajo pedido, entrega 4-5 días</em></span></div>
-          <p class="product-description">Paquete para climatizar espacios pequeños sin depender siempre de la toma de corriente. Útil para cuarto, camper, oficina móvil o emergencia.</p>
+          <span class="family-badge">Cargas esenciales del hogar</span>
+          <div class="product-title-row"><h3>DELTA 2 Black + Panel Solar EcoFlow 400W</h3><span class="card-price"><strong>$21,494.23</strong><em>Bajo pedido</em></span></div>
+          <p class="product-description">DELTA 2 Black con Panel Solar EcoFlow 400W. Paquete para respaldo esencial de casa: refrigerador eficiente, internet, luces, TV y computadoras, con carga solar de apoyo. Carga solar estimada: 3.1 h en sol útil.</p>
+          <p class="product-description"><strong>Carga con panel:</strong> 3.1 h aprox. en sol útil. <strong>Capacidad:</strong> 980 Wh. <strong>Salida:</strong> 500 W.</p>
+          <p class="product-description">Adecuado para refrigerador eficiente, internet, luces, TV, computadoras y algunos aparatos de cocina usados por periodos cortos.</p>
+          <ul class="package-runtime-list"><li><span>1 dispositivo: refrigerador eficiente promedio 120 W</span><strong>6.9 h</strong></li><li><span>2 dispositivos: refrigerador + módem 132 W</span><strong>6.3 h</strong></li><li><span>3 dispositivos: refrigerador + módem + luces 162 W</span><strong>5.1 h</strong></li><li><span>4 dispositivos: lo anterior + TV 242 W</span><strong>3.4 h</strong></li><li><span>5 dispositivos: lo anterior + laptop 287 W</span><strong>2.9 h</strong></li></ul>
           <a class="details-btn" href="#">Ver más</a>
         </div>
       </article>
-      <article class="solar-product-card">
-        <div class="solar-product-image product-photo-wrap"><img class="product-photo" src="https://cdn.shopify.com/s/files/1/0593/6132/9231/files/ecoflow-ecoflow-delta-pro-ultra-whole-home-backup-power-ecoflow-delta-pro-ultra-32618370236489.png?v=1740542286" alt="DELTA Pro Ultra + batería" loading="lazy"></div>
+      <article class="solar-product-card package-card">
+        <div class="solar-product-image product-photo-wrap package-photo-stack">
+          <div class="package-photo-slot package-photo-station">
+            <img class="product-photo" src="https://cdn.shopify.com/s/files/1/0593/6132/9231/files/ecoflow-us-ecoflow-delta-3-plus-portable-power-station-standalone-delta-3-plus-1179495741.png?v=1756975490" alt="DELTA 3" loading="lazy">
+          </div>
+          <div class="package-plus" aria-hidden="true">+</div>
+          <div class="package-photo-slot package-photo-panel">
+            <img class="product-photo" src="assets/panels/panel-solar-ecoflow-400w-clean.png" alt="Panel Solar EcoFlow 400W" loading="lazy">
+          </div>
+        </div>
         <div class="solar-product-body">
-          <span class="family-badge">Paquete</span>
-          <div class="product-title-row"><h3>DELTA Pro Ultra + batería</h3><span class="card-price"><strong>$126,099</strong><em>Bajo pedido, entrega 4-5 días</em></span></div>
-          <p class="product-description">Paquete residencial de alta capacidad para respaldar circuitos importantes de la casa. Conviene cuando quieres crecer autonomía por etapas.</p>
+          <span class="family-badge">Cargas esenciales del hogar</span>
+          <div class="product-title-row"><h3>DELTA 3 + Panel Solar EcoFlow 400W</h3><span class="card-price"><strong>$26,994.23</strong><em>Bajo pedido</em></span></div>
+          <p class="product-description">DELTA 3 con Panel Solar EcoFlow 400W. Paquete para respaldo esencial de casa: refrigerador eficiente, internet, luces, TV y computadoras, con carga solar de apoyo. Carga solar estimada: 3.2 h en sol útil.</p>
+          <p class="product-description"><strong>Carga con panel:</strong> 3.2 h aprox. en sol útil. <strong>Capacidad:</strong> 1,024 Wh. <strong>Salida:</strong> 1,800 W.</p>
+          <p class="product-description">Adecuado para refrigerador eficiente, internet, luces, TV, computadoras y algunos aparatos de cocina usados por periodos cortos.</p>
+          <ul class="package-runtime-list"><li><span>1 dispositivo: refrigerador eficiente promedio 120 W</span><strong>7.3 h</strong></li><li><span>2 dispositivos: refrigerador + módem 132 W</span><strong>6.6 h</strong></li><li><span>3 dispositivos: refrigerador + módem + luces 162 W</span><strong>5.4 h</strong></li><li><span>4 dispositivos: lo anterior + TV 242 W</span><strong>3.6 h</strong></li><li><span>5 dispositivos: lo anterior + laptop 287 W</span><strong>3.0 h</strong></li></ul>
           <a class="details-btn" href="#">Ver más</a>
         </div>
       </article>
-      <article class="solar-product-card">
-        <div class="solar-product-image product-photo-wrap"><img class="product-photo" src="https://cdn.shopify.com/s/files/1/0593/6132/9231/files/ecoflow-ecoflow-delta-pro-ultra-whole-home-backup-power-ecoflow-delta-pro-ultra-32618370236489.png?v=1740542286" alt="DELTA Pro Ultra + batería + Smart Home Panel 2" loading="lazy"></div>
+      <article class="solar-product-card package-card">
+        <div class="solar-product-image product-photo-wrap package-photo-stack">
+          <div class="package-photo-slot package-photo-station">
+            <img class="product-photo" src="assets/delta-3-plus-combo.png" alt="DELTA 3 Plus" loading="lazy">
+          </div>
+          <div class="package-plus" aria-hidden="true">+</div>
+          <div class="package-photo-slot package-photo-panel">
+            <img class="product-photo" src="assets/panels/panel-solar-rigido-400w-clean.png" alt="Panel Solar Rígido 400W" loading="lazy">
+          </div>
+        </div>
         <div class="solar-product-body">
-          <span class="family-badge">Paquete</span>
-          <div class="product-title-row"><h3>DELTA Pro Ultra + batería + Smart Home Panel 2</h3><span class="card-price"><strong>$165,099</strong><em>Bajo pedido, entrega 4-5 días</em></span></div>
-          <p class="product-description">Sistema residencial más completo: batería Pro Ultra con panel inteligente para administrar circuitos de casa como refrigerador, luces, internet o bomba.</p>
+          <span class="family-badge">Cargas esenciales del hogar</span>
+          <div class="product-title-row"><h3>DELTA 3 Plus + Panel Solar Rígido 400W</h3><span class="card-price"><strong>$31,398.20</strong><em>Bajo pedido</em></span></div>
+          <p class="product-description">DELTA 3 Plus con Panel Solar Rígido 400W. Paquete para respaldo esencial de casa: refrigerador eficiente, internet, luces, TV y computadoras, con carga solar de apoyo. Carga solar estimada: 6.4 h en sol útil.</p>
+          <p class="product-description"><strong>Carga con panel:</strong> 6.4 h aprox. en sol útil. <strong>Capacidad:</strong> 2,048 Wh. <strong>Salida:</strong> 1,800 W.</p>
+          <p class="product-description">Adecuado para refrigerador eficiente, internet, luces, TV, computadoras y algunos aparatos de cocina usados por periodos cortos.</p>
+          <ul class="package-runtime-list"><li><span>1 dispositivo: refrigerador eficiente promedio 120 W</span><strong>15 h</strong></li><li><span>2 dispositivos: refrigerador + módem 132 W</span><strong>13 h</strong></li><li><span>3 dispositivos: refrigerador + módem + luces 162 W</span><strong>11 h</strong></li><li><span>4 dispositivos: lo anterior + TV 242 W</span><strong>7.2 h</strong></li><li><span>5 dispositivos: lo anterior + laptop 287 W</span><strong>6.1 h</strong></li></ul>
+          <a class="details-btn" href="#">Ver más</a>
+        </div>
+      </article>
+      <article class="solar-product-card package-card">
+        <div class="solar-product-image product-photo-wrap package-photo-stack">
+          <div class="package-photo-slot package-photo-station">
+            <img class="product-photo" src="https://cdn.shopify.com/s/files/1/0593/6132/9231/files/ecoflow-delta-2-max-portable-power-station-51305159590231.png?v=1718876774" alt="DELTA 2 Max" loading="lazy">
+          </div>
+          <div class="package-plus" aria-hidden="true">+</div>
+          <div class="package-photo-slot package-photo-panel">
+            <img class="product-photo" src="assets/panels/panel-solar-rigido-400w-clean.png" alt="Panel Solar Rígido 400W" loading="lazy">
+          </div>
+        </div>
+        <div class="solar-product-body">
+          <span class="family-badge">Cargas esenciales del hogar</span>
+          <div class="product-title-row"><h3>DELTA 2 Max + Panel Solar Rígido 400W</h3><span class="card-price"><strong>$32,998.20</strong><em>Bajo pedido</em></span></div>
+          <p class="product-description">DELTA 2 Max con Panel Solar Rígido 400W. Paquete para respaldo esencial de casa: refrigerador eficiente, internet, luces, TV y computadoras, con carga solar de apoyo. Carga solar estimada: 6.4 h en sol útil.</p>
+          <p class="product-description"><strong>Carga con panel:</strong> 6.4 h aprox. en sol útil. <strong>Capacidad:</strong> 2,048 Wh. <strong>Salida:</strong> 2,400 W.</p>
+          <p class="product-description">Adecuado para refrigerador eficiente, internet, luces, TV, computadoras y algunos aparatos de cocina usados por periodos cortos.</p>
+          <ul class="package-runtime-list"><li><span>1 dispositivo: refrigerador eficiente promedio 120 W</span><strong>15 h</strong></li><li><span>2 dispositivos: refrigerador + módem 132 W</span><strong>13 h</strong></li><li><span>3 dispositivos: refrigerador + módem + luces 162 W</span><strong>11 h</strong></li><li><span>4 dispositivos: lo anterior + TV 242 W</span><strong>7.2 h</strong></li><li><span>5 dispositivos: lo anterior + laptop 287 W</span><strong>6.1 h</strong></li></ul>
+          <a class="details-btn" href="#">Ver más</a>
+        </div>
+      </article>
+      <article class="solar-product-card package-card">
+        <div class="solar-product-image product-photo-wrap package-photo-stack">
+          <div class="package-photo-slot package-photo-station">
+            <img class="product-photo" src="https://cdn.shopify.com/s/files/1/0593/6132/9231/files/ecoflow-us-ecoflow-delta-pro-portable-power-station-dp-delta-pro-portable-power-station-1179495743.png?v=1756889795" alt="DELTA Pro" loading="lazy">
+          </div>
+          <div class="package-plus" aria-hidden="true">+</div>
+          <div class="package-photo-slot package-photo-panel">
+            <img class="product-photo" src="assets/panels/panel-solar-rigido-400w-clean.png" alt="Panel Solar Rígido 400W" loading="lazy">
+          </div>
+        </div>
+        <div class="solar-product-body">
+          <span class="family-badge">Respaldo residencial y cargas grandes</span>
+          <div class="product-title-row"><h3>DELTA Pro + Panel Solar Rígido 400W</h3><span class="card-price"><strong>$37,598.20</strong><em>Bajo pedido</em></span></div>
+          <p class="product-description">DELTA Pro con Panel Solar Rígido 400W. Paquete para respaldo residencial, herramientas, RV o circuitos prioritarios. El panel de 400W aporta carga de apoyo; para cargar más rápido se recomienda ampliar arreglo solar. Carga solar estimada con este panel: 11 h.</p>
+          <p class="product-description"><strong>Carga con panel:</strong> 11 h aprox. en sol útil. <strong>Capacidad:</strong> 3,600 Wh. <strong>Salida:</strong> 3,600 W.</p>
+          <p class="product-description">Para circuitos prioritarios, refrigerador, congelador, bomba, herramientas, equipos sensibles o respaldo residencial con cálculo de cargas.</p>
+          <ul class="package-runtime-list"><li><span>1 carga: refrigerador eficiente 120 W</span><strong>26 h</strong></li><li><span>2 cargas: refrigerador + congelador 220 W</span><strong>14 h</strong></li><li><span>3 cargas: refrigerador + congelador + internet/luces 282 W</span><strong>11 h</strong></li><li><span>4 cargas: lo anterior + bomba pequeña intermitente 782 W</span><strong>3.9 h</strong></li><li><span>5 cargas: lo anterior + herramientas controladas 1,282 W</span><strong>2.4 h</strong></li></ul>
+          <a class="details-btn" href="#">Ver más</a>
+        </div>
+      </article>
+      <article class="solar-product-card package-card">
+        <div class="solar-product-image product-photo-wrap package-photo-stack">
+          <div class="package-photo-slot package-photo-station">
+            <img class="product-photo" src="https://mx.ecoflow.com/cdn/shop/files/ecoflow-ecoflow-delta-pro-3-portable-power-station-31998254350409.png?v=1765856654" alt="DELTA Pro 3" loading="lazy">
+          </div>
+          <div class="package-plus" aria-hidden="true">+</div>
+          <div class="package-photo-slot package-photo-panel">
+            <img class="product-photo" src="assets/panels/panel-solar-rigido-400w-clean.png" alt="Panel Solar Rígido 400W" loading="lazy">
+          </div>
+        </div>
+        <div class="solar-product-body">
+          <span class="family-badge">Respaldo residencial y cargas grandes</span>
+          <div class="product-title-row"><h3>DELTA Pro 3 + Panel Solar Rígido 400W</h3><span class="card-price"><strong>$67,598.20</strong><em>Bajo pedido</em></span></div>
+          <p class="product-description">DELTA Pro 3 con Panel Solar Rígido 400W. Paquete para respaldo residencial, herramientas, RV o circuitos prioritarios. El panel de 400W aporta carga de apoyo; para cargar más rápido se recomienda ampliar arreglo solar. Carga solar estimada con este panel: 13 h.</p>
+          <p class="product-description"><strong>Carga con panel:</strong> 13 h aprox. en sol útil. <strong>Capacidad:</strong> 4,096 Wh. <strong>Salida:</strong> 4,000 W.</p>
+          <p class="product-description">Para circuitos prioritarios, refrigerador, congelador, bomba, herramientas, equipos sensibles o respaldo residencial con cálculo de cargas.</p>
+          <ul class="package-runtime-list"><li><span>1 carga: refrigerador eficiente 120 W</span><strong>29 h</strong></li><li><span>2 cargas: refrigerador + congelador 220 W</span><strong>16 h</strong></li><li><span>3 cargas: refrigerador + congelador + internet/luces 282 W</span><strong>12 h</strong></li><li><span>4 cargas: lo anterior + bomba pequeña intermitente 782 W</span><strong>4.5 h</strong></li><li><span>5 cargas: lo anterior + herramientas controladas 1,282 W</span><strong>2.7 h</strong></li></ul>
+          <a class="details-btn" href="#">Ver más</a>
+        </div>
+      </article>
+      <article class="solar-product-card package-card">
+        <div class="solar-product-image product-photo-wrap package-photo-stack">
+          <div class="package-photo-slot package-photo-station">
+            <img class="product-photo" src="https://cdn.shopify.com/s/files/1/0593/6132/9231/files/ecoflow-ecoflow-delta-pro-ultra-whole-home-backup-power-ecoflow-delta-pro-ultra-32618370236489.png?v=1740542286" alt="DELTA Pro Ultra" loading="lazy">
+          </div>
+          <div class="package-plus" aria-hidden="true">+</div>
+          <div class="package-photo-slot package-photo-panel">
+            <img class="product-photo" src="assets/panels/panel-solar-rigido-400w-clean.png" alt="Panel Solar Rígido 400W" loading="lazy">
+          </div>
+        </div>
+        <div class="solar-product-body">
+          <span class="family-badge">Respaldo residencial y cargas grandes</span>
+          <div class="product-title-row"><h3>DELTA Pro Ultra + Panel Solar Rígido 400W</h3><span class="card-price"><strong>$117,399.20</strong><em>Bajo pedido</em></span></div>
+          <p class="product-description">DELTA Pro Ultra con Panel Solar Rígido 400W. Paquete para respaldo residencial, herramientas, RV o circuitos prioritarios. El panel de 400W aporta carga de apoyo; para cargar más rápido se recomienda ampliar arreglo solar. Carga solar estimada con este panel: 19 h.</p>
+          <p class="product-description"><strong>Carga con panel:</strong> 19 h aprox. en sol útil. <strong>Capacidad:</strong> Desde 6 kWh. <strong>Salida:</strong> Desde 7,200 W.</p>
+          <p class="product-description">Para circuitos prioritarios, refrigerador, congelador, bomba, herramientas, equipos sensibles o respaldo residencial con cálculo de cargas.</p>
+          <ul class="package-runtime-list"><li><span>1 carga: refrigerador eficiente 120 W</span><strong>43 h</strong></li><li><span>2 cargas: refrigerador + congelador 220 W</span><strong>23 h</strong></li><li><span>3 cargas: refrigerador + congelador + internet/luces 282 W</span><strong>18 h</strong></li><li><span>4 cargas: lo anterior + bomba pequeña intermitente 782 W</span><strong>6.5 h</strong></li><li><span>5 cargas: lo anterior + herramientas controladas 1,282 W</span><strong>4.0 h</strong></li></ul>
+          <a class="details-btn" href="#">Ver más</a>
+        </div>
+      </article>
+      <article class="solar-product-card package-card">
+        <div class="solar-product-image product-photo-wrap package-photo-stack">
+          <div class="package-photo-slot package-photo-station">
+            <img class="product-photo" src="https://cdn.shopify.com/s/files/1/0593/6132/9231/files/ecoflow-us-ecoflow-delta-3-plus-portable-power-station-standalone-delta-3-plus-1179495741.png?v=1756975490" alt="DELTA 3 Max" loading="lazy">
+          </div>
+          <div class="package-plus" aria-hidden="true">+</div>
+          <div class="package-photo-slot package-photo-panel">
+            <img class="product-photo" src="assets/panels/panel-solar-ecoflow-400w-clean.png" alt="Panel Solar EcoFlow 400W" loading="lazy">
+          </div>
+        </div>
+        <div class="solar-product-body">
+          <span class="family-badge">Cargas esenciales del hogar</span>
+          <div class="product-title-row"><h3>DELTA 3 Max + Panel Solar EcoFlow 400W</h3><span class="card-price"><strong>$38,494.23</strong><em>Bajo pedido</em></span></div>
+          <p class="product-description">DELTA 3 Max con Panel Solar EcoFlow 400W. Paquete para respaldo esencial de casa: refrigerador eficiente, internet, luces, TV y computadoras, con carga solar de apoyo. Carga solar estimada: 6.4 h en sol útil.</p>
+          <p class="product-description"><strong>Carga con panel:</strong> 6.4 h aprox. en sol útil. <strong>Capacidad:</strong> 2,048 Wh. <strong>Salida:</strong> 3,000 W.</p>
+          <p class="product-description">Adecuado para refrigerador eficiente, internet, luces, TV, computadoras y algunos aparatos de cocina usados por periodos cortos.</p>
+          <ul class="package-runtime-list"><li><span>1 dispositivo: refrigerador eficiente promedio 120 W</span><strong>15 h</strong></li><li><span>2 dispositivos: refrigerador + módem 132 W</span><strong>13 h</strong></li><li><span>3 dispositivos: refrigerador + módem + luces 162 W</span><strong>11 h</strong></li><li><span>4 dispositivos: lo anterior + TV 242 W</span><strong>7.2 h</strong></li><li><span>5 dispositivos: lo anterior + laptop 287 W</span><strong>6.1 h</strong></li></ul>
           <a class="details-btn" href="#">Ver más</a>
         </div>
       </article>
