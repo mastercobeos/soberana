@@ -21,7 +21,8 @@ export function middleware(request) {
 
 export const config = {
   matcher: [
-    // Aplica a todo excepto assets estáticos, _next, api, y archivos con extensión.
-    '/((?!_next/static|_next/image|assets|favicon.ico|.*\\..*).*)'
+    // Matcher estándar recomendado por Next.js.
+    // Aplica a todo excepto rutas internas de Next y estáticos comunes.
+    '/((?!_next/static|_next/image|favicon.ico|assets/).*)'
   ]
 };
