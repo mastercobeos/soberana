@@ -4,8 +4,52 @@
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{ margin:0; color:var(--text); font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; line-height:1.55; background:#040906; overflow-x:hidden; position:relative;
-} body::before{ content:""; position:fixed; inset:0; z-index:-2; pointer-events:none; background: radial-gradient( ellipse 118% 102% at 106% 104%, rgba(83,255,150,.68) 0%, rgba(48,225,122,.54) 28%, rgba(22,149,77,.38) 52%, rgba(8,63,35,.22) 70%, transparent 88% ), linear-gradient( 315deg, rgba(62,245,133,.52) 0%, rgba(38,203,105,.42) 28%, rgba(15,111,59,.26) 52%, rgba(5,31,18,.10) 72%, transparent 84% ), linear-gradient( 315deg, #174f2e 0%, #123e25 28%, #0b2719 57%, #06130d 78%, #010302 100% ); background-attachment:fixed;
-} body::after{ content:""; position:fixed; inset:0; z-index:-1; pointer-events:none; background: radial-gradient( ellipse 48% 38% at -8% -8%, rgba(0,0,0,.94) 0%, rgba(0,0,0,.72) 26%, rgba(0,0,0,.32) 48%, transparent 68% ), radial-gradient( ellipse 34% 28% at 18% 18%, rgba(7,28,17,.14) 0%, transparent 70% ), linear-gradient( 315deg, transparent 0%, transparent 64%, rgba(0,0,0,.10) 82%, rgba(0,0,0,.28) 100% );
+}
+/* Fondo con glow verde consistente en todos los tamaños.
+   Se usan gradientes circulares (aspect-ratio independiente) y una capa
+   base fija de 100vmax x 100vmax para que el degradado no se estire por
+   la orientación del viewport. */
+body::before{
+  content:"";
+  position:fixed;
+  z-index:-2;
+  pointer-events:none;
+  top:50%;
+  left:50%;
+  width:150vmax;
+  height:150vmax;
+  transform:translate(-50%,-50%);
+  background:
+    radial-gradient(
+      circle at 78% 78%,
+      rgba(83,255,150,.62) 0%,
+      rgba(48,225,122,.50) 12%,
+      rgba(22,149,77,.34) 24%,
+      rgba(8,63,35,.18) 36%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 18% 18%,
+      rgba(0,0,0,.72) 0%,
+      rgba(0,0,0,.40) 14%,
+      rgba(0,0,0,.14) 26%,
+      transparent 40%
+    ),
+    linear-gradient(315deg,#174f2e 0%,#123e25 22%,#0b2719 44%,#06130d 62%,#010302 82%);
+}
+body::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-1;
+  pointer-events:none;
+  background:
+    radial-gradient(
+      circle at 0% 0%,
+      rgba(0,0,0,.55) 0%,
+      rgba(0,0,0,.25) 26%,
+      transparent 52%
+    );
 } a{color:inherit;text-decoration:none}
 button,input{font:inherit}
 button{cursor:pointer}
@@ -1539,5 +1583,194 @@ main{ position:relative;
     top:80px;
     width:52px;
     height:52px;
+  }
+}
+
+/* ===== Mobile optimizations ===== */
+@media(max-width:900px){
+  /* Hero de subpáginas: dejar que el visual decorativo respire y
+     no atrape las card apiladas dentro con position absoluta. */
+  .solar-feature{
+    min-height:auto;
+    padding:16px 14px 92px;
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+    place-items:stretch;
+  }
+  .solar-feature > .solar-feature-visual,
+  .solar-feature > .panel-folding,
+  .solar-feature > .battery-hero-stack,
+  .solar-feature > .smart-feature-device,
+  .solar-feature > .package-hero{
+    align-self:center;
+    margin:6px 0 10px;
+  }
+  .solar-feature > .solar-product-card{
+    position:relative;
+  }
+  .solar-feature-meta{
+    position:static;
+    padding-top:6px;
+  }
+}
+
+@media(max-width:650px){
+  html{
+    -webkit-text-size-adjust:100%;
+  }
+  .container{
+    width:min(100% - 22px,1180px);
+  }
+  /* Hero principal más compacto en pantallas chicas */
+  .hero{
+    padding:38px 0 30px;
+  }
+  h1{
+    font-size:clamp(2.15rem,10vw,3rem);
+    letter-spacing:-.045em;
+    margin:10px 0 14px;
+  }
+  .hero p{
+    font-size:1rem;
+  }
+  .hero-actions{
+    margin-top:20px;
+    gap:9px;
+  }
+  .btn{
+    padding:11px 15px;
+    font-size:.94rem;
+  }
+  .hero-visual{
+    min-height:280px;
+  }
+  .hero-orbit.one{
+    width:270px;
+    height:270px;
+  }
+  .hero-orbit.two{
+    width:200px;
+    height:200px;
+  }
+  .hero-product{
+    width:min(340px,86vw);
+  }
+  /* Secciones y títulos */
+  .section{
+    padding:44px 0;
+  }
+  .section-head{
+    gap:10px;
+    margin-bottom:20px;
+  }
+  .section-head h2{
+    font-size:clamp(1.7rem,7vw,2.4rem);
+    line-height:1.08;
+  }
+  /* Tarjetas de modelo más compactas */
+  .model-body{
+    padding:16px;
+  }
+  .model-body h3{
+    font-size:1.28rem;
+  }
+  .model-image{
+    height:210px;
+  }
+  .spec-grid{
+    gap:8px;
+    margin:12px 0;
+  }
+  .spec{
+    padding:10px;
+  }
+  .card-actions{
+    gap:8px;
+  }
+  /* Product cards de subpáginas */
+  .solar-product-card{
+    padding:16px;
+    gap:14px;
+    min-height:auto;
+  }
+  .solar-product-image{
+    min-height:150px;
+  }
+  .product-photo{
+    max-width:220px;
+    height:150px;
+  }
+  .solar-product-body h3{
+    font-size:1.2rem;
+  }
+  .product-description{
+    font-size:.92rem;
+    line-height:1.5;
+  }
+  /* Warranty ribbon más discreto */
+  .warranty-ribbon{
+    width:52px;
+    top:-6px;
+  }
+  /* Panel de comparador con scroll horizontal ya presente:
+     reducir padding del panel */
+  .panel-head{
+    padding:14px 15px;
+  }
+  th,td{
+    padding:12px 13px;
+    font-size:.9rem;
+  }
+  /* Modal más cómodo */
+  .modal{
+    padding:10px;
+  }
+  .modal-content{
+    padding:18px;
+  }
+  .modal-content h2{
+    font-size:1.6rem;
+  }
+  /* Dropdown móvil: menú abre pegado al borde derecho sin salirse */
+  .nav-menu{
+    max-width:calc(100vw - 22px);
+  }
+  /* Botón WhatsApp: alejarlo del top para no chocar con hero */
+  .whatsapp-float{
+    top:auto;
+    bottom:22px;
+    right:14px;
+  }
+}
+
+/* Menos peso de GPU en móvil: reducir blur y sombras costosas */
+@media(max-width:900px){
+  .nav,
+  .nav-menu,
+  .nav-dropdown-menu,
+  .category-select-menu,
+  .category-select-wrap,
+  .category-media,
+  .category-card,
+  .modal,
+  .floating,
+  .category-model-name{
+    backdrop-filter:blur(6px);
+    -webkit-backdrop-filter:blur(6px);
+  }
+  .model-card:hover,
+  .category-card:hover,
+  .solar-product-card:hover{
+    transform:none;
+  }
+}
+
+/* Pausar animaciones costosas del hero cuando la pestaña
+   está oculta o el usuario prefiere reducir movimiento */
+@media (prefers-reduced-motion: reduce){
+  .hero-orbit,
+  .hero-product{
+    animation:none;
   }
 }

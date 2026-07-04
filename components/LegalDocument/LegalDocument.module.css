@@ -1,0 +1,42 @@
+.legalHero { padding: 82px 0 34px; }
+.title {
+  margin: 14px 0 20px;
+  font-family: "Avenir Next", "Helvetica Neue", "Segoe UI", sans-serif;
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  font-weight: 550;
+  line-height: 0.98;
+  letter-spacing: -0.045em;
+  color: #fff;
+}
+.desc {
+  max-width: 820px;
+  color: #ffffff;
+  font-size: 1.05rem;
+}
+.updated { margin-top: 18px; font-size: 0.92rem; color: #ffffff; }
+
+.legalSection { padding-top: 24px; padding-bottom: 68px; }
+.doc { max-width: 920px; }
+.doc h2 {
+  margin: 34px 0 10px;
+  font-size: 1.45rem;
+  letter-spacing: -0.02em;
+  color: #fff;
+}
+.doc p {
+  color: #ffffff;
+  margin: 0 0 14px;
+}
+.note {
+  border: 1px solid rgba(247, 201, 92, 0.28);
+  border-radius: 18px;
+  padding: 16px 18px;
+  background: rgba(247, 201, 92, 0.08);
+  color: #fff;
+  margin-bottom: 12px;
+}
+
+@media (max-width: 650px) {
+  .legalHero { padding: 62px 0 22px; }
+  .title { font-size: clamp(2rem, 7vw, 2.6rem); }
+}

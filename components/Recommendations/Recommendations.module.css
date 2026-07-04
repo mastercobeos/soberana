@@ -1,0 +1,70 @@
+.panel {
+  border: 1px solid var(--line);
+  border-radius: 26px;
+  background: rgba(255, 255, 255, 0.025);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+.tableScroll { overflow: auto; }
+.tableScroll table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 780px;
+}
+.tableScroll th,
+.tableScroll td {
+  padding: 15px 17px;
+  text-align: left;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+  color: #ffffff;
+}
+.tableScroll th {
+  background: rgba(87, 227, 137, 0.06);
+  color: var(--accent);
+  font-size: 0.77rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
+
+.pill {
+  display: inline-flex;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(87, 227, 137, 0.10);
+  color: #ffffff;
+  font-weight: 820;
+  gap: 6px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 850;
+  border-bottom: 1px solid rgba(87, 227, 137, 0.55);
+  transition: color 0.2s ease, border-color 0.2s ease, text-shadow 0.2s ease;
+}
+.link::after { content: "↗"; color: var(--accent); font-size: 0.75em; transform: translateY(-1px); }
+.link:hover,
+.link:focus-visible {
+  color: var(--accent);
+  border-color: var(--accent);
+  text-shadow: 0 0 12px rgba(87, 227, 137, 0.42);
+  outline: none;
+}
+
+.connector,
+.suffix {
+  color: #ffffff;
+  font-weight: 650;
+}
+
+@media (max-width: 650px) {
+  .tableScroll th,
+  .tableScroll td { padding: 12px 13px; font-size: 0.9rem; }
+}
