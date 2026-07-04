@@ -1,19 +1,10 @@
 import { NextResponse } from 'next/server';
-import { LOCALES, DEFAULT_LOCALE } from './lib/i18n';
 
-const PUBLIC_FILE = /\.(.*)$/;
+const LOCALES = ['en', 'es'];
+const DEFAULT_LOCALE = 'en';
 
 export function middleware(request) {
   const { pathname } = request.nextUrl;
-
-  if (
-    pathname.startsWith('/_next') ||
-    pathname.startsWith('/api') ||
-    pathname.startsWith('/assets') ||
-    PUBLIC_FILE.test(pathname)
-  ) {
-    return NextResponse.next();
-  }
 
   const hasLocale = LOCALES.some(
     (locale) => pathname === `/${locale}` || pathname.startsWith(`/${locale}/`)
@@ -29,5 +20,8 @@ export function middleware(request) {
 }
 
 export const config = {
-  matcher: ['/((?!_next|api|assets|.*\\..*).*)']
+  matcher: [
+    // Aplica a todo excepto assets estáticos, _next, api, y archivos con extensión.
+    '/((?!_next/static|_next/image|assets|favicon.ico|.*\\..*).*)'
+  ]
 };
