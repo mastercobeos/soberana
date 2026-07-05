@@ -47,22 +47,25 @@ body::before {
   height: 150vmax;
   transform: translate(-50%, -50%);
   background:
+    /* Highlight verde en la esquina inferior-derecha, más contenido */
     radial-gradient(
-      circle at 78% 78%,
-      rgba(83, 255, 150, 0.62) 0%,
-      rgba(48, 225, 122, 0.50) 12%,
-      rgba(22, 149, 77, 0.34) 24%,
-      rgba(8, 63, 35, 0.18) 36%,
-      transparent 50%
+      circle at 78% 82%,
+      rgba(83, 255, 150, 0.42) 0%,
+      rgba(48, 225, 122, 0.30) 22%,
+      rgba(22, 149, 77, 0.16) 42%,
+      transparent 62%
     ),
-    radial-gradient(
-      circle at 18% 18%,
-      rgba(0, 0, 0, 0.72) 0%,
-      rgba(0, 0, 0, 0.40) 14%,
-      rgba(0, 0, 0, 0.14) 26%,
-      transparent 40%
-    ),
-    linear-gradient(315deg, #174f2e 0%, #123e25 22%, #0b2719 44%, #06130d 62%, #010302 82%);
+    /* Base diagonal — verde bottom-right, oscuro real en el resto */
+    linear-gradient(
+      315deg,
+      #1a6b3f 0%,
+      #124e30 20%,
+      #0a3221 38%,
+      #061c14 55%,
+      #030d0a 72%,
+      #010604 88%,
+      #000201 100%
+    );
 }
 body::after {
   content: "";
@@ -73,9 +76,9 @@ body::after {
   background:
     radial-gradient(
       circle at 0% 0%,
-      rgba(0, 0, 0, 0.55) 0%,
-      rgba(0, 0, 0, 0.25) 26%,
-      transparent 52%
+      rgba(0, 0, 0, 0.32) 0%,
+      rgba(0, 0, 0, 0.14) 22%,
+      transparent 42%
     );
 }
 
@@ -177,6 +180,27 @@ main { position: relative; z-index: 1; }
   .kicker { animation: none; }
 }
 
+/* Tipografía compartida por TODOS los botones y controles del sitio.
+   Cubre <button>, <a> estilizados como botón, labels de compare, toggles, etc. */
+button,
+.btn,
+.btn.primary,
+a[class*="btn"],
+[class*="cta"],
+[class*="detailsBtn"],
+[class*="compareBtn"],
+[class*="compareLabel"],
+[class*="compareToggle"],
+[class*="clearBtn"],
+[class*="trayCta"],
+[class*="trayClear"],
+[class*="filterBtn"],
+[class*="langToggle"],
+[class*="detailsBtn"],
+[class*="officialLink"] {
+  font-family: var(--font-button), "Space Grotesk", "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
 /* Botones globales */
 .btn {
   display: inline-flex;
@@ -185,9 +209,10 @@ main { position: relative; z-index: 1; }
   border-radius: 14px;
   background: rgba(255, 255, 255, 0.04);
   color: #fff;
-  padding: 13px 18px;
-  font-weight: 650;
-  letter-spacing: 0.01em;
+  padding: 13px 20px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  letter-spacing: 0.015em;
   transition: 0.2s ease;
 }
 .btn:hover { transform: translateY(-2px); background: rgba(255, 255, 255, 0.08); }
@@ -195,8 +220,8 @@ main { position: relative; z-index: 1; }
   background: linear-gradient(135deg, #57e389 0%, #6dff9f 50%, #57e389 100%);
   color: #052012;
   border-color: transparent;
-  font-weight: 800;
-  padding: 11px 15px;
+  font-weight: 600;
+  padding: 12px 18px;
   box-shadow:
     0 0 0 1px rgba(87, 227, 137, 0.18) inset,
     0 0 16px rgba(87, 227, 137, 0.24),

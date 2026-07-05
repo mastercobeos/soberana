@@ -426,11 +426,13 @@
 .detailsBtn {
   flex: 1;
   border-radius: 12px;
-  padding: 12px 14px;
+  padding: 12px 16px;
   border: 0;
   background: linear-gradient(135deg, #57e389, #6dff9f 55%, #57e389);
   color: #052012;
-  font-weight: 850;
+  font-weight: 600;
+  font-size: 0.92rem;
+  letter-spacing: 0.02em;
   box-shadow:
     0 0 0 1px rgba(87, 227, 137, 0.18) inset,
     0 8px 20px rgba(87, 227, 137, 0.16);
@@ -473,8 +475,9 @@
 }
 .compareLabel {
   color: #ffffff;
-  font-size: 0.82rem;
-  font-weight: 700;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
 }
 .compareToggle:hover {
   border-color: rgba(87, 227, 137, 0.42);
@@ -642,22 +645,24 @@
 
 .trayActions { display: flex; gap: 8px; align-items: center; }
 .trayClear {
-  padding: 10px 14px;
+  padding: 10px 16px;
   border-radius: 12px;
   border: 1px solid var(--line);
   background: transparent;
   color: #ffffff;
-  font-weight: 700;
+  font-weight: 500;
   font-size: 0.88rem;
+  letter-spacing: 0.02em;
 }
 .trayCta {
-  padding: 10px 18px;
+  padding: 10px 20px;
   border: 0;
   border-radius: 12px;
   background: linear-gradient(135deg, #57e389, #6dff9f);
   color: #052012;
-  font-weight: 900;
-  font-size: 0.9rem;
+  font-weight: 600;
+  font-size: 0.92rem;
+  letter-spacing: 0.02em;
   box-shadow: 0 10px 24px rgba(87, 227, 137, 0.24);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }

@@ -300,7 +300,6 @@ function CompareTray({ selected, models, messages, onOpen, onRemove, onClear }) 
 export default function ModelsSection({ data, messages }) {
   const firstCategory = data.categories[0]?.id;
   const [activeFilter, setActiveFilter] = useState(firstCategory);
-  const [search, setSearch] = useState('');
   const [selectedCompare, setSelectedCompare] = useState([]);
   const [modalModel, setModalModel] = useState(null);
   const [highlightName, setHighlightName] = useState(null);
@@ -310,7 +309,6 @@ export default function ModelsSection({ data, messages }) {
       const nextId = event.detail;
       if (data.categories.some((c) => c.id === nextId)) {
         setActiveFilter(nextId);
-        setSearch('');
       }
     };
     window.addEventListener('soberana:filter-category', onFilter);
@@ -323,7 +321,6 @@ export default function ModelsSection({ data, messages }) {
       const model = data.models.find((m) => m.name === name);
       if (!model) return;
       setActiveFilter(model.category);
-      setSearch('');
       requestAnimationFrame(() => {
         const target = document.getElementById(modelAnchorId(name));
         if (!target) return;
@@ -337,13 +334,10 @@ export default function ModelsSection({ data, messages }) {
   }, [data.models]);
 
   const filtered = useMemo(() => {
-    const q = search.trim().toLowerCase();
-    return data.models.filter((m) => {
-      const byCategory = activeFilter === 'all' || m.category === activeFilter;
-      const text = `${m.name} ${m.message} ${m.explanation} ${m.plain} ${m.keywords} ${m.ideal.join(' ')}`.toLowerCase();
-      return byCategory && text.includes(q);
-    });
-  }, [activeFilter, search, data.models]);
+    return data.models.filter(
+      (m) => activeFilter === 'all' || m.category === activeFilter
+    );
+  }, [activeFilter, data.models]);
 
   const toggleCompare = (model) => {
     setSelectedCompare((prev) => {
@@ -412,14 +406,6 @@ export default function ModelsSection({ data, messages }) {
               category={messages.category}
               filterAria={messages.filterAria}
             />
-            <input
-              type="search"
-              className={styles.search}
-              placeholder={messages.searchPlaceholder}
-              value={search}
-              autoComplete="off"
-              onChange={(e) => setSearch(e.target.value)}
-            />
             <span className={styles.resultsCount}>
               {filtered.length} {filtered.length === 1 ? messages.model : messages.model + 's'}
             </span>
@@ -442,41 +428,41 @@ export default function ModelsSection({ data, messages }) {
         </div>
       </section>
 
-      <section className="section" id="comparador">
-        <div className="container">
-          <div
-            className={clsx(styles.panel, selectedCompare.length && styles.panelVisible)}
-          >
-            <div className={styles.panelHead}>
-              <div>
-                <h3>{messages.compareTitle}</h3>
-                <small>{messages.compareSubtitle}</small>
+      {selectedCompare.length > 0 && (
+        <section className="section" id="comparador">
+          <div className="container">
+            <div className={clsx(styles.panel, styles.panelVisible)}>
+              <div className={styles.panelHead}>
+                <div>
+                  <h3>{messages.compareTitle}</h3>
+                  <small>{messages.compareSubtitle}</small>
+                </div>
+                <button
+                  className={styles.clearBtn}
+                  type="button"
+                  onClick={() => setSelectedCompare([])}
+                >
+                  {messages.clear}
+                </button>
               </div>
-              <button
-                className={styles.clearBtn}
-                type="button"
-                onClick={() => setSelectedCompare([])}
-              >
-                {messages.clear}
-              </button>
-            </div>
-            <div className={styles.tableScroll}>
-              <table>
-                <tbody>
-                  {compareRows?.map((row, i) => (
-                    <tr key={i}>
-                      <th>{row[0]}</th>
-                      {row.slice(1).map((v, j) => (
-                        <td key={j}>{v}</td>
-                      ))}
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+              <div className={styles.tableScroll}>
+                <table>
+                  <tbody>
+                    {compareRows?.map((row, i) => (
+                      <tr key={i}>
+                        <th>{row[0]}</th>
+                        {row.slice(1).map((v, j) => (
+                          <td key={j}>{v}</td>
+                        ))}
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       <CompareTray
         selected={selectedCompare}
