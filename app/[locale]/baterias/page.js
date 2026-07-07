@@ -2,6 +2,8 @@ import SubpageHero from '@/components/SubpageHero/SubpageHero';
 import ProductCatalog from '@/components/ProductCatalog/ProductCatalog';
 import { batteries } from '@/lib/products';
 import { categoryPagesData } from '@/lib/utils';
+import JsonLd from '@/components/Seo/JsonLd';
+import { pageAlternates, productListJsonLd } from '@/lib/seo';
 
 export async function generateMetadata({ params }) {
   const { locale } = await params;
@@ -10,7 +12,8 @@ export async function generateMetadata({ params }) {
     title: isEs ? 'Baterías' : 'Batteries',
     description: isEs
       ? 'Catálogo de baterías EcoFlow con precios.'
-      : 'Catalog of EcoFlow batteries with pricing.'
+      : 'Catalog of EcoFlow batteries with pricing.',
+    alternates: pageAlternates(locale, '/baterias')
   };
 }
 
@@ -21,6 +24,14 @@ export default async function BateriasPage({ params }) {
 
   return (
     <main>
+      <JsonLd
+        data={productListJsonLd({
+          products: batteries,
+          locale,
+          path: '/baterias',
+          name: isEs ? 'Baterías' : 'Batteries'
+        })}
+      />
       <SubpageHero
         locale={locale}
         copy={copy}
@@ -40,7 +51,6 @@ export default async function BateriasPage({ params }) {
             ? 'Baterías de expansión y respaldo con precio. Revisa compatibilidad antes de recomendar cada modelo.'
             : 'Expansion and backup batteries with pricing. Verify compatibility before recommending each model.'
         }
-        verMasLabel={isEs ? 'Ver más' : 'See more'}
       />
     </main>
   );

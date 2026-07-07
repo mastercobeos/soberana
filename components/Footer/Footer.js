@@ -30,6 +30,16 @@ export default function Footer({ locale }) {
           <Link href={p('/#comparador')}>{isEs ? 'Comparador' : 'Comparator'}</Link>
         </div>
         <div className={styles.col}>
+          <h3>{isEs ? 'Empresa' : 'Company'}</h3>
+          <Link href={p('/nosotros')}>{isEs ? 'Nosotros' : 'About us'}</Link>
+          <Link href={p('/envios-garantia')}>
+            {isEs ? 'Envíos y garantía' : 'Shipping and warranty'}
+          </Link>
+          <a href="https://wa.me/529842281177" target="_blank" rel="noopener">
+            WhatsApp: +52 984 228 1177
+          </a>
+        </div>
+        <div className={styles.col}>
           <h3>Legal</h3>
           <Link href={p('/aviso-privacidad')}>
             {isEs ? 'Aviso de privacidad' : 'Privacy notice'}

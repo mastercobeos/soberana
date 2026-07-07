@@ -1,7 +1,9 @@
 import SubpageHero from '@/components/SubpageHero/SubpageHero';
-import ProductCatalog from '@/components/ProductCatalog/ProductCatalog';
+import PackageCard from '@/components/PackageCard/PackageCard';
 import { bundles } from '@/lib/products';
 import { categoryPagesData } from '@/lib/utils';
+import JsonLd from '@/components/Seo/JsonLd';
+import { pageAlternates, productListJsonLd } from '@/lib/seo';
 
 export async function generateMetadata({ params }) {
   const { locale } = await params;
@@ -10,7 +12,8 @@ export async function generateMetadata({ params }) {
     title: isEs ? 'Paquetes' : 'Bundles',
     description: isEs
       ? 'Paquetes EcoFlow con combinaciones listas para respaldo, carga solar y uso residencial.'
-      : 'EcoFlow bundles combining backup, solar charging, and residential use.'
+      : 'EcoFlow bundles combining backup, solar charging, and residential use.',
+    alternates: pageAlternates(locale, '/paquetes')
   };
 }
 
@@ -21,26 +24,47 @@ export default async function PaquetesPage({ params }) {
 
   return (
     <main>
+      <JsonLd
+        data={productListJsonLd({
+          products: bundles,
+          locale,
+          path: '/paquetes',
+          name: isEs ? 'Paquetes' : 'Bundles'
+        })}
+      />
       <SubpageHero
         locale={locale}
         copy={copy}
-        visual="bundles"
+        visual="bundlesReal"
         secondaryHref={`/${locale}/paneles`}
         primaryHref="#products"
       />
-      <ProductCatalog
-        locale={locale}
-        products={bundles}
-        sectionId="products"
-        kicker={isEs ? 'Ejemplos de paquetes' : 'Bundle examples'}
-        title={isEs ? 'Combos disponibles' : 'Available combos'}
-        desc={
-          isEs
-            ? 'Paquetes pensados para explicar rápido qué puede resolver cada combinación. La compatibilidad exacta debe validarse antes de cerrar venta.'
-            : 'Bundles designed to quickly explain what each combination can solve. Exact compatibility should be validated before closing the sale.'
-        }
-        verMasLabel={isEs ? 'Ver más' : 'See more'}
-      />
+      <section className="section" id="products">
+        <div className="container">
+          <div className="sectionHead">
+            <div>
+              <div className="kicker">{isEs ? 'Combos solares' : 'Solar combos'}</div>
+              <h2>{isEs ? 'Combos disponibles' : 'Available combos'}</h2>
+            </div>
+            <p className="sectionDesc">
+              {isEs
+                ? 'Equipo EcoFlow más su panel correspondiente, con precio combinado, tiempo de carga solar y autonomía estimada según los dispositivos conectados.'
+                : 'EcoFlow equipment plus its matching panel, with combined price, solar charge time, and estimated runtime based on the connected devices.'}
+            </p>
+          </div>
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 480px), 1fr))',
+              gap: '18px'
+            }}
+          >
+            {bundles.map((p) => (
+              <PackageCard key={p.slug} product={p} locale={locale} />
+            ))}
+          </div>
+        </div>
+      </section>
     </main>
   );
 }

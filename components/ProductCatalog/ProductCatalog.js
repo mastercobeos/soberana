@@ -7,8 +7,7 @@ export default function ProductCatalog({
   sectionId,
   kicker,
   title,
-  desc,
-  verMasLabel
+  desc
 }) {
   return (
     <section className="section" id={sectionId}>
@@ -26,7 +25,6 @@ export default function ProductCatalog({
               key={product.slug}
               product={product}
               locale={locale}
-              verMasLabel={verMasLabel}
             />
           ))}
         </div>

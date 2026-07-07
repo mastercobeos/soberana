@@ -299,6 +299,8 @@
 }
 .priceTag strong {
   color: var(--accent);
+  font-family: var(--font-numbers), sans-serif;
+  font-variant-numeric: tabular-nums;
   font-size: clamp(0.9rem, 1.4vw, 1.05rem);
   font-weight: 900;
   line-height: 1.05;
@@ -390,6 +392,8 @@
 }
 .spec strong {
   color: #fff;
+  font-family: var(--font-numbers), sans-serif;
+  font-variant-numeric: tabular-nums;
   font-size: 0.98rem;
   font-weight: 700;
   line-height: 1.15;
@@ -419,6 +423,7 @@
 /* Actions */
 .actions {
   display: flex;
+  flex-wrap: wrap;
   gap: 10px;
   align-items: center;
   margin-top: auto;
@@ -766,7 +771,7 @@
   background: rgba(255, 255, 255, 0.03);
 }
 .modalSpec small { display: block; color: #ffffff; font-size: 0.72rem; opacity: 0.7; }
-.modalSpec strong { color: #fff; }
+.modalSpec strong { color: #fff; font-family: var(--font-numbers), sans-serif; font-variant-numeric: tabular-nums; }
 
 .columns { display: grid; grid-template-columns: 1fr 1fr; gap: 13px; }
 .miniList { border: 1px solid var(--line); border-radius: 18px; padding: 16px; }
@@ -776,16 +781,12 @@
 .miniList.good li::before { content: "✓"; color: var(--accent); font-weight: 950; }
 .miniList.bad li::before { content: "×"; color: var(--danger); font-weight: 950; }
 
-.officialLink {
-  display: inline-flex;
+.modalActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
   margin-top: 18px;
-  padding: 10px 13px;
-  border-radius: 12px;
-  border: 1px solid var(--line);
-  color: #ffffff;
-  font-weight: 750;
 }
-.officialLink:hover { border-color: rgba(87, 227, 137, 0.5); color: var(--accent); }
 
 /* ============ Responsive ============ */
 @media (max-width: 1000px) {

@@ -4,6 +4,26 @@
   background: transparent;
   overflow: hidden;
 }
+
+/* Mismo vidrio translúcido que el panel del carrito */
+.recBtn.recBtn {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  border-color: rgba(255, 255, 255, 0.14);
+}
+.recBtn.recBtn:hover {
+  background: rgba(255, 255, 255, 0.09);
+}
+
+/* Mismo verde sólido que los números de las estadísticas */
+.catBtn.catBtn {
+  background: var(--accent);
+  color: #052012;
+}
+.catBtn.catBtn:hover {
+  background: var(--accent-2);
+}
 .hero::before {
   content: "";
   position: absolute;
@@ -52,8 +72,8 @@
 /* --- Stats strip --- */
 .stats {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 14px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 40px;
   margin: 34px 0 0;
   padding: 22px 8px;
   border-top: 1px solid rgba(255, 255, 255, 0.10);
@@ -66,7 +86,8 @@
   min-width: 0;
 }
 .statItem dt {
-  font-family: "Avenir Next", "Helvetica Neue", "Segoe UI", sans-serif;
+  font-family: var(--font-numbers), sans-serif;
+  font-variant-numeric: tabular-nums;
   font-size: clamp(1.4rem, 2vw, 1.85rem);
   font-weight: 800;
   color: var(--accent);

@@ -2,6 +2,8 @@ import SubpageHero from '@/components/SubpageHero/SubpageHero';
 import ProductCatalog from '@/components/ProductCatalog/ProductCatalog';
 import { smartProducts } from '@/lib/products';
 import { categoryPagesData } from '@/lib/utils';
+import JsonLd from '@/components/Seo/JsonLd';
+import { pageAlternates, productListJsonLd } from '@/lib/seo';
 
 export async function generateMetadata({ params }) {
   const { locale } = await params;
@@ -10,7 +12,8 @@ export async function generateMetadata({ params }) {
     title: isEs ? 'Inteligentes' : 'Smart',
     description: isEs
       ? 'Catálogo de equipos inteligentes EcoFlow con descripción, precios y uso recomendado.'
-      : 'Catalog of EcoFlow smart equipment with descriptions, pricing, and recommended use.'
+      : 'Catalog of EcoFlow smart equipment with descriptions, pricing, and recommended use.',
+    alternates: pageAlternates(locale, '/inteligentes')
   };
 }
 
@@ -21,6 +24,14 @@ export default async function InteligentesPage({ params }) {
 
   return (
     <main>
+      <JsonLd
+        data={productListJsonLd({
+          products: smartProducts,
+          locale,
+          path: '/inteligentes',
+          name: isEs ? 'Equipos inteligentes' : 'Smart equipment'
+        })}
+      />
       <SubpageHero
         locale={locale}
         copy={copy}
@@ -40,7 +51,6 @@ export default async function InteligentesPage({ params }) {
             ? 'Estos productos son accesorios y equipos especializados: algunos administran energía del hogar, otros cargan desde vehículo o agregan climatización y refrigeración portátil.'
             : 'These products are specialized accessories and equipment: some manage home energy, others charge from a vehicle, and some add portable climate or refrigeration.'
         }
-        verMasLabel={isEs ? 'Ver más' : 'See more'}
       />
     </main>
   );

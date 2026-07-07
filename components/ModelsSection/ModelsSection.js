@@ -1,11 +1,16 @@
 'use client';
 
 import { useEffect, useMemo, useRef, useState } from 'react';
+import Image from 'next/image';
 import clsx from 'clsx';
 import { modelAnchorId } from '@/lib/utils';
+import { findProductBySlug, stationSlug } from '@/lib/products';
+import AddToCartButton from '@/components/Cart/AddToCartButton';
 import styles from './ModelsSection.module.css';
 
-function ModelCard({ model, messages, isCompared, onDetails, onCompare, highlight }) {
+function ModelCard({ model, locale, messages, isCompared, onDetails, onCompare, highlight }) {
+  const cartSlug = stationSlug(model.name);
+  const purchasable = Boolean(findProductBySlug(cartSlug));
   const compareId = `compare-${modelAnchorId(model.name)}`;
   return (
     <article
@@ -13,11 +18,12 @@ function ModelCard({ model, messages, isCompared, onDetails, onCompare, highligh
       id={modelAnchorId(model.name)}
       data-model-name={model.name}
     >
-      <img
+      <Image
         className={styles.warrantyRibbon}
         src="/assets/warranty-5-year.png"
         alt={messages.warranty}
-        loading="lazy"
+        width={90}
+        height={90}
       />
       <div className={styles.image}>
         <span className={styles.levelBadge}>
@@ -29,7 +35,7 @@ function ModelCard({ model, messages, isCompared, onDetails, onCompare, highligh
             {model.sale_status && <em>{model.sale_status}</em>}
           </span>
         )}
-        <img src={model.image} alt={model.name} loading="lazy" />
+        <Image src={model.image} alt={model.name} width={640} height={480} sizes="(max-width: 650px) 300px, 420px" />
       </div>
 
       <div className={styles.body}>
@@ -66,6 +72,7 @@ function ModelCard({ model, messages, isCompared, onDetails, onCompare, highligh
         </div>
 
         <div className={styles.actions}>
+          {purchasable && <AddToCartButton slug={cartSlug} locale={locale} />}
           <button
             className={styles.detailsBtn}
             type="button"
@@ -96,7 +103,7 @@ function ModelCard({ model, messages, isCompared, onDetails, onCompare, highligh
   );
 }
 
-function Modal({ model, messages, onClose }) {
+function Modal({ model, locale, messages, onClose }) {
   useEffect(() => {
     const onKey = (e) => {
       if (e.key === 'Escape') onClose();
@@ -118,7 +125,7 @@ function Modal({ model, messages, onClose }) {
       <div className={styles.modalCard}>
         <div className={styles.modalGrid}>
           <div className={styles.modalMedia}>
-            <img src={model.image} alt={model.name} />
+            <Image src={model.image} alt={model.name} width={800} height={600} />
           </div>
           <div className={styles.modalContent}>
             <div className={styles.modalTop}>
@@ -179,14 +186,11 @@ function Modal({ model, messages, onClose }) {
                 </ul>
               </div>
             </div>
-            <a
-              className={styles.officialLink}
-              href={model.url}
-              target="_blank"
-              rel="noopener"
-            >
-              {messages.officialLink}
-            </a>
+            {findProductBySlug(stationSlug(model.name)) && (
+              <div className={styles.modalActions}>
+                <AddToCartButton slug={stationSlug(model.name)} locale={locale} />
+              </div>
+            )}
           </div>
         </div>
       </div>
@@ -268,7 +272,7 @@ function CompareTray({ selected, models, messages, onOpen, onRemove, onClear }) 
         <ul className={styles.trayList}>
           {chosen.map((model) => (
             <li key={model.name} className={styles.trayItem}>
-              <img src={model.image} alt={model.name} />
+              <Image src={model.image} alt={model.name} width={64} height={64} />
               <div>
                 <strong>{model.name}</strong>
                 <span>{model.family}</span>
@@ -297,7 +301,7 @@ function CompareTray({ selected, models, messages, onOpen, onRemove, onClear }) 
   );
 }
 
-export default function ModelsSection({ data, messages }) {
+export default function ModelsSection({ locale, data, messages }) {
   const firstCategory = data.categories[0]?.id;
   const [activeFilter, setActiveFilter] = useState(firstCategory);
   const [selectedCompare, setSelectedCompare] = useState([]);
@@ -417,6 +421,7 @@ export default function ModelsSection({ data, messages }) {
               <ModelCard
                 key={model.name}
                 model={model}
+                locale={locale}
                 messages={messages}
                 isCompared={selectedCompare.includes(model.name)}
                 onDetails={setModalModel}
@@ -473,7 +478,7 @@ export default function ModelsSection({ data, messages }) {
         onClear={() => setSelectedCompare([])}
       />
 
-      <Modal model={modalModel} messages={messages} onClose={() => setModalModel(null)} />
+      <Modal model={modalModel} locale={locale} messages={messages} onClose={() => setModalModel(null)} />
     </>
   );
 }

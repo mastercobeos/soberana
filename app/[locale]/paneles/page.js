@@ -2,6 +2,8 @@ import SubpageHero from '@/components/SubpageHero/SubpageHero';
 import ProductCatalog from '@/components/ProductCatalog/ProductCatalog';
 import { solarPanels } from '@/lib/products';
 import { categoryPagesData } from '@/lib/utils';
+import JsonLd from '@/components/Seo/JsonLd';
+import { pageAlternates, productListJsonLd } from '@/lib/seo';
 
 export async function generateMetadata({ params }) {
   const { locale } = await params;
@@ -10,7 +12,8 @@ export async function generateMetadata({ params }) {
     title: isEs ? 'Paneles solares' : 'Solar panels',
     description: isEs
       ? 'Catálogo de paneles solares EcoFlow con precios, precios de distribuidor y opciones por potencia.'
-      : 'Catalog of EcoFlow solar panels with pricing, dealer pricing, and power options.'
+      : 'Catalog of EcoFlow solar panels with pricing, dealer pricing, and power options.',
+    alternates: pageAlternates(locale, '/paneles')
   };
 }
 
@@ -21,6 +24,14 @@ export default async function PanelesPage({ params }) {
 
   return (
     <main>
+      <JsonLd
+        data={productListJsonLd({
+          products: solarPanels,
+          locale,
+          path: '/paneles',
+          name: isEs ? 'Paneles solares' : 'Solar panels'
+        })}
+      />
       <SubpageHero
         locale={locale}
         copy={copy}
@@ -39,7 +50,6 @@ export default async function PanelesPage({ params }) {
             ? 'Lista preparada con precio. Los importes están basados en la referencia compartida y pueden actualizarse desde esta misma página.'
             : 'List with pricing. Amounts are based on shared reference values and can be updated from this same page.'
         }
-        verMasLabel={isEs ? 'Ver más' : 'See more'}
       />
     </main>
   );

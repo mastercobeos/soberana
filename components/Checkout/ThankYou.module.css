@@ -1,0 +1,68 @@
+.page {
+  padding: 140px 0 90px;
+  min-height: 70vh;
+  display: grid;
+  place-items: center;
+}
+
+.card {
+  max-width: 520px;
+  width: 100%;
+  text-align: center;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 40px 32px;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.015));
+}
+
+.icon {
+  display: inline-grid;
+  place-items: center;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: rgba(87, 227, 137, 0.16);
+  color: var(--accent);
+  font-size: 1.6rem;
+  font-weight: 800;
+  margin-bottom: 18px;
+}
+
+.iconFail {
+  background: rgba(255, 123, 123, 0.16);
+  color: var(--danger);
+}
+
+.title {
+  margin: 0 0 12px;
+  font-size: clamp(1.4rem, 3vw, 1.9rem);
+  letter-spacing: -0.03em;
+}
+
+.body {
+  margin: 0 0 24px;
+  color: rgba(255, 255, 255, 0.72);
+  line-height: 1.55;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+.homeBtn {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 12px;
+  padding: 11px 20px;
+  font-weight: 600;
+  font-size: 0.94rem;
+  background: var(--accent);
+  color: #052012;
+}
+
+@media (max-width: 480px) {
+  .page { padding: 110px 0 60px; }
+  .card { padding: 30px 20px; }
+}

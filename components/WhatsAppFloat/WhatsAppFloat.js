@@ -1,15 +1,22 @@
+'use client';
+
+import clsx from 'clsx';
 import { WHATSAPP_URL } from '@/lib/utils';
+import { useCart } from '@/components/Cart/CartContext';
 import styles from './WhatsAppFloat.module.css';
 
 export default function WhatsAppFloat({ locale }) {
+  const { isCartOpen } = useCart();
   const label = locale === 'es' ? 'Contactar por WhatsApp' : 'Contact us on WhatsApp';
   return (
     <a
-      className={styles.float}
+      className={clsx(styles.float, isCartOpen && styles.hidden)}
       href={WHATSAPP_URL}
       target="_blank"
       rel="noopener"
       aria-label={label}
+      aria-hidden={isCartOpen}
+      tabIndex={isCartOpen ? -1 : undefined}
     >
       <span aria-hidden="true">
         <svg viewBox="0 0 32 32" role="img" focusable="false">

@@ -9,6 +9,12 @@ export function middleware(request) {
   // No tocar archivos estáticos servidos desde public/ (llevan extensión).
   if (pathname.includes('.')) return NextResponse.next();
 
+  // Las rutas de API no llevan locale (checkout, webhooks de Stripe).
+  if (pathname.startsWith('/api')) return NextResponse.next();
+
+  // Rutas de metadata generadas por Next (imagen OG) tampoco llevan locale.
+  if (pathname.startsWith('/opengraph-image')) return NextResponse.next();
+
   const hasLocale = LOCALES.some(
     (locale) => pathname === `/${locale}` || pathname.startsWith(`/${locale}/`)
   );

@@ -2,6 +2,8 @@ import { notFound } from 'next/navigation';
 import Nav from '@/components/Nav/Nav';
 import Footer from '@/components/Footer/Footer';
 import WhatsAppFloat from '@/components/WhatsAppFloat/WhatsAppFloat';
+import { CartProvider } from '@/components/Cart/CartContext';
+import CartDrawer from '@/components/Cart/CartDrawer';
 import { LOCALES, isLocale } from '@/lib/i18n';
 import { getMessages } from '@/lib/utils';
 
@@ -29,11 +31,12 @@ export default async function LocaleLayout({ children, params }) {
   const { locale } = await params;
   if (!isLocale(locale)) notFound();
   return (
-    <>
+    <CartProvider>
       <Nav locale={locale} />
       {children}
       <Footer locale={locale} />
       <WhatsAppFloat locale={locale} />
-    </>
+      <CartDrawer locale={locale} />
+    </CartProvider>
   );
 }

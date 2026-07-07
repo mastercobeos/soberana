@@ -1,0 +1,206 @@
+.card {
+  display: grid;
+  grid-template-columns: minmax(210px, 30%) 1fr;
+  gap: 20px;
+  align-items: stretch;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  padding: 20px;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.018)),
+    radial-gradient(circle at 100% 100%, rgba(73, 233, 139, 0.12), transparent 42%);
+  transition: 0.22s ease;
+}
+.card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(87, 227, 137, 0.46);
+  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.28);
+}
+
+/* Photo stack: station + "+" + panel */
+.photoStack {
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) 34px minmax(0, 1.05fr);
+  gap: 4px;
+  align-items: center;
+  align-self: stretch;
+  min-height: 430px;
+  padding: 12px;
+  border-radius: 18px;
+  background:
+    radial-gradient(circle at 50% 25%, rgba(96, 255, 176, 0.18), transparent 45%),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
+}
+.photoSlot {
+  min-height: 0;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  overflow: hidden;
+}
+.photo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 16px 26px rgba(0, 0, 0, 0.3));
+}
+.plus {
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  justself: center;
+  justify-self: center;
+  align-self: center;
+  border-radius: 999px;
+  color: #052817;
+  background: #49e98b;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.badge {
+  display: inline-flex;
+  width: max-content;
+  max-width: 100%;
+  align-items: center;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(5, 12, 8, 0.72);
+  border: 1px solid var(--line);
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 750;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+.titleRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 6px 0 12px;
+}
+.titleRow h3 {
+  flex: 1 1 auto;
+  min-width: 0;
+  margin: 0;
+  font-size: clamp(1.2rem, 1.9vw, 1.55rem);
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  color: #fff;
+}
+.price {
+  flex: 0 0 auto;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+  max-width: 46%;
+  text-align: right;
+  color: var(--accent);
+}
+.price strong {
+  font-family: var(--font-numbers), sans-serif;
+  font-variant-numeric: tabular-nums;
+  font-size: clamp(0.98rem, 1.5vw, 1.15rem);
+  font-weight: 900;
+  overflow-wrap: anywhere;
+}
+.price em {
+  color: #ffffff;
+  font-style: normal;
+  font-size: 0.72rem;
+  font-weight: 750;
+  white-space: nowrap;
+}
+
+.intro {
+  margin: 0 0 12px;
+  color: #ffffff;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+.specs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 18px;
+  margin: 0 0 12px;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  font-size: 0.88rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+.specs strong {
+  color: var(--accent);
+  font-weight: 700;
+}
+.usage {
+  margin: 0 0 14px;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.runtime {
+  margin-bottom: 16px;
+}
+.runtimeLabel {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 750;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+  margin-bottom: 8px;
+}
+.runtime ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+.runtime li {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  border-radius: 10px;
+  padding: 9px 12px;
+  background: rgba(255, 255, 255, 0.025);
+  font-size: 0.86rem;
+  line-height: 1.35;
+  color: rgba(255, 255, 255, 0.85);
+}
+.runtime li strong {
+  white-space: nowrap;
+  color: #f3fff6;
+  font-family: var(--font-numbers), sans-serif;
+  font-variant-numeric: tabular-nums;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: auto;
+}
+
+@media (max-width: 760px) {
+  .card {
+    grid-template-columns: 1fr;
+  }
+  .photoStack {
+    min-height: 360px;
+    grid-template-rows: minmax(0, 1fr) 34px minmax(0, 1fr);
+  }
+}

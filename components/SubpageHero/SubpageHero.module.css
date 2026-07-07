@@ -63,6 +63,53 @@
 .meta strong { color: #fff; font-size: 1.1rem; }
 .meta small { text-align: right; color: #ffffff; }
 
+/* Real image visual: estación + panel (paquetes) */
+.bundleReal {
+  position: relative;
+  flex: 1;
+  width: 100%;
+  min-height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+}
+.bundleReal::before {
+  content: "";
+  position: absolute;
+  inset: 18px 28px;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(79, 243, 134, 0.24), rgba(79, 243, 134, 0) 68%);
+  filter: blur(4px);
+  z-index: 0;
+}
+.bundleRealStation,
+.bundleRealPanel {
+  position: relative;
+  z-index: 1;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 18px 28px rgba(0, 0, 0, 0.34));
+}
+.bundleRealStation { width: min(48%, 280px); }
+.bundleRealPanel { width: min(52%, 320px); }
+.bundleRealPlus {
+  position: relative;
+  z-index: 2;
+  flex: 0 0 40px;
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  color: #06160e;
+  background: #5cff8d;
+  box-shadow: 0 14px 32px rgba(92, 255, 141, 0.3);
+  font-size: 1.5rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
 /* Decorative visuals */
 .panelFolding {
   display: flex;

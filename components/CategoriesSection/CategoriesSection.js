@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import Image from 'next/image';
 import clsx from 'clsx';
 import styles from './CategoriesSection.module.css';
 
@@ -56,12 +57,13 @@ function CategorySlider({ category, models, viewLabel }) {
       <div className={styles.media}>
         <div className={styles.mediaGlow}></div>
         {categoryModels.map((m, i) => (
-          <img
+          <Image
             key={m.name}
             className={clsx(styles.slide, i === index && styles.slideActive)}
             src={m.image}
             alt={m.name}
-            loading="lazy"
+            width={480}
+            height={360}
           />
         ))}
         <span className={styles.modelName}>{categoryModels[index]?.name}</span>

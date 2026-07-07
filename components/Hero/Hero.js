@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { getMessages, getDataForLocale } from '@/lib/utils';
 import styles from './Hero.module.css';
 
@@ -11,8 +12,7 @@ export default function Hero({ locale }) {
   const stats = [
     { value: '14', label: isEs ? 'modelos EcoFlow' : 'EcoFlow models' },
     { value: '90 kWh', label: isEs ? 'sistema escalable' : 'scalable system' },
-    { value: '5', label: isEs ? 'años de garantía' : 'year warranty' },
-    { value: '4–5', label: isEs ? 'días de entrega' : 'day delivery' }
+    { value: '5', label: isEs ? 'años de garantía' : 'year warranty' }
   ];
 
   return (
@@ -26,10 +26,10 @@ export default function Hero({ locale }) {
           />
           <p className={styles.desc}>{t.heroDesc}</p>
           <div className={styles.actions}>
-            <Link className="btn primary" href="#categorias">
+            <Link className={`btn primary ${styles.catBtn}`} href="#categorias">
               {t.chooseCategory}
             </Link>
-            <Link className="btn" href="#recomendador">
+            <Link className={`btn ${styles.recBtn}`} href="#recomendador">
               {t.quickRecommendation}
             </Link>
           </div>
@@ -46,7 +46,7 @@ export default function Hero({ locale }) {
           <div className={`${styles.orbit} ${styles.orbitOne}`}></div>
           <div className={`${styles.orbit} ${styles.orbitTwo}`}></div>
           <div className={styles.product}>
-            <img src={featured.image} alt={featured.name} />
+            <Image src={featured.image} alt={featured.name} width={720} height={540} priority />
           </div>
           <span className={styles.productBadge}>{featured.name}</span>
         </div>

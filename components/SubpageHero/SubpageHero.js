@@ -1,8 +1,28 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import clsx from 'clsx';
 import styles from './SubpageHero.module.css';
 
 const VISUALS = {
+  bundlesReal: (
+    <div className={styles.bundleReal} aria-hidden="true">
+      <Image
+        className={styles.bundleRealStation}
+        src="/products/img-25.png"
+        alt=""
+        width={420}
+        height={320}
+      />
+      <span className={styles.bundleRealPlus}>+</span>
+      <Image
+        className={styles.bundleRealPanel}
+        src="/products/img-02.png"
+        alt=""
+        width={300}
+        height={220}
+      />
+    </div>
+  ),
   panels: (
     <div className={clsx(styles.panelFolding, styles.large)} aria-hidden="true">
       <span></span>

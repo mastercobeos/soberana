@@ -1,0 +1,118 @@
+.paymentForm {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.formSection {
+  margin: 0;
+  font-size: 0.98rem;
+  letter-spacing: -0.01em;
+}
+.formSection:not(:first-child) {
+  margin-top: 8px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.fieldLabel {
+  font-size: 0.86rem;
+  color: rgba(255, 255, 255, 0.78);
+}
+.input {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: #22402f;
+  color: #ffffff;
+  font-size: 0.95rem;
+  transition: 0.15s ease;
+}
+.input::placeholder {
+  color: rgba(255, 255, 255, 0.42);
+}
+.input:focus {
+  outline: none;
+  border-color: #f7a83c;
+  box-shadow: 0 0 0 1px #f7a83c;
+}
+
+.payActions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+}
+
+.stripeBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.8rem;
+}
+.stripeBadge svg { color: #635bff; }
+.stripeBadge strong {
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 700;
+}
+.payBtn {
+  display: inline-flex;
+  align-items: center;
+  border: 0;
+  border-radius: 12px;
+  padding: 12px 22px;
+  background: var(--accent);
+  color: #052012;
+  font-weight: 700;
+  font-size: 0.98rem;
+  letter-spacing: 0.02em;
+  transition: 0.18s ease;
+}
+.payBtn:hover:not(:disabled) { background: var(--accent-2); }
+.payBtn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.note {
+  margin: 0;
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.5;
+}
+.consent {
+  margin: 0;
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.5;
+}
+.consent a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.consent a:hover {
+  color: var(--accent-2);
+}
+
+.error {
+  margin: 0;
+  color: var(--danger);
+  font-size: 0.9rem;
+}
+
+.loading {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.65);
+}
