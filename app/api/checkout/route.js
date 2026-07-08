@@ -45,6 +45,14 @@ export async function POST(request) {
       // Explicit card-only: keeps Stripe Link (the "save my info for faster
       // payment" box) out of the Payment Element.
       payment_method_types: ['card'],
+      // Meses sin intereses (MX installments): Stripe surfaces eligible plans
+      // (3/6/9/12/18/24 months) in the Payment Element once the customer enters
+      // a supported Mexican consumer credit card. Ineligible cards (debit,
+      // corporate, foreign) simply pay in full — no downside. Stripe enforces
+      // per-plan minimum amounts and adds the installment fee automatically.
+      payment_method_options: {
+        card: { installments: { enabled: true } }
+      },
       description: `Soberana Solutions: ${lineSummary.join(', ')}`,
       metadata: {
         items: JSON.stringify(items.map((i) => ({ slug: i.slug, quantity: i.quantity }))).slice(0, 500)
