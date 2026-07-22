@@ -42,8 +42,12 @@ export async function POST(request) {
     const paymentIntent = await stripe.paymentIntents.create({
       amount,
       currency: 'mxn',
-      // Explicit card-only: keeps Stripe Link (the "save my info for faster
-      // payment" box) out of the Payment Element.
+      // Card-only intent (no OXXO/wallets/etc. at the PaymentIntent level).
+      // NOTE: this does NOT remove the Stripe Link "save my info for faster
+      // payment" box — Link shows in the card form regardless of
+      // payment_method_types. Link is disabled at the account level in the
+      // Stripe Dashboard (Settings > Payment methods > Link > off), done in
+      // both test and live modes on 2026-07-08.
       payment_method_types: ['card'],
       // Meses sin intereses (MX installments): Stripe surfaces eligible plans
       // (3/6/9/12/18/24 months) in the Payment Element once the customer enters
