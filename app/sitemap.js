@@ -1,5 +1,6 @@
 import { LOCALES } from '@/lib/i18n';
 import { SITE_URL } from '@/lib/seo';
+import { allProducts } from '@/lib/products';
 
 const PAGES = [
   { path: '', priority: 1, changeFrequency: 'weekly' },
@@ -13,8 +14,14 @@ const PAGES = [
   { path: '/terminos-condiciones', priority: 0.3, changeFrequency: 'yearly' }
 ];
 
+const PRODUCT_PAGES = allProducts.map((p) => ({
+  path: `/producto/${p.slug}`,
+  priority: 0.8,
+  changeFrequency: 'weekly'
+}));
+
 export default function sitemap() {
-  return PAGES.flatMap((page) =>
+  return [...PAGES, ...PRODUCT_PAGES].flatMap((page) =>
     LOCALES.map((locale) => ({
       url: `${SITE_URL}/${locale}${page.path}`,
       lastModified: new Date(),
